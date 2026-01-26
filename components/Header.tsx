@@ -6,6 +6,7 @@ import { useState } from 'react';
 import Container from './Container';
 
 const navLinks = [
+  { href: '/', label: 'Home' },
   { href: '/about', label: 'About' },
   { href: '/programs', label: 'Programs' },
   { href: '/press', label: 'Press' },
@@ -55,7 +56,7 @@ export default function Header() {
           {/* Left Navigation Links - Desktop */}
           <div className="hidden lg:flex items-center gap-6 lg:gap-8">
             {navLinks.map((link) => {
-              const isActive = pathname === link.href;
+              const isActive = pathname === link.href || (link.href === '/' && pathname === '/');
               return (
                 <Link
                   key={link.href}
@@ -145,7 +146,7 @@ export default function Header() {
           >
             <div className="py-4 space-y-3">
               {navLinks.map((link) => {
-                const isActive = pathname === link.href;
+                const isActive = pathname === link.href || (link.href === '/' && pathname === '/');
                 return (
                   <Link
                     key={link.href}
