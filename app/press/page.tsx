@@ -1,0 +1,144 @@
+import { Metadata } from 'next';
+import Image from 'next/image';
+import Link from 'next/link';
+import Container from '@/components/Container';
+
+export const metadata: Metadata = {
+  title: 'Press',
+  description: 'Stay inspired. Scroll for helpful tips, stories, and news from Rosen Relations. Read about our success stories and press coverage.',
+  openGraph: {
+    title: 'Press | Rosen Relations',
+    description: 'Stay inspired. Scroll for helpful tips, stories, and news from Rosen Relations.',
+  },
+};
+
+const pressPosts = [
+  {
+    id: 'tina-rose-featured',
+    category: 'press',
+    date: '2/19/20',
+    title: 'In the Press: Tina & Rose Featured',
+    image: '/hero-section.jpg',
+    href: '/press/tina-rose-featured',
+  },
+  {
+    id: 'shirley-l',
+    category: 'success story',
+    date: '6/19/19',
+    title: 'Success Story — Shirley L.',
+    image: '/home-image-2.webp',
+    href: '/press/shirley-l',
+  },
+];
+
+export default function PressPage() {
+  return (
+    <>
+      {/* Header Section */}
+      <section 
+        className="w-full py-16 sm:py-20 lg:py-24"
+        style={{ backgroundColor: 'var(--color-soft-ivory)' }}
+      >
+        <Container>
+          <div className="max-w-4xl mx-auto space-y-4">
+            <h1 
+              className="font-light"
+              style={{ 
+                color: 'var(--color-rose-accent)',
+                fontSize: 'clamp(2.5rem, 5vw, 4rem)',
+                letterSpacing: '0.05em',
+                lineHeight: '1.2'
+              }}
+            >
+              Stay inspired.
+            </h1>
+            <p 
+              className="font-light"
+              style={{ 
+                color: 'var(--color-ink-black)',
+                fontSize: 'clamp(1rem, 1.5vw, 1.125rem)',
+                lineHeight: '1.6',
+                letterSpacing: '0.01em',
+                opacity: 0.7
+              }}
+            >
+              Scroll for helpful tips, stories, and news.
+            </p>
+          </div>
+        </Container>
+      </section>
+
+      {/* Press Listing */}
+      <section 
+        className="w-full py-12 sm:py-16 lg:py-20"
+        style={{ backgroundColor: 'var(--color-soft-ivory)' }}
+      >
+        <Container>
+          <div className="max-w-6xl mx-auto space-y-16 sm:space-y-20">
+            {pressPosts.map((post) => (
+              <article
+                key={post.id}
+                className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-12 lg:items-center"
+              >
+                {/* Left: Image */}
+                <div className="relative w-full aspect-[4/3] overflow-hidden rounded-lg">
+                  <Image
+                    src={post.image}
+                    alt={post.title}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    quality={85}
+                  />
+                </div>
+
+                {/* Right: Text Content */}
+                <div className="flex flex-col gap-5">
+                  {/* Category and Date */}
+                  <div 
+                    className="text-sm font-light uppercase tracking-wide"
+                    style={{ 
+                      color: 'var(--color-rose-accent)',
+                      letterSpacing: '0.1em',
+                      fontSize: '0.875rem'
+                    }}
+                  >
+                    {post.category} | {post.date}
+                  </div>
+
+                  {/* Title */}
+                  <h2 
+                    className="font-light"
+                    style={{ 
+                      color: 'var(--color-rose-accent)',
+                      fontSize: 'clamp(1.5rem, 3vw, 2rem)',
+                      letterSpacing: '0.03em',
+                      lineHeight: '1.4'
+                    }}
+                  >
+                    {post.title}
+                  </h2>
+
+                  {/* Read More Link */}
+                  <div className="pt-2">
+                    <Link
+                      href={post.href}
+                      className="press-read-more font-light focus:outline-none"
+                      style={{ 
+                        color: 'var(--color-ink-black)',
+                        textDecorationColor: 'var(--color-ink-black)',
+                        fontSize: '0.9375rem'
+                      }}
+                    >
+                      Read More
+                    </Link>
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+        </Container>
+      </section>
+    </>
+  );
+}
