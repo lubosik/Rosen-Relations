@@ -18,9 +18,9 @@ export default function Hero() {
 
       {/* Glassmorphism Overlay Band at Bottom */}
       <div 
-        className="absolute bottom-0 left-0 right-0 px-4 py-8 sm:px-6 sm:py-12 lg:px-8 lg:py-20"
+        className="absolute bottom-0 left-0 right-0 px-4 py-6 sm:px-6 sm:py-8 lg:px-8 lg:py-12"
         style={{
-          background: 'linear-gradient(to top, rgba(235, 234, 223, 0.95) 0%, rgba(235, 234, 223, 0.85) 30%, rgba(235, 234, 223, 0.7) 60%, rgba(235, 234, 223, 0.4) 90%, transparent 100%)',
+          background: 'linear-gradient(to top, rgba(235, 234, 223, 0.95) 0%, rgba(235, 234, 223, 0.85) 25%, rgba(235, 234, 223, 0.6) 50%, rgba(235, 234, 223, 0.3) 75%, transparent 100%)',
           backdropFilter: 'blur(10px) saturate(180%)',
           WebkitBackdropFilter: 'blur(10px) saturate(180%)',
         }}
@@ -32,7 +32,7 @@ export default function Hero() {
             style={{ 
               color: 'var(--color-ink-black)',
               letterSpacing: '0.05em',
-              fontSize: 'clamp(1.5rem, 6vw, 4.5rem)',
+              fontSize: 'clamp(1.25rem, 4.5vw, 3rem)',
               textShadow: '0 1px 3px rgba(235, 234, 223, 0.8)',
               lineHeight: '1.2'
             }}
