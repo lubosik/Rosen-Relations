@@ -15,6 +15,13 @@ const packages = [
       'Content system & folder structure',
       'Team-delivered edited content to Drive',
       'Client posts & engages independently',
+    ],
+    notIncluded: [
+      'Auto-posting via Hootsuite',
+      'Automated content flow (Make)',
+      'Monthly performance reports',
+      'Auto replies via ManyChat',
+      'Auto DMs for lead qualification',
       'Dedicated account manager',
     ],
   },
@@ -30,6 +37,11 @@ const packages = [
       'Automated content flow (Make)',
       'Monthly performance reports',
       'Dedicated account manager',
+    ],
+    notIncluded: [
+      'Auto replies via ManyChat',
+      'Auto DMs for lead qualification',
+      'Automated engagement workflows',
     ],
     featured: true,
     badge: 'Most Popular',
@@ -230,7 +242,7 @@ export default function PricingSection() {
                   </p>
 
                   {/* Features List */}
-                  <div className="mb-8 space-y-3">
+                  <div className="mb-6 space-y-3">
                     {pkg.features.map((feature, idx) => (
                       <div key={idx} className="flex items-start gap-2">
                         <span 
@@ -254,6 +266,46 @@ export default function PricingSection() {
                       </div>
                     ))}
                   </div>
+
+                  {/* Not Included Section (for Package 1 and 2) */}
+                  {pkg.notIncluded && pkg.notIncluded.length > 0 && (
+                    <div className="mb-8 space-y-3 border-t pt-6" style={{ borderTopColor: 'rgba(212, 192, 190, 0.3)' }}>
+                      <p 
+                        className="text-xs font-light uppercase tracking-wide mb-3"
+                        style={{ 
+                          color: 'var(--color-ink-black)',
+                          opacity: 0.5,
+                          letterSpacing: '0.1em'
+                        }}
+                      >
+                        Not Included
+                      </p>
+                      {pkg.notIncluded.map((feature, idx) => (
+                        <div key={idx} className="flex items-start gap-2">
+                          <span 
+                            className="text-sm font-light flex-shrink-0 mt-0.5"
+                            style={{ 
+                              color: 'var(--color-ink-black)',
+                              opacity: 0.3
+                            }}
+                          >
+                            ✗
+                          </span>
+                          <span 
+                            className="text-sm font-light line-through"
+                            style={{ 
+                              color: 'var(--color-ink-black)',
+                              opacity: 0.3,
+                              lineHeight: '1.5',
+                              textDecorationColor: 'var(--color-ink-black)'
+                            }}
+                          >
+                            {feature}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+                  )}
 
                   {/* CTA Button */}
                   <Link
