@@ -8,8 +8,8 @@ const packages = [
   {
     id: 'starter',
     name: 'Starter',
-    monthlyPrice: '$499',
-    annualPrice: '$4,990',
+    monthlyPrice: '$199',
+    annualPrice: '$1,990',
     description: 'Content system + folder structure. Your team delivers edited content into their Drive, and the client posts + engages themselves.',
     features: [
       'Content system & folder structure',
@@ -32,6 +32,7 @@ const packages = [
       'Dedicated account manager',
     ],
     featured: true,
+    badge: 'Most Popular',
   },
   {
     id: 'hands-free-engagement',
@@ -160,6 +161,20 @@ export default function PricingSection() {
                       : '0 4px 16px rgba(11, 11, 11, 0.08), 0 1px 4px rgba(11, 11, 11, 0.04), inset 0 1px 0 rgba(255, 255, 255, 0.3)',
                   }}
                 >
+                  {/* Badge */}
+                  {pkg.badge && (
+                    <div 
+                      className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1.5 rounded-full text-xs font-light uppercase tracking-wide"
+                      style={{
+                        backgroundColor: 'var(--color-rose-accent)',
+                        color: 'var(--color-ink-black)',
+                        letterSpacing: '0.1em'
+                      }}
+                    >
+                      {pkg.badge}
+                    </div>
+                  )}
+
                   {/* Plan Name */}
                   <h3 
                     className="font-light mb-4"
