@@ -322,22 +322,24 @@ html {
   }
   
   /* Fix mobile JOIN button symmetry */
-  header .lg\\:hidden a.button {
-    box-sizing: border-box !important;
-    display: inline-flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    vertical-align: middle !important;
-    line-height: 1 !important;
-    padding: 6px 10px !important;
-    height: 28px !important;
-    min-height: 28px !important;
-    max-height: 28px !important;
-    border-radius: 2px !important;
-    font-size: 0.75rem !important;
-    font-weight: 500 !important;
-    letter-spacing: 0.05em !important;
-    text-transform: uppercase !important;
+  @media (max-width: 1023px) {
+    .mobile-join-btn {
+      box-sizing: border-box !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      vertical-align: middle !important;
+      line-height: 1 !important;
+      padding: 6px 10px !important;
+      height: 28px !important;
+      min-height: 28px !important;
+      max-height: 28px !important;
+      border-radius: 2px !important;
+      font-size: 0.75rem !important;
+      font-weight: 500 !important;
+      letter-spacing: 0.05em !important;
+      text-transform: uppercase !important;
+    }
   }
   
   /* Improve form input sizing on mobile */

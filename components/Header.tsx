@@ -122,7 +122,7 @@ export default function Header() {
               </Link>
               <Link
                 href="/join"
-                className="button inline-flex items-center justify-center transition-all duration-300 hover:opacity-90 focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2"
+                className="button mobile-join-btn inline-flex items-center justify-center transition-all duration-300 hover:opacity-90 focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2"
                 style={{ 
                   backgroundColor: 'var(--color-ink-black)',
                   color: 'var(--color-pure-white)',
