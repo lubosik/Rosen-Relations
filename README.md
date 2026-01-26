@@ -1,36 +1,125 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Rosen Relations
+
+Luxury PR & Coaching website for Rosen Relations - a custom-built Next.js application with a premium design system.
+
+## Features
+
+- **Luxury Design System** - Tokenized color palette, premium typography, and refined spacing
+- **Full Marketing Site** - Home, About, Programs, Press, and Contact pages
+- **Production-Ready** - SEO optimized, security headers, sitemap, and robots.txt
+- **Responsive Design** - Mobile-first approach with elegant breakpoints
+- **Accessibility** - WCAG compliant with keyboard navigation and reduced motion support
+- **Performance** - Optimized images, code splitting, and fast page loads
+
+## Tech Stack
+
+- **Next.js 16** - App Router with TypeScript
+- **Tailwind CSS v4** - Utility-first styling with design tokens
+- **Next/Image** - Optimized image delivery
+- **Next/Font** - Google Fonts optimization (Work Sans & Playfair Display)
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js 18+ 
+- npm or yarn
+
+### Installation
+
+```bash
+npm install
+```
+
+### Development
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to view the site.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Production Build
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+npm start
+```
 
-## Learn More
+## Project Structure
 
-To learn more about Next.js, take a look at the following resources:
+```
+rosen-relations/
+├── app/                    # Next.js App Router pages
+│   ├── about/             # About page
+│   ├── contact/           # Contact page with form
+│   ├── join/              # Registration page
+│   ├── login/             # Login page
+│   ├── press/             # Press listing and detail pages
+│   ├── programs/          # Programs page with pricing
+│   └── page.tsx           # Home page
+├── components/            # Reusable React components
+│   ├── Header.tsx         # Site navigation
+│   ├── Footer.tsx         # Site footer
+│   ├── Hero.tsx           # Home hero section
+│   └── ...                # Other section components
+├── public/                # Static assets
+│   ├── hero-section.jpg   # Hero image
+│   └── home-image-2.webp # About section image
+└── CLIENT_PORTAL_ARCHITECTURE.md  # Portal implementation guide
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Design System
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Color Palette
 
-## Deploy on Vercel
+- **Blush Pink**: `#F4C2C2`
+- **Rose Accent**: `#F0B0B0`
+- **Dusty Rose**: `#D4C0BE`
+- **Warm Sand**: `#E7DECF`
+- **Soft Ivory**: `#EBEADF`
+- **Ink Black**: `#0B0B0B`
+- **Pure White**: `#FFFFFF`
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Typography
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **Primary Sans**: Work Sans (light, wide-tracked for nav and headings)
+- **Serif**: Playfair Display (for quotes and statements)
+
+## Deployment
+
+### Vercel (Recommended)
+
+1. Push to GitHub
+2. Import repository in Vercel
+3. Add environment variable: `NEXT_PUBLIC_SITE_URL=https://yourdomain.com`
+4. Deploy
+
+The site is configured for optimal Vercel deployment with:
+- Automatic image optimization
+- Edge caching
+- Serverless functions ready
+
+## Environment Variables
+
+Create a `.env.local` file:
+
+```env
+NEXT_PUBLIC_SITE_URL=https://rosenrelations.com
+```
+
+## Client Portal
+
+See `CLIENT_PORTAL_ARCHITECTURE.md` for portal implementation recommendations. The portal is not yet implemented - the architecture document outlines two viable approaches.
+
+## Production Checklist
+
+See `PRODUCTION_NOTES.md` for a complete deployment checklist including:
+- OG image creation
+- Analytics setup
+- Contact form integration
+- SEO verification
+
+## License
+
+Private - Rosen Relations
