@@ -122,24 +122,25 @@ export default function Header() {
               </Link>
               <Link
                 href="/join"
-                className="button inline-flex items-center justify-center px-3 py-2 text-xs transition-all duration-300 hover:opacity-90 focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2"
+                className="button inline-flex items-center justify-center transition-all duration-300 hover:opacity-90 focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2"
                 style={{ 
                   backgroundColor: 'var(--color-ink-black)',
                   color: 'var(--color-pure-white)',
                   outlineColor: 'var(--color-ink-black)',
-                  minHeight: '32px',
-                  minWidth: 'auto',
-                  borderRadius: '0',
+                  padding: '6px 10px',
+                  fontSize: '0.75rem',
+                  lineHeight: '1',
+                  borderRadius: '2px',
                   display: 'inline-flex',
                   alignItems: 'center',
                   justifyContent: 'center',
                   boxSizing: 'border-box',
                   verticalAlign: 'middle',
-                  lineHeight: '1',
-                  paddingTop: '8px',
-                  paddingBottom: '8px',
-                  paddingLeft: '12px',
-                  paddingRight: '12px'
+                  minHeight: '28px',
+                  height: '28px',
+                  fontWeight: '500',
+                  letterSpacing: '0.05em',
+                  textTransform: 'uppercase'
                 }}
               >
                 Join
