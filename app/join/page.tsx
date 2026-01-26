@@ -46,16 +46,16 @@ function JoinForm() {
     <>
       {/* Hero Section */}
       <section 
-        className="w-full py-16 sm:py-20 lg:py-24"
+        className="w-full py-12 sm:py-16 lg:py-20"
         style={{ backgroundColor: 'var(--color-soft-ivory)' }}
       >
         <Container>
-          <div className="max-w-4xl mx-auto text-center space-y-6">
+          <div className="max-w-4xl mx-auto text-center space-y-4 sm:space-y-6 px-4">
             <h1 
               className="font-light"
               style={{ 
                 color: 'var(--color-ink-black)',
-                fontSize: 'clamp(2.5rem, 5vw, 4rem)',
+                fontSize: 'clamp(2rem, 6vw, 4rem)',
                 letterSpacing: '0.05em',
                 lineHeight: '1.2'
               }}
@@ -66,7 +66,7 @@ function JoinForm() {
               className="font-light max-w-2xl mx-auto"
               style={{ 
                 color: 'var(--color-ink-black)',
-                fontSize: 'clamp(1rem, 1.5vw, 1.125rem)',
+                fontSize: 'clamp(0.9375rem, 2.5vw, 1.125rem)',
                 lineHeight: '1.7',
                 letterSpacing: '0.01em',
                 opacity: 0.8
@@ -80,31 +80,31 @@ function JoinForm() {
 
       {/* Plan Selection and Form */}
       <section 
-        className="w-full py-20 sm:py-24 lg:py-32"
+        className="w-full py-12 sm:py-20 lg:py-24"
         style={{ backgroundColor: 'var(--color-soft-ivory)' }}
       >
         <Container>
-          <div className="max-w-4xl mx-auto space-y-12">
+          <div className="max-w-4xl mx-auto space-y-8 sm:space-y-12">
             {/* Plan Selection */}
             <div>
               <h2 
-                className="font-light mb-8 text-center"
+                className="font-light mb-6 sm:mb-8 text-center"
                 style={{ 
                   color: 'var(--color-ink-black)',
-                  fontSize: 'clamp(1.75rem, 3vw, 2.25rem)',
+                  fontSize: 'clamp(1.5rem, 4vw, 2.25rem)',
                   letterSpacing: '0.04em',
                   lineHeight: '1.3'
                 }}
               >
                 Select Your Plan
               </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
                 {plans.map((plan) => (
                   <button
                     key={plan.id}
                     type="button"
                     onClick={() => setSelectedPlan(plan.id)}
-                    className="p-6 rounded-lg text-left transition-all duration-300"
+                    className="p-4 sm:p-6 rounded-lg text-left transition-all duration-300"
                     style={{
                       background: selectedPlan === plan.id
                         ? 'linear-gradient(135deg, rgba(235, 234, 223, 0.95) 0%, rgba(231, 222, 207, 0.9) 100%)'
@@ -183,7 +183,7 @@ function JoinForm() {
 
             {/* Registration Form */}
             <div 
-              className="p-8 sm:p-10 lg:p-12 rounded-lg"
+              className="p-6 sm:p-8 lg:p-10 xl:p-12 rounded-lg"
               style={{
                 background: 'linear-gradient(135deg, rgba(235, 234, 223, 0.95) 0%, rgba(231, 222, 207, 0.9) 100%)',
                 backdropFilter: 'blur(20px) saturate(180%)',
@@ -193,17 +193,17 @@ function JoinForm() {
               }}
             >
               <h2 
-                className="font-light mb-8"
+                className="font-light mb-6 sm:mb-8"
                 style={{ 
                   color: 'var(--color-ink-black)',
-                  fontSize: 'clamp(1.5rem, 3vw, 2rem)',
+                  fontSize: 'clamp(1.25rem, 4vw, 2rem)',
                   letterSpacing: '0.03em',
                   lineHeight: '1.3'
                 }}
               >
                 Create Your Account
               </h2>
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
                 <div>
                   <label
                     htmlFor="name"
@@ -221,12 +221,12 @@ function JoinForm() {
                     id="name"
                     name="name"
                     required
-                    className="w-full px-4 py-3 rounded-sm border transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2"
+                    className="w-full px-3 sm:px-4 py-2.5 sm:py-3 rounded-sm border transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2"
                     style={{
                       backgroundColor: 'var(--color-pure-white)',
                       borderColor: 'rgba(212, 192, 190, 0.4)',
                       color: 'var(--color-ink-black)',
-                      fontSize: '1rem',
+                      fontSize: 'clamp(0.9375rem, 2vw, 1rem)',
                       fontFamily: 'var(--font-sans)'
                     }}
                   />
@@ -249,12 +249,12 @@ function JoinForm() {
                     id="email"
                     name="email"
                     required
-                    className="w-full px-4 py-3 rounded-sm border transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2"
+                    className="w-full px-3 sm:px-4 py-2.5 sm:py-3 rounded-sm border transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2"
                     style={{
                       backgroundColor: 'var(--color-pure-white)',
                       borderColor: 'rgba(212, 192, 190, 0.4)',
                       color: 'var(--color-ink-black)',
-                      fontSize: '1rem',
+                      fontSize: 'clamp(0.9375rem, 2vw, 1rem)',
                       fontFamily: 'var(--font-sans)'
                     }}
                   />
@@ -278,17 +278,17 @@ function JoinForm() {
                     name="password"
                     required
                     minLength={8}
-                    className="w-full px-4 py-3 rounded-sm border transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2"
+                    className="w-full px-3 sm:px-4 py-2.5 sm:py-3 rounded-sm border transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2"
                     style={{
                       backgroundColor: 'var(--color-pure-white)',
                       borderColor: 'rgba(212, 192, 190, 0.4)',
                       color: 'var(--color-ink-black)',
-                      fontSize: '1rem',
+                      fontSize: 'clamp(0.9375rem, 2vw, 1rem)',
                       fontFamily: 'var(--font-sans)'
                     }}
                   />
                   <p 
-                    className="mt-2 text-sm font-light"
+                    className="mt-2 text-xs sm:text-sm font-light"
                     style={{ 
                       color: 'var(--color-ink-black)',
                       opacity: 0.6
@@ -302,12 +302,12 @@ function JoinForm() {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="button w-full px-10 py-4 transition-all duration-300 hover:opacity-90 focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="button w-full px-8 sm:px-10 py-3 sm:py-4 transition-all duration-300 hover:opacity-90 focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 disabled:opacity-50 disabled:cursor-not-allowed"
                     style={{ 
                       backgroundColor: 'var(--color-ink-black)',
                       color: 'var(--color-pure-white)',
                       outlineColor: 'var(--color-ink-black)',
-                      fontSize: '0.875rem',
+                      fontSize: 'clamp(0.75rem, 2vw, 0.875rem)',
                       letterSpacing: '0.08em'
                     }}
                   >

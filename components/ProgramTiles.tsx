@@ -27,7 +27,7 @@ export default function ProgramTiles() {
       style={{ backgroundColor: 'var(--color-soft-ivory)' }}
     >
       <Container>
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 gap-3 sm:gap-4 sm:grid-cols-2 lg:grid-cols-3 max-w-5xl mx-auto">
           {programTiles.map((tile, index) => (
             <Link
               key={index}
@@ -44,7 +44,7 @@ export default function ProgramTiles() {
                   alt=""
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
-                  sizes="(max-width: 640px) 100vw, 50vw"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   quality={85}
                 />
               </div>
@@ -67,12 +67,12 @@ export default function ProgramTiles() {
               />
 
               {/* Text Overlay */}
-              <div className="absolute inset-0 flex items-end p-6 sm:p-8">
+              <div className="absolute inset-0 flex items-end p-4 sm:p-6 lg:p-8">
                 <h3 
                   className="font-light text-left transition-transform duration-300 group-hover:translate-y-[-4px] z-10"
                   style={{ 
                     color: 'var(--color-pure-white)',
-                    fontSize: 'clamp(1.25rem, 3vw, 1.75rem)',
+                    fontSize: 'clamp(1.125rem, 4vw, 1.75rem)',
                     letterSpacing: '0.05em',
                     lineHeight: '1.3',
                     textShadow: '0 3px 12px rgba(11, 11, 11, 0.6), 0 1px 4px rgba(11, 11, 11, 0.4), 0 0 2px rgba(11, 11, 11, 0.3)',

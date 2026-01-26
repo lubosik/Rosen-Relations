@@ -17,16 +17,16 @@ export default function AboutPage() {
     <>
       {/* Hero Section */}
       <section 
-        className="w-full py-16 sm:py-20 lg:py-24"
+        className="w-full py-12 sm:py-16 lg:py-20"
         style={{ backgroundColor: 'var(--color-soft-ivory)' }}
       >
         <Container>
-          <div className="max-w-4xl mx-auto text-center space-y-6">
+          <div className="max-w-4xl mx-auto text-center space-y-4 sm:space-y-6 px-4">
             <h1 
               className="font-light"
               style={{ 
                 color: 'var(--color-ink-black)',
-                fontSize: 'clamp(2.5rem, 5vw, 4rem)',
+                fontSize: 'clamp(2rem, 6vw, 4rem)',
                 letterSpacing: '0.05em',
                 lineHeight: '1.2'
               }}
@@ -37,7 +37,7 @@ export default function AboutPage() {
               className="font-light max-w-2xl mx-auto"
               style={{ 
                 color: 'var(--color-ink-black)',
-                fontSize: 'clamp(1.125rem, 2vw, 1.25rem)',
+                fontSize: 'clamp(1rem, 2.5vw, 1.25rem)',
                 lineHeight: '1.7',
                 letterSpacing: '0.01em'
               }}
@@ -56,7 +56,7 @@ export default function AboutPage() {
         <Container>
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-16 lg:items-center">
             {/* Left: Text Content */}
-            <div className="flex flex-col gap-10 lg:gap-12">
+            <div className="flex flex-col gap-6 sm:gap-8 lg:gap-12 order-2 lg:order-1">
               {/* Quoted Paragraph */}
               <blockquote 
                 className="quote pl-8 border-l-2"
@@ -98,15 +98,15 @@ export default function AboutPage() {
               </div>
 
               {/* CTAs */}
-              <div className="flex flex-col sm:flex-row gap-4 pt-4">
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-4">
                 <Link
                   href="/programs"
-                  className="button inline-block text-center px-8 py-4 transition-all duration-300 hover:opacity-90 focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2"
+                  className="button inline-block w-full sm:w-auto text-center px-6 sm:px-8 py-3 sm:py-4 transition-all duration-300 hover:opacity-90 focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2"
                   style={{ 
                     backgroundColor: 'var(--color-ink-black)',
                     color: 'var(--color-pure-white)',
                     outlineColor: 'var(--color-ink-black)',
-                    fontSize: '0.875rem',
+                    fontSize: 'clamp(0.75rem, 2vw, 0.875rem)',
                     letterSpacing: '0.08em'
                   }}
                 >
@@ -114,12 +114,12 @@ export default function AboutPage() {
                 </Link>
                 <Link
                   href="/join"
-                  className="button inline-block text-center px-8 py-4 transition-all duration-300 hover:opacity-90 focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2"
+                  className="button inline-block w-full sm:w-auto text-center px-6 sm:px-8 py-3 sm:py-4 transition-all duration-300 hover:opacity-90 focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2"
                   style={{ 
                     backgroundColor: 'var(--color-blush-pink)',
                     color: 'var(--color-ink-black)',
                     outlineColor: 'var(--color-blush-pink)',
-                    fontSize: '0.875rem',
+                    fontSize: 'clamp(0.75rem, 2vw, 0.875rem)',
                     letterSpacing: '0.08em',
                     boxShadow: '0 4px 12px rgba(244, 194, 194, 0.3)'
                   }}
@@ -130,9 +130,9 @@ export default function AboutPage() {
             </div>
 
             {/* Right: Circular Image */}
-            <div className="flex justify-center lg:justify-end">
+            <div className="flex justify-center lg:justify-end order-1 lg:order-2">
               <div 
-                className="relative w-full max-w-md aspect-square rounded-full overflow-hidden"
+                className="relative w-full max-w-xs sm:max-w-md aspect-square rounded-full overflow-hidden"
                 style={{ 
                   boxShadow: '0 12px 40px rgba(11, 11, 11, 0.15), 0 2px 8px rgba(11, 11, 11, 0.1)',
                   border: '1px solid rgba(212, 192, 190, 0.2)'
@@ -143,7 +143,7 @@ export default function AboutPage() {
                   alt="Nani speaking at an event"
                   fill
                   className="object-cover"
-                  sizes="(max-width: 768px) 100vw, 50vw"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   quality={90}
                 />
               </div>

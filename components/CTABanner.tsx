@@ -57,7 +57,7 @@ export default function CTABanner() {
       {/* Content */}
       <Container>
         <div 
-          className={`cta-banner-content relative z-10 text-center space-y-6 sm:space-y-8 ${
+          className={`cta-banner-content relative z-10 text-center space-y-4 sm:space-y-6 lg:space-y-8 px-2 ${
             isVisible ? 'cta-visible' : 'cta-hidden'
           }`}
         >
@@ -66,16 +66,17 @@ export default function CTABanner() {
             className="font-light leading-tight"
             style={{ 
               color: 'var(--color-ink-black)',
-              fontSize: 'clamp(2rem, 5vw, 3.5rem)',
+              fontSize: 'clamp(1.5rem, 6vw, 3.5rem)',
               letterSpacing: '0.04em',
-              textShadow: '0 2px 8px rgba(235, 234, 223, 0.8)'
+              textShadow: '0 2px 8px rgba(235, 234, 223, 0.8)',
+              lineHeight: '1.2'
             }}
           >
             Let's kickstart{' '}
             <span className="relative inline-block">
               your
               <span 
-                className="absolute -bottom-1 left-0 right-0 h-0.5"
+                className="absolute -bottom-0.5 left-0 right-0 h-0.5"
                 style={{ 
                   backgroundColor: 'var(--color-rose-accent)',
                   boxShadow: '0 1px 3px rgba(240, 176, 176, 0.4)'
@@ -88,10 +89,10 @@ export default function CTABanner() {
 
           {/* Subtext */}
           <p 
-            className="font-light max-w-2xl mx-auto"
+            className="font-light max-w-2xl mx-auto px-2"
             style={{ 
               color: 'var(--color-ink-black)',
-              fontSize: 'clamp(1.125rem, 2vw, 1.25rem)',
+              fontSize: 'clamp(1rem, 2.5vw, 1.25rem)',
               lineHeight: '1.6',
               letterSpacing: '0.01em'
             }}
@@ -100,15 +101,15 @@ export default function CTABanner() {
           </p>
 
           {/* CTA Button */}
-          <div className="pt-4">
+          <div className="pt-2 sm:pt-4">
             <Link
               href="/join"
-              className="button inline-block px-10 py-4 rounded-sm transition-all duration-300 hover:opacity-90 focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2"
+              className="button inline-block w-full sm:w-auto px-8 sm:px-10 py-3 sm:py-4 rounded-sm transition-all duration-300 hover:opacity-90 focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2"
               style={{ 
                 backgroundColor: 'var(--color-blush-pink)',
                 color: 'var(--color-ink-black)',
                 outlineColor: 'var(--color-blush-pink)',
-                fontSize: '0.875rem',
+                fontSize: 'clamp(0.75rem, 2vw, 0.875rem)',
                 letterSpacing: '0.08em',
                 boxShadow: '0 4px 16px rgba(244, 194, 194, 0.4), 0 2px 4px rgba(244, 194, 194, 0.2)'
               }}

@@ -18,10 +18,10 @@ export default function Footer() {
       }}
     >
       <Container>
-        <div className="flex flex-col items-start justify-between gap-6 py-8 sm:flex-row sm:items-center">
+        <div className="flex flex-col items-start justify-between gap-4 sm:gap-6 py-6 sm:py-8 sm:flex-row sm:items-center">
           {/* Left: Brand Name */}
           <div 
-            className="text-lg font-light tracking-wide uppercase"
+            className="text-base sm:text-lg font-light tracking-wide uppercase"
             style={{ 
               color: 'var(--color-ink-black)',
               letterSpacing: '0.1em'

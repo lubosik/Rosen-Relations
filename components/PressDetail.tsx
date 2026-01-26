@@ -75,7 +75,7 @@ export default function PressDetail({ title, category, date, image, imageAlt }: 
       </section>
 
       {/* Hero Image */}
-      <section className="relative w-full" style={{ minHeight: '50vh', maxHeight: '70vh' }}>
+      <section className="relative w-full" style={{ minHeight: '40vh', maxHeight: '60vh' }}>
         <div className="relative w-full h-full aspect-[16/9]">
           <Image
             src={image}
@@ -91,18 +91,17 @@ export default function PressDetail({ title, category, date, image, imageAlt }: 
 
       {/* Article Content */}
       <article 
-        className="w-full py-16 sm:py-20 lg:py-24"
+        className="w-full py-12 sm:py-16 lg:py-20"
         style={{ backgroundColor: 'var(--color-soft-ivory)' }}
       >
         <Container>
-          <div className="max-w-4xl mx-auto space-y-8">
+          <div className="max-w-4xl mx-auto space-y-6 sm:space-y-8 px-4">
             {/* Category and Date */}
             <div 
-              className="text-sm font-light uppercase tracking-wide"
+              className="text-xs sm:text-sm font-light uppercase tracking-wide"
               style={{ 
                 color: 'var(--color-rose-accent)',
-                letterSpacing: '0.1em',
-                fontSize: '0.875rem'
+                letterSpacing: '0.1em'
               }}
             >
               {category} | {date}
@@ -113,7 +112,7 @@ export default function PressDetail({ title, category, date, image, imageAlt }: 
               className="font-light"
               style={{ 
                 color: 'var(--color-rose-accent)',
-                fontSize: 'clamp(2rem, 5vw, 3rem)',
+                fontSize: 'clamp(1.75rem, 6vw, 3rem)',
                 letterSpacing: '0.03em',
                 lineHeight: '1.3'
               }}
@@ -123,16 +122,16 @@ export default function PressDetail({ title, category, date, image, imageAlt }: 
 
             {/* Article Body - Placeholder Content */}
             <div 
-              className="space-y-8"
+              className="space-y-6 sm:space-y-8"
               style={{ 
                 color: 'var(--color-ink-black)'
               }}
             >
-              <div className="space-y-6">
+              <div className="space-y-4 sm:space-y-6">
                 <p 
                   className="font-light"
                   style={{ 
-                    fontSize: 'clamp(1.125rem, 2vw, 1.25rem)',
+                    fontSize: 'clamp(1rem, 2.5vw, 1.25rem)',
                     lineHeight: '1.8',
                     letterSpacing: '0.01em'
                   }}
@@ -142,7 +141,7 @@ export default function PressDetail({ title, category, date, image, imageAlt }: 
                 <p 
                   className="font-light"
                   style={{ 
-                    fontSize: 'clamp(1.125rem, 2vw, 1.25rem)',
+                    fontSize: 'clamp(1rem, 2.5vw, 1.25rem)',
                     lineHeight: '1.8',
                     letterSpacing: '0.01em'
                   }}
@@ -152,7 +151,7 @@ export default function PressDetail({ title, category, date, image, imageAlt }: 
                 <p 
                   className="font-light"
                   style={{ 
-                    fontSize: 'clamp(1.125rem, 2vw, 1.25rem)',
+                    fontSize: 'clamp(1rem, 2.5vw, 1.25rem)',
                     lineHeight: '1.8',
                     letterSpacing: '0.01em'
                   }}

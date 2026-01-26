@@ -20,9 +20,9 @@ export default function StatementBlock() {
       </div>
 
       {/* Premium Glassmorphism Panel */}
-      <div className="relative flex items-center justify-center min-h-[60vh] px-4 sm:px-6 lg:px-8">
+      <div className="relative flex items-center justify-center min-h-[50vh] sm:min-h-[60vh] px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
         <div 
-          className="statement-panel w-full max-w-4xl mx-auto px-8 py-16 sm:px-12 sm:py-20 lg:px-16 lg:py-24 rounded-lg"
+          className="statement-panel w-full max-w-4xl mx-auto px-6 py-12 sm:px-8 sm:py-16 lg:px-16 lg:py-24 rounded-lg"
           style={{
             background: 'linear-gradient(135deg, rgba(235, 234, 223, 0.85) 0%, rgba(231, 222, 207, 0.8) 100%)',
             backdropFilter: 'blur(24px) saturate(180%)',

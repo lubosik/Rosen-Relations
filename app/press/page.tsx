@@ -36,16 +36,16 @@ export default function PressPage() {
     <>
       {/* Header Section */}
       <section 
-        className="w-full py-16 sm:py-20 lg:py-24"
+        className="w-full py-12 sm:py-16 lg:py-20"
         style={{ backgroundColor: 'var(--color-soft-ivory)' }}
       >
         <Container>
-          <div className="max-w-4xl mx-auto space-y-4">
+          <div className="max-w-4xl mx-auto space-y-3 sm:space-y-4 px-2">
             <h1 
               className="font-light"
               style={{ 
                 color: 'var(--color-rose-accent)',
-                fontSize: 'clamp(2.5rem, 5vw, 4rem)',
+                fontSize: 'clamp(2rem, 6vw, 4rem)',
                 letterSpacing: '0.05em',
                 lineHeight: '1.2'
               }}
@@ -56,7 +56,7 @@ export default function PressPage() {
               className="font-light"
               style={{ 
                 color: 'var(--color-ink-black)',
-                fontSize: 'clamp(1rem, 1.5vw, 1.125rem)',
+                fontSize: 'clamp(0.9375rem, 2vw, 1.125rem)',
                 lineHeight: '1.6',
                 letterSpacing: '0.01em',
                 opacity: 0.7
@@ -70,15 +70,15 @@ export default function PressPage() {
 
       {/* Press Listing */}
       <section 
-        className="w-full py-12 sm:py-16 lg:py-20"
+        className="w-full py-8 sm:py-12 lg:py-16"
         style={{ backgroundColor: 'var(--color-soft-ivory)' }}
       >
         <Container>
-          <div className="max-w-6xl mx-auto space-y-16 sm:space-y-20">
+          <div className="max-w-6xl mx-auto space-y-12 sm:space-y-16 lg:space-y-20">
             {pressPosts.map((post) => (
               <article
                 key={post.id}
-                className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-12 lg:items-center"
+                className="grid grid-cols-1 gap-6 sm:gap-8 lg:grid-cols-2 lg:gap-12 lg:items-center"
               >
                 {/* Left: Image */}
                 <div className="relative w-full aspect-[4/3] overflow-hidden rounded-lg">
@@ -87,20 +87,19 @@ export default function PressPage() {
                     alt={post.title}
                     fill
                     className="object-cover"
-                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 50vw"
                     quality={85}
                   />
                 </div>
 
                 {/* Right: Text Content */}
-                <div className="flex flex-col gap-5">
+                <div className="flex flex-col gap-4 sm:gap-5">
                   {/* Category and Date */}
                   <div 
-                    className="text-sm font-light uppercase tracking-wide"
+                    className="text-xs sm:text-sm font-light uppercase tracking-wide"
                     style={{ 
                       color: 'var(--color-rose-accent)',
-                      letterSpacing: '0.1em',
-                      fontSize: '0.875rem'
+                      letterSpacing: '0.1em'
                     }}
                   >
                     {post.category} | {post.date}
@@ -111,7 +110,7 @@ export default function PressPage() {
                     className="font-light"
                     style={{ 
                       color: 'var(--color-rose-accent)',
-                      fontSize: 'clamp(1.5rem, 3vw, 2rem)',
+                      fontSize: 'clamp(1.25rem, 4vw, 2rem)',
                       letterSpacing: '0.03em',
                       lineHeight: '1.4'
                     }}
@@ -120,14 +119,14 @@ export default function PressPage() {
                   </h2>
 
                   {/* Read More Link */}
-                  <div className="pt-2">
+                  <div className="pt-1 sm:pt-2">
                     <Link
                       href={post.href}
                       className="press-read-more font-light focus:outline-none"
                       style={{ 
                         color: 'var(--color-ink-black)',
                         textDecorationColor: 'var(--color-ink-black)',
-                        fontSize: '0.9375rem'
+                        fontSize: 'clamp(0.875rem, 2vw, 0.9375rem)'
                       }}
                     >
                       Read More

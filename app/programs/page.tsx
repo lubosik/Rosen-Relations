@@ -17,18 +17,18 @@ export default function ProgramsPage() {
     <>
       {/* Programs Hero Section */}
       <section 
-        className="w-full py-20 sm:py-24 lg:py-32 flex items-center justify-center"
+        className="w-full py-16 sm:py-20 lg:py-24 flex items-center justify-center"
         style={{ 
           backgroundColor: 'var(--color-blush-pink)',
-          minHeight: '60vh'
+          minHeight: 'min(50vh, 400px)'
         }}
       >
         <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 
-            className="text-center font-light leading-tight"
+            className="text-center font-light leading-tight px-2"
             style={{ 
               color: 'var(--color-ink-black)',
-              fontSize: 'clamp(2rem, 5vw, 3.5rem)',
+              fontSize: 'clamp(1.5rem, 6vw, 3.5rem)',
               letterSpacing: '0.05em',
               lineHeight: '1.3'
             }}

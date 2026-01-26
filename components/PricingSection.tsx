@@ -10,11 +10,11 @@ const packages = [
     name: 'Starter',
     monthlyPrice: '$199',
     annualPrice: '$1,990',
-    description: 'Content system + folder structure. Your team delivers edited content into their Drive, and the client posts + engages themselves.',
+    description: 'Get the content system and folder structure. Receive edited content delivered to your Drive, then post and engage yourself.',
     features: [
       'Content system & folder structure',
-      'Team-delivered edited content to Drive',
-      'Client posts & engages independently',
+      'Edited content delivered to your Drive',
+      'You post & engage independently',
     ],
     notIncluded: [
       'Auto-posting via Hootsuite',
@@ -30,7 +30,7 @@ const packages = [
     name: 'Hands-Free Posting',
     monthlyPrice: '$999',
     annualPrice: '$9,990',
-    description: 'Everything in Starter, plus auto-posting. We use Hootsuite to schedule and publish, and Make to automatically move content from Drive into the scheduler. End of each month, you also get a simple performance report.',
+    description: 'Everything in Starter, plus auto-posting. We use Hootsuite to schedule and publish, and Make to automatically move content from your Drive into the scheduler. At the end of each month, you also get a simple performance report.',
     features: [
       'Everything in Starter',
       'Auto-posting via Hootsuite',
@@ -51,7 +51,7 @@ const packages = [
     name: 'Hands-Free Posting + Auto-Engagement',
     monthlyPrice: '$1,499',
     annualPrice: '$14,990',
-    description: 'Everything in Hands-Free Posting, plus auto replies and auto DMs using ManyChat. When people comment "how much" or DM "send info," it replies for them and pushes them toward the next step, without the client living in their inbox.',
+    description: 'Everything in Hands-Free Posting, plus auto replies and auto DMs using ManyChat. When people comment "how much" or DM "send info," it replies for you and pushes them toward the next step, without you living in your inbox.',
     features: [
       'Everything in Hands-Free Posting',
       'Auto replies via ManyChat',
@@ -88,14 +88,14 @@ export default function PricingSection() {
             </h2>
 
             {/* Billing Toggle */}
-            <div className="flex items-center justify-center gap-4">
+            <div className="flex items-center justify-center gap-3 sm:gap-4 px-4">
               <button
                 type="button"
                 onClick={() => setBillingPeriod('monthly')}
                 className={`font-light transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-sm px-2 py-1`}
                 style={{ 
                   color: billingPeriod === 'monthly' ? 'var(--color-ink-black)' : 'var(--color-ink-black)',
-                  fontSize: '0.9375rem',
+                  fontSize: 'clamp(0.875rem, 2vw, 0.9375rem)',
                   opacity: billingPeriod === 'monthly' ? 1 : 0.5,
                   outlineColor: 'var(--color-rose-accent)'
                 }}
@@ -124,18 +124,18 @@ export default function PricingSection() {
               <button
                 type="button"
                 onClick={() => setBillingPeriod('annual')}
-                className={`font-light transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-sm px-2 py-1`}
+                className={`font-light transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-sm px-2 py-1 flex items-center flex-wrap justify-center gap-1`}
                 style={{ 
                   color: billingPeriod === 'annual' ? 'var(--color-ink-black)' : 'var(--color-ink-black)',
-                  fontSize: '0.9375rem',
+                  fontSize: 'clamp(0.875rem, 2vw, 0.9375rem)',
                   opacity: billingPeriod === 'annual' ? 1 : 0.5,
                   outlineColor: 'var(--color-rose-accent)'
                 }}
               >
-                Annual
+                <span>Annual</span>
                 {billingPeriod === 'annual' && (
                   <span 
-                    className="ml-2 text-xs"
+                    className="text-xs"
                     style={{ 
                       color: 'var(--color-rose-accent)'
                     }}
@@ -148,7 +148,7 @@ export default function PricingSection() {
           </div>
 
           {/* Pricing Cards */}
-          <div className="grid grid-cols-1 gap-8 lg:grid-cols-3 lg:gap-6">
+          <div className="grid grid-cols-1 gap-6 sm:gap-8 lg:grid-cols-3 lg:gap-6">
             {packages.map((pkg) => {
               const price = billingPeriod === 'monthly' ? pkg.monthlyPrice : pkg.annualPrice;
               const period = billingPeriod === 'monthly' ? '/mo' : '/yr';
@@ -156,7 +156,7 @@ export default function PricingSection() {
               return (
                 <div
                   key={pkg.id}
-                  className={`pricing-card relative p-8 sm:p-10 rounded-lg transition-all duration-300 ${
+                  className={`pricing-card relative p-6 sm:p-8 lg:p-10 rounded-lg transition-all duration-300 ${
                     pkg.featured ? 'featured' : ''
                   }`}
                   style={{
@@ -189,10 +189,10 @@ export default function PricingSection() {
 
                   {/* Plan Name */}
                   <h3 
-                    className="font-light mb-4"
+                    className="font-light mb-3 sm:mb-4"
                     style={{ 
                       color: 'var(--color-ink-black)',
-                      fontSize: 'clamp(1.5rem, 3vw, 1.75rem)',
+                      fontSize: 'clamp(1.25rem, 4vw, 1.75rem)',
                       letterSpacing: '0.03em',
                       lineHeight: '1.4'
                     }}
@@ -201,13 +201,13 @@ export default function PricingSection() {
                   </h3>
 
                   {/* Price */}
-                  <div className="mb-6">
+                  <div className="mb-4 sm:mb-6">
                     <div className="flex items-baseline gap-2">
                       <span 
                         className="font-light"
                         style={{ 
                           color: 'var(--color-ink-black)',
-                          fontSize: 'clamp(2.5rem, 5vw, 3.5rem)',
+                          fontSize: 'clamp(2rem, 6vw, 3.5rem)',
                           letterSpacing: '0.02em',
                           lineHeight: '1'
                         }}
@@ -218,7 +218,7 @@ export default function PricingSection() {
                         className="font-light"
                         style={{ 
                           color: 'var(--color-ink-black)',
-                          fontSize: 'clamp(1rem, 2vw, 1.25rem)',
+                          fontSize: 'clamp(0.875rem, 2vw, 1.25rem)',
                           opacity: 0.7
                         }}
                       >
@@ -229,10 +229,10 @@ export default function PricingSection() {
 
                   {/* Description */}
                   <p 
-                    className="font-light mb-6"
+                    className="font-light mb-4 sm:mb-6"
                     style={{ 
                       color: 'var(--color-ink-black)',
-                      fontSize: 'clamp(0.9375rem, 1.5vw, 1rem)',
+                      fontSize: 'clamp(0.875rem, 2vw, 1rem)',
                       lineHeight: '1.7',
                       letterSpacing: '0.01em',
                       opacity: 0.85
@@ -242,11 +242,11 @@ export default function PricingSection() {
                   </p>
 
                   {/* Features List */}
-                  <div className="mb-6 space-y-3">
+                  <div className="mb-4 sm:mb-6 space-y-2 sm:space-y-3">
                     {pkg.features.map((feature, idx) => (
                       <div key={idx} className="flex items-start gap-2">
                         <span 
-                          className="text-sm font-light flex-shrink-0 mt-0.5"
+                          className="text-xs sm:text-sm font-light flex-shrink-0 mt-0.5"
                           style={{ 
                             color: 'var(--color-rose-accent)'
                           }}
@@ -254,7 +254,7 @@ export default function PricingSection() {
                           ✓
                         </span>
                         <span 
-                          className="text-sm font-light"
+                          className="text-xs sm:text-sm font-light"
                           style={{ 
                             color: 'var(--color-ink-black)',
                             opacity: 0.7,
@@ -269,9 +269,9 @@ export default function PricingSection() {
 
                   {/* Not Included Section (for Package 1 and 2) */}
                   {pkg.notIncluded && pkg.notIncluded.length > 0 && (
-                    <div className="mb-8 space-y-3 border-t pt-6" style={{ borderTopColor: 'rgba(212, 192, 190, 0.3)' }}>
+                    <div className="mb-6 sm:mb-8 space-y-2 sm:space-y-3 border-t pt-4 sm:pt-6" style={{ borderTopColor: 'rgba(212, 192, 190, 0.3)' }}>
                       <p 
-                        className="text-xs font-light uppercase tracking-wide mb-3"
+                        className="text-xs font-light uppercase tracking-wide mb-2 sm:mb-3"
                         style={{ 
                           color: 'var(--color-ink-black)',
                           opacity: 0.5,
@@ -283,7 +283,7 @@ export default function PricingSection() {
                       {pkg.notIncluded.map((feature, idx) => (
                         <div key={idx} className="flex items-start gap-2">
                           <span 
-                            className="text-sm font-light flex-shrink-0 mt-0.5"
+                            className="text-xs sm:text-sm font-light flex-shrink-0 mt-0.5"
                             style={{ 
                               color: 'var(--color-ink-black)',
                               opacity: 0.3
@@ -292,7 +292,7 @@ export default function PricingSection() {
                             ✗
                           </span>
                           <span 
-                            className="text-sm font-light line-through"
+                            className="text-xs sm:text-sm font-light line-through"
                             style={{ 
                               color: 'var(--color-ink-black)',
                               opacity: 0.3,
@@ -310,12 +310,12 @@ export default function PricingSection() {
                   {/* CTA Button */}
                   <Link
                     href="/join"
-                    className="button block w-full text-center px-8 py-4 transition-all duration-300 hover:opacity-90 focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2"
+                    className="button block w-full text-center px-6 sm:px-8 py-3 sm:py-4 transition-all duration-300 hover:opacity-90 focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2"
                     style={{ 
                       backgroundColor: pkg.featured ? 'var(--color-ink-black)' : 'var(--color-blush-pink)',
                       color: pkg.featured ? 'var(--color-pure-white)' : 'var(--color-ink-black)',
                       outlineColor: pkg.featured ? 'var(--color-ink-black)' : 'var(--color-blush-pink)',
-                      fontSize: '0.875rem',
+                      fontSize: 'clamp(0.75rem, 2vw, 0.875rem)',
                       letterSpacing: '0.08em',
                       boxShadow: pkg.featured 
                         ? '0 4px 12px rgba(11, 11, 11, 0.2)'

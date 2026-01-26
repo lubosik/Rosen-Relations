@@ -26,11 +26,11 @@ export default function ValueCards() {
       style={{ backgroundColor: 'var(--color-soft-ivory)' }}
     >
       <Container>
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
+        <div className="grid grid-cols-1 gap-4 sm:gap-6 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
           {valueCards.map((card, index) => (
             <div
               key={index}
-              className="value-card h-full p-8 sm:p-10 rounded-lg transition-all duration-300 flex flex-col"
+              className="value-card h-full p-6 sm:p-8 lg:p-10 rounded-lg transition-all duration-300 flex flex-col"
               style={{
                 background: 'linear-gradient(135deg, rgba(235, 234, 223, 0.9) 0%, rgba(231, 222, 207, 0.85) 100%)',
                 backdropFilter: 'blur(20px) saturate(180%)',

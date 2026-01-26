@@ -43,7 +43,7 @@ export default function ContactForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-6">
+    <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
       {/* Honeypot Field - Hidden from users */}
       <div className="hidden" aria-hidden="true">
         <label htmlFor="website">Website</label>
@@ -74,12 +74,12 @@ export default function ContactForm() {
           id="name"
           name="name"
           required
-          className="w-full px-4 py-3 rounded-sm border transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2"
+          className="w-full px-3 sm:px-4 py-2.5 sm:py-3 rounded-sm border transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2"
           style={{
             backgroundColor: 'var(--color-pure-white)',
             borderColor: 'rgba(212, 192, 190, 0.4)',
             color: 'var(--color-ink-black)',
-            fontSize: '1rem',
+            fontSize: 'clamp(0.9375rem, 2vw, 1rem)',
             fontFamily: 'var(--font-sans)'
           }}
           onFocus={(e) => {
@@ -112,12 +112,12 @@ export default function ContactForm() {
           id="email"
           name="email"
           required
-          className="w-full px-4 py-3 rounded-sm border transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2"
+          className="w-full px-3 sm:px-4 py-2.5 sm:py-3 rounded-sm border transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2"
           style={{
             backgroundColor: 'var(--color-pure-white)',
             borderColor: 'rgba(212, 192, 190, 0.4)',
             color: 'var(--color-ink-black)',
-            fontSize: '1rem',
+            fontSize: 'clamp(0.9375rem, 2vw, 1rem)',
             fontFamily: 'var(--font-sans)'
           }}
           onFocus={(e) => {
@@ -150,12 +150,12 @@ export default function ContactForm() {
           id="subject"
           name="subject"
           required
-          className="w-full px-4 py-3 rounded-sm border transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2"
+          className="w-full px-3 sm:px-4 py-2.5 sm:py-3 rounded-sm border transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2"
           style={{
             backgroundColor: 'var(--color-pure-white)',
             borderColor: 'rgba(212, 192, 190, 0.4)',
             color: 'var(--color-ink-black)',
-            fontSize: '1rem',
+            fontSize: 'clamp(0.9375rem, 2vw, 1rem)',
             fontFamily: 'var(--font-sans)'
           }}
           onFocus={(e) => {
@@ -187,13 +187,13 @@ export default function ContactForm() {
           id="message"
           name="message"
           required
-          rows={6}
-          className="w-full px-4 py-3 rounded-sm border transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 resize-none"
+          rows={5}
+          className="w-full px-3 sm:px-4 py-2.5 sm:py-3 rounded-sm border transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 resize-none"
           style={{
             backgroundColor: 'var(--color-pure-white)',
             borderColor: 'rgba(212, 192, 190, 0.4)',
             color: 'var(--color-ink-black)',
-            fontSize: '1rem',
+            fontSize: 'clamp(0.9375rem, 2vw, 1rem)',
             fontFamily: 'var(--font-sans)',
             lineHeight: '1.6'
           }}
@@ -211,20 +211,20 @@ export default function ContactForm() {
 
       {/* Submit Button */}
       <div className="pt-4">
-        <button
-          type="submit"
-          disabled={isSubmitting}
-          className="button w-full px-10 py-4 transition-all duration-300 hover:opacity-90 focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 disabled:opacity-50 disabled:cursor-not-allowed"
-          style={{ 
-            backgroundColor: 'var(--color-ink-black)',
-            color: 'var(--color-pure-white)',
-            outlineColor: 'var(--color-ink-black)',
-            fontSize: '0.875rem',
-            letterSpacing: '0.08em'
-          }}
-        >
-          {isSubmitting ? 'Sending...' : 'Send Message'}
-        </button>
+          <button
+            type="submit"
+            disabled={isSubmitting}
+            className="button w-full px-8 sm:px-10 py-3 sm:py-4 transition-all duration-300 hover:opacity-90 focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 disabled:opacity-50 disabled:cursor-not-allowed"
+            style={{ 
+              backgroundColor: 'var(--color-ink-black)',
+              color: 'var(--color-pure-white)',
+              outlineColor: 'var(--color-ink-black)',
+              fontSize: 'clamp(0.75rem, 2vw, 0.875rem)',
+              letterSpacing: '0.08em'
+            }}
+          >
+            {isSubmitting ? 'Sending...' : 'Send Message'}
+          </button>
       </div>
 
       {/* Status Messages */}
