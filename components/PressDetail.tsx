@@ -60,7 +60,7 @@ export default function PressDetail({ title, category, date, image, imageAlt }: 
           <nav aria-label="Breadcrumb">
             <Link
               href="/press"
-              className="press-read-more font-light inline-flex items-center gap-2 focus:outline-none"
+              className="press-read-more font-light inline-flex items-center min-h-[44px] gap-2 focus:outline-none"
               style={{ 
                 color: 'var(--color-ink-black)',
                 textDecorationColor: 'var(--color-ink-black)',
@@ -75,13 +75,13 @@ export default function PressDetail({ title, category, date, image, imageAlt }: 
       </section>
 
       {/* Hero Image */}
-      <section className="relative w-full" style={{ minHeight: '40vh', maxHeight: '60vh' }}>
-        <div className="relative w-full h-full aspect-[16/9]">
+      <section className="relative w-full overflow-hidden" style={{ minHeight: '30vh', maxHeight: '55vh' }}>
+        <div className="relative w-full h-full aspect-[16/9] min-w-0">
           <Image
             src={image}
             alt={imageAlt || title}
             fill
-            className="object-cover"
+            className="object-cover object-center"
             sizes="100vw"
             priority
             quality={90}
@@ -95,7 +95,7 @@ export default function PressDetail({ title, category, date, image, imageAlt }: 
         style={{ backgroundColor: 'var(--color-soft-ivory)' }}
       >
         <Container>
-          <div className="max-w-4xl mx-auto space-y-6 sm:space-y-8 px-4">
+          <div className="max-w-4xl mx-auto space-y-6 sm:space-y-8 px-4 min-w-0">
             {/* Category and Date */}
             <div 
               className="text-xs sm:text-sm font-light uppercase tracking-wide"
@@ -112,7 +112,7 @@ export default function PressDetail({ title, category, date, image, imageAlt }: 
               className="font-light"
               style={{ 
                 color: 'var(--color-rose-accent)',
-                fontSize: 'clamp(1.75rem, 6vw, 3rem)',
+                fontSize: 'clamp(1.5rem, 6vw, 3rem)',
                 letterSpacing: '0.03em',
                 lineHeight: '1.3'
               }}
@@ -122,7 +122,7 @@ export default function PressDetail({ title, category, date, image, imageAlt }: 
 
             {/* Article Body - Placeholder Content */}
             <div 
-              className="space-y-6 sm:space-y-8"
+              className="space-y-6 sm:space-y-8 max-w-[65ch]"
               style={{ 
                 color: 'var(--color-ink-black)'
               }}
@@ -132,7 +132,7 @@ export default function PressDetail({ title, category, date, image, imageAlt }: 
                   className="font-light"
                   style={{ 
                     fontSize: 'clamp(1rem, 2.5vw, 1.25rem)',
-                    lineHeight: '1.8',
+                    lineHeight: '1.75',
                     letterSpacing: '0.01em'
                   }}
                 >
@@ -142,7 +142,7 @@ export default function PressDetail({ title, category, date, image, imageAlt }: 
                   className="font-light"
                   style={{ 
                     fontSize: 'clamp(1rem, 2.5vw, 1.25rem)',
-                    lineHeight: '1.8',
+                    lineHeight: '1.75',
                     letterSpacing: '0.01em'
                   }}
                 >
@@ -152,7 +152,7 @@ export default function PressDetail({ title, category, date, image, imageAlt }: 
                   className="font-light"
                   style={{ 
                     fontSize: 'clamp(1rem, 2.5vw, 1.25rem)',
-                    lineHeight: '1.8',
+                    lineHeight: '1.75',
                     letterSpacing: '0.01em'
                   }}
                 >

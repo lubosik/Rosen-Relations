@@ -43,6 +43,13 @@ body {
   position: relative;
 }
 
+/* iOS Safari / Chrome Android: reduce tap delay */
+@media (hover: none) and (pointer: coarse) {
+  button, a, [role="button"], input[type="submit"], input[type="button"] {
+    touch-action: manipulation;
+  }
+}
+
 /* Ensure fonts are loaded */
 .font-sans {
   font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -279,6 +286,99 @@ html {
   transform: translateY(0);
 }
 
+/* Logo Marquee - subtle, expensive-feeling motion */
+@keyframes marquee-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee-track {
+  width: max-content;
+  animation: marquee-scroll 40s linear infinite;
+}
+
+.marquee-content {
+  display: inline-flex;
+}
+
+/* Affiliation Logo Marquee - chip-based, premium motion */
+@keyframes roadmapReveal {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes affiliation-marquee-scroll {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.affiliation-marquee-track {
+  width: max-content;
+  animation: affiliation-marquee-scroll 55s linear infinite;
+}
+
+/* Faster marquee on mobile for better content visibility */
+@media (max-width: 640px) {
+  .affiliation-marquee-track {
+    animation-duration: 45s;
+  }
+}
+
+.affiliation-marquee-content {
+  display: inline-flex;
+}
+
+/* Reduced motion: static wrapped grid, premium on small screens */
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none;
+  }
+  .affiliation-marquee-track {
+    animation: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 1.25rem;
+    padding: 0.5rem 0;
+  }
+  @media (min-width: 640px) {
+    .affiliation-marquee-track {
+      gap: 1.5rem;
+    }
+  }
+  .affiliation-marquee-content {
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-left: 0 !important;
+    gap: 1.25rem;
+  }
+  @media (min-width: 640px) {
+    .affiliation-marquee-content {
+      gap: 1.5rem;
+    }
+  }
+  .affiliation-marquee-dup {
+    display: none !important;
+  }
+}
+
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -300,14 +400,11 @@ html {
 
 /* Mobile Optimizations */
 @media (max-width: 640px) {
-  * {
-    max-width: 100%;
-  }
-  
   img, video {
     height: auto;
     max-width: 100%;
   }
+  /* iframe excluded - Calendly and similar embeds need explicit height from parent */
   
   /* Prevent text overflow on mobile */
   h1, h2, h3, p, span {
@@ -321,30 +418,14 @@ html {
     min-width: 44px;
   }
   
-  /* Fix mobile JOIN button symmetry */
-  @media (max-width: 1023px) {
-    .mobile-join-btn {
-      box-sizing: border-box !important;
-      display: inline-flex !important;
-      align-items: center !important;
-      justify-content: center !important;
-      vertical-align: middle !important;
-      line-height: 1 !important;
-      padding: 6px 10px !important;
-      height: 28px !important;
-      min-height: 28px !important;
-      max-height: 28px !important;
-      border-radius: 2px !important;
-      font-size: 0.75rem !important;
-      font-weight: 500 !important;
-      letter-spacing: 0.05em !important;
-      text-transform: uppercase !important;
-    }
+  /* Improve form input sizing on mobile - prevents zoom on iOS */
+  input, textarea, select {
+    font-size: 16px !important;
   }
   
-  /* Improve form input sizing on mobile */
-  input, textarea, select {
-    font-size: 16px !important; /* Prevents zoom on iOS */
+  /* iOS: smooth momentum scrolling in overflow containers */
+  .overflow-y-auto, .overflow-y-scroll, [style*="overflow-y: auto"], [style*="overflow-y: scroll"] {
+    -webkit-overflow-scrolling: touch;
   }
 }
 
@@ -379,6 +460,13 @@ html {
   text-decoration: none;
 }
 
+/* iOS Safari: 100vh fix - use dvh when supported for accurate viewport height */
+@supports (min-height: 100dvh) {
+  .min-h-screen {
+    min-height: 100dvh;
+  }
+}
+
 /* Hero Section - Prevent Layout Shift */
 .hero-image-container {
   position: relative;
@@ -390,6 +478,28 @@ html {
 .hero-image-container img {
   object-fit: cover;
   object-position: center;
+}
+
+/* Homepage Hero - responsive min-height (dvh when supported for iOS) */
+.hero-home {
+  min-height: min(60vh, 420px);
+}
+@supports (min-height: 100dvh) {
+  .hero-home {
+    min-height: min(60dvh, 420px);
+  }
+}
+@media (min-width: 640px) {
+  .hero-home {
+    min-height: min(70vh, 500px);
+  }
+}
+@supports (min-height: 100dvh) {
+  @media (min-width: 640px) {
+    .hero-home {
+      min-height: min(70dvh, 500px);
+    }
+  }
 }
 
 /* Statement Block Glassmorphism Panel */

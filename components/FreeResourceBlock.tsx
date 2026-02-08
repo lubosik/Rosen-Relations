@@ -54,7 +54,7 @@ export default function FreeResourceBlock() {
           {/* CTA Button */}
           <div className="pt-4 sm:pt-6">
             <Link
-              href="/join"
+              href="/contact"
               className="button inline-block w-full sm:w-auto px-8 sm:px-10 py-3 sm:py-4 rounded-sm transition-all duration-300 hover:opacity-90 focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2"
               style={{ 
                 backgroundColor: 'var(--color-rose-accent)',

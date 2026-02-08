@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import Container from './Container';
+import { rosenAssets } from '@/lib/rosen-assets';
 
 export default function AboutSection() {
   return (
@@ -10,11 +11,10 @@ export default function AboutSection() {
     >
       <Container>
         <div className="grid grid-cols-1 gap-8 sm:gap-12 lg:grid-cols-2 lg:gap-16 lg:items-center">
-          {/* Left: Text Content */}
+          {/* Left: About Preview */}
           <div className="flex flex-col gap-6 sm:gap-8 lg:gap-12 order-2 lg:order-1">
-            {/* Headline */}
             <h2 
-              className="font-light leading-tight"
+              className="font-light leading-tight uppercase"
               style={{ 
                 color: 'var(--color-ink-black)',
                 fontSize: 'clamp(1.75rem, 5vw, 3rem)',
@@ -22,28 +22,25 @@ export default function AboutSection() {
                 lineHeight: '1.2'
               }}
             >
-              We're here to help you thrive every step of the way!
+              About Chantal &quot;Nani&quot; Rosen
             </h2>
 
-            {/* Quoted Paragraph */}
-            <blockquote 
-              className="quote pl-4 sm:pl-6 lg:pl-8 border-l-2"
+            <p 
+              className="font-light"
               style={{ 
-                borderLeftColor: 'var(--color-rose-accent)',
-                borderLeftWidth: '3px',
                 color: 'var(--color-ink-black)',
                 fontSize: 'clamp(1rem, 2.5vw, 1.25rem)',
-                lineHeight: '1.7'
+                lineHeight: '1.7',
+                letterSpacing: '0.01em'
               }}
             >
-              After 12 years of personal and professional experience, Rosen Relations was founded to transform high performance professionals into luxury-positioned brands that command attention, trust, and authority. With our comprehensive guided resources, you'll unearth renewed confidence and tactics to help your business thrive.
-            </blockquote>
+              Chantal &quot;Nani&quot; Rosen is the founder of Rosen Relations and is widely known as The Luxury Lens, a distinction that speaks to both aesthetic mastery and a strategic ability to see brands in their highest, most intentional form. With a background in modeling, visual storytelling, and creative direction, she brings a refined editorial eye to every project, ensuring each brand&apos;s presence is curated with precision and purpose. She has partnered with globally recognized brands including Breitling, Neiman Marcus, Kendra Scott, and America&apos;s Heart. As a woman-owned firm, Rosen Relations challenges outdated industry norms and redefines how visibility, influence, and creative leadership are cultivated.
+            </p>
 
-            {/* CTA Button */}
-            <div className="pt-2">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-2">
               <Link
-                href="/contact"
-                className="button inline-block w-full sm:w-fit text-center sm:text-left px-6 sm:px-10 py-3 sm:py-4 transition-all duration-300 hover:opacity-90 focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2"
+                href="/services"
+                className="button inline-block w-full sm:w-auto text-center px-6 sm:px-10 py-3 sm:py-4 transition-all duration-300 hover:opacity-90 focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2"
                 style={{ 
                   backgroundColor: 'var(--color-ink-black)',
                   color: 'var(--color-pure-white)',
@@ -52,7 +49,21 @@ export default function AboutSection() {
                   letterSpacing: '0.08em'
                 }}
               >
-                BOOK NANI TO SPEAK AT YOUR NEXT EVENT !
+                Explore Services
+              </Link>
+              <Link
+                href="/contact#book"
+                className="button inline-block w-full sm:w-auto text-center px-6 sm:px-10 py-3 sm:py-4 transition-all duration-300 hover:opacity-90 focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2"
+                style={{ 
+                  backgroundColor: 'var(--color-blush-pink)',
+                  color: 'var(--color-ink-black)',
+                  outlineColor: 'var(--color-blush-pink)',
+                  fontSize: 'clamp(0.75rem, 2vw, 0.875rem)',
+                  letterSpacing: '0.08em',
+                  boxShadow: '0 4px 12px rgba(244, 194, 194, 0.3)'
+                }}
+              >
+                Book a Call
               </Link>
             </div>
           </div>
@@ -67,8 +78,8 @@ export default function AboutSection() {
               }}
             >
               <Image
-                src="/home-image-2.webp"
-                alt="Nani speaking at an event"
+                src={rosenAssets.founderPicture}
+                alt="Chantal Nani Rosen, founder of Rosen Relations"
                 fill
                 className="object-cover"
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"

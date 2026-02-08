@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import Container from '@/components/Container';
+import TestimonialsSection from '@/components/TestimonialsSection';
 
 export const metadata: Metadata = {
   title: 'Press',
@@ -25,7 +26,7 @@ const pressPosts = [
     id: 'shirley-l',
     category: 'success story',
     date: '6/19/19',
-    title: 'Success Story — Shirley L.',
+    title: 'Success Story: Shirley L.',
     image: '/home-image-2.webp',
     href: '/press/shirley-l',
   },
@@ -40,14 +41,14 @@ export default function PressPage() {
         style={{ backgroundColor: 'var(--color-soft-ivory)' }}
       >
         <Container>
-          <div className="max-w-4xl mx-auto space-y-3 sm:space-y-4 px-2">
+          <div className="max-w-4xl mx-auto space-y-3 sm:space-y-4 px-4">
             <h1 
               className="font-light"
               style={{ 
                 color: 'var(--color-rose-accent)',
-                fontSize: 'clamp(2rem, 6vw, 4rem)',
+                fontSize: 'clamp(1.75rem, 6vw, 4rem)',
                 letterSpacing: '0.05em',
-                lineHeight: '1.2'
+                lineHeight: '1.25'
               }}
             >
               Stay inspired.
@@ -74,26 +75,26 @@ export default function PressPage() {
         style={{ backgroundColor: 'var(--color-soft-ivory)' }}
       >
         <Container>
-          <div className="max-w-6xl mx-auto space-y-12 sm:space-y-16 lg:space-y-20">
+          <div className="max-w-6xl mx-auto space-y-10 sm:space-y-16 lg:space-y-20 min-w-0">
             {pressPosts.map((post) => (
               <article
                 key={post.id}
                 className="grid grid-cols-1 gap-6 sm:gap-8 lg:grid-cols-2 lg:gap-12 lg:items-center"
               >
                 {/* Left: Image */}
-                <div className="relative w-full aspect-[4/3] overflow-hidden rounded-lg">
+                <div className="relative w-full min-w-0 aspect-[4/3] overflow-hidden rounded-lg">
                   <Image
                     src={post.image}
                     alt={post.title}
                     fill
-                    className="object-cover"
+                    className="object-cover object-center"
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 50vw"
                     quality={85}
                   />
                 </div>
 
                 {/* Right: Text Content */}
-                <div className="flex flex-col gap-4 sm:gap-5">
+                <div className="flex flex-col gap-4 sm:gap-5 min-w-0">
                   {/* Category and Date */}
                   <div 
                     className="text-xs sm:text-sm font-light uppercase tracking-wide"
@@ -122,7 +123,7 @@ export default function PressPage() {
                   <div className="pt-1 sm:pt-2">
                     <Link
                       href={post.href}
-                      className="press-read-more font-light focus:outline-none"
+                      className="press-read-more font-light inline-flex items-center min-h-[44px] focus:outline-none"
                       style={{ 
                         color: 'var(--color-ink-black)',
                         textDecorationColor: 'var(--color-ink-black)',
@@ -138,6 +139,8 @@ export default function PressPage() {
           </div>
         </Container>
       </section>
+
+      <TestimonialsSection />
     </>
   );
 }

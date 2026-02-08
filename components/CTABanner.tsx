@@ -103,7 +103,7 @@ export default function CTABanner() {
           {/* CTA Button */}
           <div className="pt-2 sm:pt-4">
             <Link
-              href="/join"
+              href="/contact"
               className="button inline-block w-full sm:w-auto px-8 sm:px-10 py-3 sm:py-4 rounded-sm transition-all duration-300 hover:opacity-90 focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2"
               style={{ 
                 backgroundColor: 'var(--color-blush-pink)',
@@ -114,7 +114,7 @@ export default function CTABanner() {
                 boxShadow: '0 4px 16px rgba(244, 194, 194, 0.4), 0 2px 4px rgba(244, 194, 194, 0.2)'
               }}
             >
-              Join now
+              Get in Touch
             </Link>
           </div>
         </div>

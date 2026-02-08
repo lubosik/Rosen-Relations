@@ -20,7 +20,7 @@ export default function Container({
   }
 
   return (
-    <div className={`mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 ${className}`} style={{ maxWidth: '100%' }}>
+    <div className={`mx-auto min-w-0 w-full max-w-7xl px-4 sm:px-6 lg:px-8 ${className}`} style={{ maxWidth: '100%' }}>
       {children}
     </div>
   );

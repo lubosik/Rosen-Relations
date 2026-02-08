@@ -2,7 +2,9 @@ import Link from 'next/link';
 import Container from './Container';
 
 const footerLinks = [
-  { href: '/programs', label: 'Programs' },
+  { href: '/company', label: 'About' },
+  { href: '/services', label: 'Services' },
+  { href: '/foundation', label: 'Foundation' },
   { href: '/press', label: 'Press' },
   { href: '/contact', label: 'Contact' },
 ];
@@ -14,7 +16,8 @@ export default function Footer() {
       className="w-full border-t"
       style={{ 
         backgroundColor: 'var(--color-soft-ivory)',
-        borderTopColor: 'rgba(212, 192, 190, 0.2)'
+        borderTopColor: 'rgba(212, 192, 190, 0.2)',
+        paddingBottom: 'env(safe-area-inset-bottom)',
       }}
     >
       <Container>
@@ -27,7 +30,7 @@ export default function Footer() {
               letterSpacing: '0.1em'
             }}
           >
-            ROSEN COACHING
+            ROSEN RELATIONS
           </div>
 
           {/* Right: Footer Links */}

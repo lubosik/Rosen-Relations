@@ -1,0 +1,2 @@
+# Place logo files here: breitling.svg, neiman-marcus.svg, kendra-scott.svg, americas-heart.svg
+# Then update lib/affiliation-logos.ts with src: '/assets/affiliations/filename.svg'

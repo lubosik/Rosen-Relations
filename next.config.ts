@@ -57,6 +57,16 @@ const nextConfig: NextConfig = {
   
   // React strict mode for development
   reactStrictMode: true,
+
+  // Redirects: company and founder merged into about; programs → services
+  async redirects() {
+    return [
+      { source: '/company', destination: '/about', permanent: true },
+      { source: '/founder', destination: '/about', permanent: true },
+      { source: '/programs', destination: '/services', permanent: true },
+      { source: '/programs/:path*', destination: '/services', permanent: true },
+    ];
+  },
 };
 
 export default nextConfig;

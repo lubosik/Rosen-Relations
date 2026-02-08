@@ -3,6 +3,7 @@ import { Work_Sans, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import MobileQADebugOverlay from "@/components/MobileQADebugOverlay";
 
 const workSans = Work_Sans({
   variable: "--font-sans",
@@ -17,6 +18,12 @@ const playfairDisplay = Playfair_Display({
   weight: ["400", "500", "600"],
   display: "swap",
 });
+
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  viewportFit: 'cover' as const,
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://rosenrelations.com'),
@@ -95,15 +102,16 @@ export default function RootLayout({
         >
           Skip to main content
         </a>
-        <div className="flex min-h-screen flex-col">
+        <div className="flex min-h-screen min-w-0 flex-col overflow-x-hidden">
           <Header />
 
           {/* Main content area - allows full-bleed sections */}
-          <main id="main-content" className="flex-1" tabIndex={-1}>
+          <main id="main-content" className="min-w-0 flex-1" tabIndex={-1}>
             {children}
           </main>
 
           <Footer />
+          <MobileQADebugOverlay />
         </div>
       </body>
     </html>

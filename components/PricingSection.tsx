@@ -309,7 +309,7 @@ export default function PricingSection() {
 
                   {/* CTA Button */}
                   <Link
-                    href="/join"
+                    href="/contact"
                     className="button block w-full text-center px-6 sm:px-8 py-3 sm:py-4 transition-all duration-300 hover:opacity-90 focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2"
                     style={{ 
                       backgroundColor: pkg.featured ? 'var(--color-ink-black)' : 'var(--color-blush-pink)',

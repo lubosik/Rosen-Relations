@@ -1,8 +1,10 @@
 import { Metadata } from 'next';
+import HighlightReel from '@/components/HighlightReel';
 import Hero from '@/components/Hero';
+import LogoMarquee from '@/components/LogoMarquee';
 import AboutSection from '@/components/AboutSection';
 import StatementBlock from '@/components/StatementBlock';
-import ValueCards from '@/components/ValueCards';
+import Roadmap from '@/components/Roadmap';
 import CTABanner from '@/components/CTABanner';
 
 export const metadata: Metadata = {
@@ -33,10 +35,12 @@ export default function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
       />
+      <HighlightReel />
       <Hero />
+      <LogoMarquee />
       <AboutSection />
       <StatementBlock />
-      <ValueCards />
+      <Roadmap />
       <CTABanner />
     </>
   );

@@ -5,7 +5,7 @@ Luxury PR & Coaching website for Rosen Relations - a custom-built Next.js applic
 ## Features
 
 - **Luxury Design System** - Tokenized color palette, premium typography, and refined spacing
-- **Full Marketing Site** - Home, About, Programs, Press, and Contact pages
+- **Full Marketing Site** - Home, About, Services, Foundation, Press, and Contact pages
 - **Production-Ready** - SEO optimized, security headers, sitemap, and robots.txt
 - **Responsive Design** - Mobile-first approach with elegant breakpoints
 - **Accessibility** - WCAG compliant with keyboard navigation and reduced motion support
@@ -53,10 +53,9 @@ rosen-relations/
 ├── app/                    # Next.js App Router pages
 │   ├── about/             # About page
 │   ├── contact/           # Contact page with form
-│   ├── join/              # Registration page
-│   ├── login/             # Login page
+│   ├── foundation/        # Foundation page (Road to Her Smile)
 │   ├── press/             # Press listing and detail pages
-│   ├── programs/          # Programs page with pricing
+│   ├── services/          # Services page with pricing
 │   └── page.tsx           # Home page
 ├── components/            # Reusable React components
 │   ├── Header.tsx         # Site navigation
