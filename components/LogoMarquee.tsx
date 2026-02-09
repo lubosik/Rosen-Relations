@@ -44,11 +44,11 @@ function LogoItem({ item }: { item: { name: string; src: string; alt: string } }
 export default function LogoMarquee() {
   return (
     <section
-      className="w-full overflow-hidden py-10 sm:py-12 lg:py-16 logo-marquee-section"
+      className="w-full overflow-hidden pt-10 pb-4 sm:pt-12 sm:pb-8 lg:pt-16 lg:pb-12 logo-marquee-section"
       style={{
-        background: 'linear-gradient(180deg, rgba(245, 244, 240, 0.6) 0%, rgba(235, 234, 223, 0.85) 50%, rgba(245, 244, 240, 0.6) 100%)',
+        background: 'linear-gradient(180deg, rgba(245, 244, 240, 0.6) 0%, rgba(235, 234, 223, 0.85) 50%, rgba(245, 244, 240, 0.6) 85%, rgba(235, 234, 223, 0.96) 100%)',
         borderTop: '1px solid rgba(212, 192, 190, 0.25)',
-        borderBottom: '1px solid rgba(212, 192, 190, 0.25)',
+        borderBottom: '1px solid rgba(212, 192, 190, 0.18)',
       }}
       aria-label="Previous collaborations and affiliations"
     >
