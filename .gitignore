@@ -1,0 +1,12 @@
+.DS_Store
+*.pyc
+venv/
+__pycache__/
+*.pdf
+*.py
+update_logos.py
+clean_logo.py
+fix_logos.py
+fast_logo_extract.py
+read_pdf.py
+pdf_text.txt

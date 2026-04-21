@@ -1,0 +1,10 @@
+[build]
+  publish = "."
+  functions = "netlify/functions"
+
+# Route /api/notion → Netlify function (keeps frontend JS unchanged)
+[[redirects]]
+  from   = "/api/notion"
+  to     = "/.netlify/functions/notion"
+  status = 200
+  force  = true

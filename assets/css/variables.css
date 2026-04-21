@@ -1,0 +1,61 @@
+:root {
+  /* === COLORS === */
+  --black:        #0A0A0A;
+  --black-soft:   #141414;
+  --black-card:   #1A1A1A;
+  --gold:         #C9A84C;
+  --gold-light:   #E8C97A;
+  --gold-dim:     #8B6F2E;
+  --cream:        #F5EDD6;
+  --cream-dim:    #E8DFC7;
+  --white:        #FFFFFF;
+  --white-80:     rgba(255,255,255,0.80);
+  --white-60:     rgba(255,255,255,0.60);
+  --white-20:     rgba(255,255,255,0.20);
+  --overlay-dark: rgba(10,10,10,0.70);
+  --overlay-mid:  rgba(10,10,10,0.50);
+
+  /* === TYPOGRAPHY === */
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-body:    'Lato', 'Helvetica Neue', sans-serif;
+
+  /* === FONT SIZES (desktop) === */
+  --fs-hero:     clamp(2.8rem, 6vw, 5.5rem);   /* Hero tagline */
+  --fs-h1:       clamp(2.2rem, 4vw, 3.8rem);    /* Page headings */
+  --fs-h2:       clamp(1.6rem, 3vw, 2.4rem);    /* Section headings */
+  --fs-h3:       clamp(1.1rem, 2vw, 1.5rem);    /* Sub-headings */
+  --fs-body:     1rem;                           /* 16px body */
+  --fs-small:    0.875rem;                       /* 14px captions */
+  --fs-ticker:   0.8rem;                         /* Ticker text */
+  --fs-nav:      0.75rem;                        /* Nav links — small caps */
+
+  /* === SPACING === */
+  --section-pad-v:   96px;   /* Vertical section padding desktop */
+  --section-pad-h:   80px;   /* Horizontal section padding desktop */
+  --section-pad-mob: 48px;   /* Section padding mobile (both axes) */
+  --gap-cards:       24px;   /* Gap between service cards */
+
+  /* === BORDERS & RADII === */
+  --border-gold:    1px solid var(--gold);
+  --border-gold-30: 1px solid rgba(201,168,76,0.30);
+  --radius-sm:      4px;
+  --radius-md:      8px;
+  --radius-none:    0px;
+
+  /* === TRANSITIONS === */
+  --ease-luxury:    cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --ease-snap:      cubic-bezier(0.16, 1, 0.3, 1);
+  --dur-fast:       200ms;
+  --dur-mid:        400ms;
+  --dur-slow:       800ms;
+  --dur-curtain:    1400ms;   /* Hero curtain reveal */
+  --dur-vre:        2200ms;   /* VRE page curtain reveal */
+
+  /* === Z-INDEX LAYERS === */
+  --z-base:     1;
+  --z-overlay:  10;
+  --z-nav:      100;
+  --z-curtain:  200;
+  --z-funnel:   400;
+  --z-top:      999;
+}

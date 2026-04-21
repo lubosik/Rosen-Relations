@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/png" href="assets/images/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Nani Rosen is the founder of Rosen Relations, a luxury brand relations firm. 2024 Emerging Leader Award recipient.">
+  <meta property="og:title" content="About Nani Rosen | Rosen Relations">
+  <meta property="og:description" content="Nani Rosen is the founder of Rosen Relations, a luxury brand relations firm. 2024 Emerging Leader Award recipient.">
+  <meta property="og:image" content="assets/images/hero-placeholder.jpg">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <title>About Nani Rosen | Rosen Relations</title>
+  
+  <link rel="canonical" href="https://rosenrelations.com/about.html">
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="assets/css/variables.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/nav.css">
+  <link rel="stylesheet" href="assets/css/about.css">
+  <link rel="stylesheet" href="assets/css/footer.css">
+  <link rel="stylesheet" href="assets/css/funnel.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+</head>
+<body>
+
+<nav class="site-nav" id="siteNav">
+  <!-- Left: Nani's name + IG -->
+  <div class="nav-left">
+    <a href="about.html" class="nav-founder">Nani Rosen</a>
+    <a href="https://www.instagram.com/thenanirosen" target="_blank" class="nav-ig" aria-label="Nani Rosen on Instagram">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+      </svg>
+    </a>
+  </div>
+  <!-- Right: Nav links + Contact CTA -->
+  <div class="nav-right">
+    <a href="index.html" class="nav-home-crest" aria-label="Rosen Relations — Home">
+      <svg viewBox="0 0 80 100" fill="none" xmlns="http://www.w3.org/2000/svg" class="nav-crest-svg">
+        <path d="M40 4 L74 18 L74 52 C74 72 58 88 40 96 C22 88 6 72 6 52 L6 18 Z" stroke="rgba(201,168,76,0.8)" stroke-width="1.5" fill="rgba(201,168,76,0.06)"/>
+        <path d="M40 12 L68 24 L68 52 C68 69 54 84 40 91 C26 84 12 69 12 52 L12 24 Z" stroke="rgba(201,168,76,0.35)" stroke-width="0.75" fill="none"/>
+        <text x="17" y="64" font-family="Georgia,'Times New Roman',serif" font-size="32" font-weight="300" fill="rgba(201,168,76,0.9)">R</text>
+        <text x="40" y="64" font-family="Georgia,'Times New Roman',serif" font-size="32" font-weight="300" fill="rgba(201,168,76,0.9)">R</text>
+        <line x1="28" y1="22" x2="52" y2="22" stroke="rgba(201,168,76,0.45)" stroke-width="0.75"/>
+      </svg>
+    </a>
+    <a href="about.html" style="color: var(--gold);">About</a>
+    <a href="services.html">Services</a>
+    <a href="experience.html">THE VRE</a>
+    <a href="press.html" class="nav-disabled">Press</a>
+    <a href="affiliations.html" class="nav-disabled">Affiliations</a>
+    <a href="contact.html" class="btn-ghost nav-cta">Contact Us</a>
+  </div>
+  <!-- Mobile hamburger (hidden on desktop) -->
+  <button class="nav-hamburger" id="navHamburger" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- Mobile menu drawer (hidden by default) -->
+<div class="nav-drawer" id="navDrawer">
+  <button class="nav-drawer-close" id="navDrawerClose" aria-label="Close menu">✕</button>
+  <a href="index.html" class="nav-home-crest nav-drawer-crest" aria-label="Rosen Relations — Home">
+    <svg viewBox="0 0 80 100" fill="none" xmlns="http://www.w3.org/2000/svg" class="nav-crest-svg nav-drawer-crest-svg">
+      <path d="M40 4 L74 18 L74 52 C74 72 58 88 40 96 C22 88 6 72 6 52 L6 18 Z" stroke="rgba(201,168,76,0.8)" stroke-width="1.5" fill="rgba(201,168,76,0.06)"/>
+      <path d="M40 12 L68 24 L68 52 C68 69 54 84 40 91 C26 84 12 69 12 52 L12 24 Z" stroke="rgba(201,168,76,0.35)" stroke-width="0.75" fill="none"/>
+      <text x="17" y="64" font-family="Georgia,'Times New Roman',serif" font-size="32" font-weight="300" fill="rgba(201,168,76,0.9)">R</text>
+      <text x="40" y="64" font-family="Georgia,'Times New Roman',serif" font-size="32" font-weight="300" fill="rgba(201,168,76,0.9)">R</text>
+      <line x1="28" y1="22" x2="52" y2="22" stroke="rgba(201,168,76,0.45)" stroke-width="0.75"/>
+    </svg>
+  </a>
+  <a href="about.html">About Founder</a>
+  <a href="services.html">Services</a>
+  <a href="experience.html">The Visual Rebrand Experience</a>
+  <a href="press.html" class="nav-disabled">Press</a>
+  <a href="affiliations.html" class="nav-disabled">Affiliations</a>
+  <a href="contact.html">Contact Us</a>
+</div>
+
+<main class="about-page page-fade-in">
+  <!-- Page header -->
+  <div class="page-header reveal">
+    <p class="small-caps gold">The Company</p>
+    <h1>Rosen Relations</h1>
+    <div class="sep-gold"></div>
+  </div>
+
+  <!-- RR Crest — centered, prominent -->
+  <div class="about-crest-wrap reveal">
+    <svg viewBox="0 0 80 100" fill="none" xmlns="http://www.w3.org/2000/svg" class="about-crest-svg" aria-hidden="true">
+      <path d="M40 4 L74 18 L74 52 C74 72 58 88 40 96 C22 88 6 72 6 52 L6 18 Z"
+        stroke="rgba(201,168,76,0.7)" stroke-width="1.2" fill="rgba(201,168,76,0.04)"/>
+      <path d="M40 12 L68 24 L68 52 C68 69 54 84 40 91 C26 84 12 69 12 52 L12 24 Z"
+        stroke="rgba(201,168,76,0.3)" stroke-width="0.75" fill="none"/>
+      <text x="17" y="64" font-family="Georgia,'Times New Roman',serif" font-size="32"
+        font-weight="300" fill="rgba(201,168,76,0.9)" opacity="1">R</text>
+      <text x="40" y="64" font-family="Georgia,'Times New Roman',serif" font-size="32"
+        font-weight="300" fill="rgba(201,168,76,0.9)" opacity="1">R</text>
+      <line x1="28" y1="22" x2="52" y2="22" stroke="rgba(201,168,76,0.4)" stroke-width="0.75"/>
+    </svg>
+  </div>
+
+  <style>
+    .about-crest-wrap {
+      display: flex;
+      justify-content: center;
+      padding: 0 0 64px;
+    }
+    .about-crest-svg {
+      width: clamp(100px, 15vw, 160px);
+      height: auto;
+    }
+
+    /* Dark cinematic company story section */
+    .about-company-dark .about-bio-lead {
+      color: rgba(255,255,255,0.92);
+    }
+    .about-company-dark .about-bio-body {
+      color: rgba(255,255,255,0.75);
+    }
+    .about-company-dark p[style] {
+      color: #ffffff !important;
+    }
+
+    /* Our Founder section — 40/60 grid */
+    .about-founder-section {
+      display: grid;
+      grid-template-columns: 40% 60%;
+      gap: 0;
+      align-items: start;
+      max-width: 1180px;
+      margin: 0 auto;
+    }
+    .about-founder-photo {
+      position: relative;
+    }
+    .about-founder-photo-box {
+      width: 100%;
+      aspect-ratio: 3/4;
+      background: #1a1a1a;
+      overflow: hidden;
+    }
+    .about-founder-photo-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+    }
+    .about-founder-text {
+      padding-left: 56px;
+      padding-top: 40px;
+    }
+    .about-our-founder-label {
+      font-family: 'Lato', sans-serif;
+      font-size: 0.56rem;
+      color: #C9A84C;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 16px;
+    }
+    .about-founder-name-head {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-weight: 300;
+      font-size: clamp(2rem, 3.5vw, 2.625rem);
+      color: #111;
+      margin: 0 0 8px;
+      line-height: 1.1;
+    }
+    .about-founder-title-sub {
+      font-family: 'Lato', sans-serif;
+      font-size: 0.56rem;
+      color: #aaa;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 0;
+    }
+    .about-founder-bio-text {
+      font-family: 'Lato', sans-serif;
+      font-weight: 300;
+      font-size: 0.9375rem;
+      color: #555;
+      line-height: 1.80;
+      margin-top: 20px;
+    }
+
+    /* L'Échelon connector strip on About page */
+    .about-lechelon {
+      background: #0A0A0A;
+      padding: 56px;
+      text-align: center;
+      border-top: 1px solid rgba(201,168,76,0.1);
+    }
+    .about-lechelon-powered {
+      font-family: 'Lato', sans-serif;
+      font-size: 0.56rem;
+      color: rgba(255,255,255,0.35);
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .about-lechelon-masthead {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-weight: 300;
+      font-size: 2.25rem;
+      color: #ffffff;
+      letter-spacing: 0.08em;
+      margin: 0;
+    }
+    .about-lechelon-sub {
+      font-family: 'Lato', sans-serif;
+      font-weight: 300;
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.40);
+      line-height: 1.65;
+      max-width: 400px;
+      margin: 10px auto 28px;
+    }
+    .about-lechelon-btn {
+      display: inline-block;
+      border: 1px solid #C9A84C;
+      color: #C9A84C;
+      background: transparent;
+      font-family: 'Lato', sans-serif;
+      font-size: 0.56rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      padding: 12px 28px;
+      border-radius: 0;
+      text-decoration: none;
+      transition: background 0.25s ease, color 0.25s ease;
+    }
+    .about-lechelon-btn:hover {
+      background: #C9A84C;
+      color: #000;
+    }
+
+    /* About page footer locations */
+    .about-footer-byline {
+      font-size: 0.5rem;
+      letter-spacing: 0.12em;
+      text-align: center;
+      color: #666;
+      margin-top: 6px;
+    }
+
+    /* SR-only for SEO */
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0,0,0,0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    @media (max-width: 768px) {
+      .about-founder-section {
+        grid-template-columns: 1fr;
+      }
+      .about-founder-text {
+        padding-left: 24px;
+        padding-right: 24px;
+        padding-top: 32px;
+      }
+      .about-lechelon { padding: 48px 24px; }
+    }
+  </style>
+
+  <!-- Company story -->
+  <section class="section-pad about-company-dark" style="position:relative; background: linear-gradient(rgba(0,0,0,0.68),rgba(0,0,0,0.68)), url('assets/images/about-bg.jpg') center top / cover no-repeat; padding-top: 80px; padding-bottom: 80px;">
+    <div class="about-bio-col about-bio-col--full reveal" style="max-width: 760px; margin: 0 auto;">
+      <p class="about-bio-lead" style="font-style: italic;">
+        In a world where artificial intelligence can replicate nearly anything, Rosen Relations was built on the one thing it cannot: genuine human taste, lived experience, and the instinct that only comes from decades of standing in the room.
+      </p>
+
+      <div class="sep-gold" style="margin: 36px 0;"></div>
+
+      <p class="about-bio-body">
+        Rosen Relations is a luxury brand relations and visibility strategy firm operating at the intersection of high-end visual conceptualization, editorial direction, and brand elevation. Founded by Nani Rosen and established in 2020, the firm is a culture-shaping force designed to position brands with intention, authority, and unmistakable presence in competitive luxury markets. We partner with discerning founders, executives, and brands who understand that how you are seen is inseparable from what you are worth.
+      </p>
+
+      <p class="about-bio-body" style="margin-top: 24px;">
+        Rosen Relations solves visibility problems — and visibility, as Nani describes it, is the stage upon which your entire sales funnel is set. With the right visibility, you are found by exactly the right people before you have said a single word. We bridge the gap between a business's true worth and how the world currently perceives it, transforming that distance into a competitive advantage through strategic positioning, authentic narrative, and precision-crafted presence.
+      </p>
+
+      <p class="about-bio-body" style="margin-top: 24px;">
+        In the ever-evolving world of artificial intelligence, human taste and elegance can only be executed by a human. AI can process. AI can replicate. But it cannot know you — your story, your inspiration, the reason you started. That is the bridge Rosen Relations builds. We bring the irreplaceable human instinct to every engagement: the editorial eye, the cultural fluency, and the lived understanding of what makes a brand not just seen, but remembered.
+      </p>
+
+      <p class="about-bio-body" style="margin-top: 24px;">
+        Our approach operates across two complementary modes. Front-facing visibility places you at the centre — your face, your story, your presence become your brand's greatest asset. Back-of-house visibility builds the AI-powered, SEO-driven infrastructure that works while you sleep, ensuring your business is perpetually discoverable, credible, and chosen. Together, they create an ecosystem where your brand is not simply present — it is undeniable.
+      </p>
+
+      <!-- Stats strip -->
+      <div class="about-stats reveal" style="display: flex; gap: 48px; flex-wrap: wrap; margin-top: 48px; padding-top: 40px; border-top: 1px solid rgba(201,168,76,0.2);">
+        <div class="about-stat">
+          <span class="small-caps gold" style="font-size: 0.65rem; letter-spacing: 0.25em;">Founded</span>
+          <p style="font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 300; color: #fff; margin: 6px 0 0;">2020</p>
+        </div>
+        <div class="about-stat">
+          <span class="small-caps gold" style="font-size: 0.65rem; letter-spacing: 0.25em;">Reach</span>
+          <p style="font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 300; color: #fff; margin: 6px 0 0;">DC · MD · VA · Beyond</p>
+        </div>
+        <div class="about-stat">
+          <span class="small-caps gold" style="font-size: 0.65rem; letter-spacing: 0.25em;">Recognition</span>
+          <p style="font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 300; color: #fff; margin: 6px 0 0;">2024 Emerging Leader · Dubai</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Founder -->
+  <section class="section-pad" style="padding-top: 80px; padding-bottom: 80px; border-top: 1px solid rgba(201,168,76,0.1); background: #fff;">
+    <div class="about-founder-section">
+      <div class="about-founder-photo reveal">
+        <div class="about-founder-photo-box">
+          <img src="assets/images/nani-rosen.jpg" alt="Nani Rosen — Founder, Rosen Relations" loading="lazy">
+        </div>
+      </div>
+
+      <div class="about-founder-text reveal reveal-stagger">
+        <span class="about-our-founder-label">OUR FOUNDER</span>
+        <h2 class="about-founder-name-head">Nani Rosen</h2>
+        <span class="about-founder-title-sub">Founder &amp; Principal</span>
+        <div class="sep-gold" style="margin: 20px 0 0;"></div>
+
+        <p class="about-founder-bio-text">
+          Chantal "Nani" Rosen is the founder of Rosen Relations and is widely known as The Luxury Lens, a distinction that speaks to both aesthetic mastery and a strategic ability to see brands in their highest, most intentional form. With a background in modeling, visual storytelling, and creative direction, she brings a refined editorial eye to every project, ensuring each brand's presence is curated with precision and purpose. She has partnered with globally recognized brands including Breitling, Neiman Marcus, Kendra Scott, and America's Heart. As a woman-owned firm, Rosen Relations challenges outdated industry norms and redefines how visibility, influence, and creative leadership are cultivated.
+        </p>
+
+        <!-- Featured logos strip -->
+        <div class="about-logos" style="margin-top: 32px;">
+          <span class="small-caps about-logos-label">As seen in</span>
+          <div class="about-logos-row">
+            <span class="about-logo-item">Vogue Runway</span>
+            <span class="about-logo-sep">·</span>
+            <span class="about-logo-item">Sergio Hudson</span>
+            <span class="about-logo-sep">·</span>
+            <span class="about-logo-item">Peacock</span>
+          </div>
+        </div>
+
+        <!-- CTA -->
+        <a href="contact.html" class="btn-solid about-cta" style="margin-top: 40px;">Work With Nani</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- L'Échelon Newsletter Connector -->
+  <section class="about-lechelon" aria-label="L'Échelon">
+    <p class="about-lechelon-powered">POWERED BY</p>
+    <h2 class="about-lechelon-masthead">L&rsquo;&Eacute;chelon</h2>
+    <p class="about-lechelon-sub">The luxury editorial intelligence platform covering fashion, motorsport, watches, equestrian, and lifestyle. Rosen Relations is a proud partner.</p>
+    <a href="https://lechelon.com/subscribe" class="about-lechelon-btn" target="_blank" rel="noopener noreferrer">Subscribe to L&rsquo;&Eacute;chelon &rarr;</a>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-logo">
+      <img src="assets/images/rr-logo-gold.png?v=2" alt="Rosen Relations" style="height: 52px; width: auto; object-fit: contain;">
+    </div>
+    <nav class="footer-nav" aria-label="Footer navigation">
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="experience.html">THE VRE</a>
+      <a href="contact.html">Contact</a>
+      <a href="privacy.html">Privacy Policy</a>
+    </nav>
+    <div class="footer-social">
+      <a href="https://www.instagram.com/thenanirosen" target="_blank" rel="noopener noreferrer" class="footer-ig">
+        @thenanirosen
+      </a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-copy">© 2026 Rosen Relations. All rights reserved.</p>
+    <p class="footer-byline about-footer-byline">Serving &middot; New York &middot; Washington DC &middot; Maryland &middot; Virginia &middot; Orlando &middot; Los Angeles</p>
+  </div>
+  <p class="sr-only">Rosen Relations provides luxury brand visibility strategy, media relations, visual rebrand experience, media diagnostic, and event press coverage services in New York, Washington DC, Maryland, McLean Virginia, Loudoun County Virginia, Orlando Florida, and Los Angeles California.</p>
+</footer>
+
+<!-- Funnel overlay -->
+<div class="funnel-overlay" id="funnelOverlay" role="dialog" aria-modal="true" aria-label="Work with Nani Rosen" hidden>
+  <div class="funnel-modal">
+    <button class="funnel-close" id="funnelClose" aria-label="Close">✕</button>
+    <div class="funnel-progress-bar">
+      <div class="funnel-progress-fill" id="funnelProgressFill" style="width: 33%"></div>
+    </div>
+    <p class="funnel-step-label small-caps" id="funnelStepLabel">Step 1 of 3</p>
+
+    <!-- STEP 1 -->
+    <div class="funnel-step" id="funnelStep1">
+      <h3>What would you like help with?</h3>
+      <p class="funnel-sub">Select everything that applies. We'll tailor our approach to your exact needs.</p>
+      <div class="funnel-checkboxes">
+        <label class="funnel-check"><input type="checkbox" value="visibility"> I need better brand visibility</label>
+        <label class="funnel-check"><input type="checkbox" value="website"> I need a website rebuild or redesign</label>
+        <label class="funnel-check"><input type="checkbox" value="seo"> I need SEO — I'm not showing up on Google</label>
+        <label class="funnel-check"><input type="checkbox" value="content"> I need content ideation — I don't know what to post</label>
+        <label class="funnel-check" id="vreCheckLabel"><input type="checkbox" value="vre" id="vreCheck"> I need a full visual rebrand (headshots, content, presence)</label>
+        <label class="funnel-check"><input type="checkbox" value="events"> I need event coverage for my brand</label>
+        <label class="funnel-check"><input type="checkbox" value="strategy"> I need a full brand strategy</label>
+      </div>
+      <button class="btn-solid funnel-next" id="funnelStep1Next">Next →</button>
+    </div>
+
+    <!-- STEP 2 -->
+    <div class="funnel-step" id="funnelStep2" hidden>
+      <h3>What is your monthly marketing investment?</h3>
+      <p class="funnel-sub">This helps us match you with the right service level.</p>
+      <div class="funnel-radios">
+        <label class="funnel-radio"><input type="radio" name="budget" value="under-1k"> Under $1,000/month</label>
+        <label class="funnel-radio"><input type="radio" name="budget" value="1k-2.5k"> $1,000 — $2,500/month</label>
+        <label class="funnel-radio"><input type="radio" name="budget" value="2.5k-5k"> $2,500 — $5,000/month</label>
+        <label class="funnel-radio"><input type="radio" name="budget" value="5k-plus"> $5,000+/month</label>
+        <label class="funnel-radio"><input type="radio" name="budget" value="unsure"> I'm not sure yet — I want to learn more</label>
+      </div>
+      <button class="btn-solid funnel-next" id="funnelStep2Next">Next →</button>
+    </div>
+
+    <!-- STEP 3 -->
+    <div class="funnel-step" id="funnelStep3" hidden>
+      <h3>Let's get to know you.</h3>
+      <p class="funnel-sub">One step from clarity. We'll be in touch within 24 hours.</p>
+      <div class="funnel-form">
+        <div class="funnel-form-row">
+          <input type="text"  id="funnelFirstName" placeholder="First Name" required>
+          <input type="text"  id="funnelLastName"  placeholder="Last Name" required>
+        </div>
+        <input type="text"  id="funnelCompany" placeholder="Company Name">
+        <input type="email" id="funnelEmail"   placeholder="Email Address" required>
+        <input type="tel"   id="funnelPhone"   placeholder="Phone Number">
+      </div>
+      <button class="btn-solid funnel-submit" id="funnelSubmitBtn">Book My Discovery Call →</button>
+    </div>
+  </div>
+</div>
+
+<script src="assets/js/main.js" defer></script>
+<script src="assets/js/funnel.js" defer></script>
+</body>
+</html>

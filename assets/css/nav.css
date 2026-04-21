@@ -1,0 +1,173 @@
+.site-nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: var(--nav-height);
+  z-index: var(--z-nav);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+  background: rgba(10, 10, 10, 0.95);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(201, 168, 76, 0.2);
+  transition: all 0.4s var(--ease-luxury);
+}
+
+/* Scrolled state — darkens */
+.site-nav.scrolled {
+  background: rgba(10, 10, 10, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 14px 40px;
+  border-bottom: var(--border-gold-30);
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex: 1;
+}
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex: 1;
+  justify-content: flex-end;
+}
+
+.nav-founder {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 300;
+  letter-spacing: 0.08em;
+  color: var(--white-80);
+}
+.nav-founder:hover { color: var(--gold); }
+
+.nav-ig {
+  color: var(--white-60);
+  transition: color var(--dur-fast) var(--ease-luxury);
+}
+.nav-ig:hover { color: var(--gold); }
+
+.nav-center { 
+  display: flex; 
+  justify-content: center;
+  flex: 0 0 auto; 
+  padding: 0 20px;
+}
+.nav-logo img { 
+  max-height: 56px !important; 
+  width: auto !important; 
+  object-fit: contain; 
+}
+
+.nav-right a:not(.btn-ghost) {
+  font-family: var(--font-body);
+  font-size: var(--fs-nav);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--white-80);
+  white-space: nowrap;
+  transition: color var(--dur-fast) var(--ease-luxury);
+}
+.nav-right a:not(.btn-ghost):hover { color: var(--gold); }
+
+.nav-right .btn-ghost { padding: 8px 18px; font-size: var(--fs-nav); white-space: nowrap; }
+
+/* Home crest */
+.nav-home-crest {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
+  cursor: pointer;
+  opacity: 1;
+  transition: opacity 0.2s ease;
+  text-decoration: none;
+}
+.nav-home-crest:hover { opacity: 0.75; }
+.nav-crest-svg { width: 36px; height: 36px; }
+.nav-drawer-crest-svg { width: 48px; height: 48px; }
+
+/* Hamburger — desktop hidden */
+.nav-hamburger { display: none; }
+
+/* Mobile drawer */
+.nav-drawer {
+  position: fixed;
+  top: 0; right: -100%;
+  width: 85vw; max-width: 360px;
+  height: 100vh;
+  background: var(--black-soft);
+  border-left: var(--border-gold-30);
+  z-index: 350;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding: 80px 40px 40px;
+  transition: right 0.45s var(--ease-snap);
+}
+.nav-drawer.open { right: 0; }
+.nav-drawer a {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: var(--white-80);
+  letter-spacing: 0.04em;
+  border-bottom: var(--border-gold-30);
+  padding-bottom: 16px;
+}
+.nav-drawer a:hover { color: var(--gold); }
+.nav-drawer-close {
+  position: absolute; top: 24px; right: 24px;
+  background: none; border: none;
+  color: var(--gold); font-size: 1.4rem; cursor: pointer;
+}
+
+/* NAVIGATION — MOBILE */
+@media (max-width: 768px) {
+  .site-nav {
+    padding: 16px 20px;
+  }
+
+  /* Hide all desktop nav links */
+  .nav-right {
+    display: none;
+  }
+
+  /* Left stays — shows Nani Rosen + IG */
+  .nav-left .nav-founder {
+    font-size: 0.8rem;
+  }
+
+  /* Hamburger appears */
+  .nav-hamburger {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    z-index: var(--z-nav);
+  }
+  .nav-hamburger span {
+    display: block;
+    width: 22px;
+    height: 1px;
+    background: var(--gold);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+
+  /* Logo scales down */
+  .nav-logo img { width: 36px; height: 36px; }
+}
+
+@media (max-width: 480px) {
+  /* Hide Nani Rosen text on very small screens — keep just IG icon */
+  .nav-founder { display: none; }
+}

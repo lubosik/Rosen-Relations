@@ -1,0 +1,300 @@
+/* ═══════════════════════════════════════════════════════
+   EXPERIENCE.CSS — The Visual Rebrand Experience
+═══════════════════════════════════════════════════════ */
+
+/* ─── HERO OPENING ─────────────────────────────────── */
+.vre-opening {
+  position: relative;
+  height: 100vh;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.vre-opening-img {
+  position: absolute;
+  inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center center;
+}
+.vre-opening-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(10,10,10,0.55);
+}
+.vre-opening-content {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  padding: 0 40px;
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.9s cubic-bezier(0.16,1,0.3,1) 0.4s,
+              transform 0.9s cubic-bezier(0.16,1,0.3,1) 0.4s;
+}
+.vre-opening-content.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.vre-opening-content h1 {
+  font-size: clamp(2.5rem, 5vw, 5rem);
+  margin: 16px 0;
+}
+.vre-opening-sub {
+  font-family: var(--font-display);
+  font-style: italic;
+  color: var(--white-80);
+  font-size: 1.1rem;
+  margin-top: 20px;
+}
+
+/* ─── SCROLL HINT ──────────────────────────────────── */
+.vre-scroll-hint {
+  position: absolute;
+  bottom: 36px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  z-index: 3;
+  color: var(--white-60);
+}
+.vre-scroll-hint span {
+  font-size: 0.65rem;
+  letter-spacing: 0.28em;
+}
+.vre-scroll-hint-line {
+  width: 1px;
+  height: 40px;
+  background: var(--gold-dim);
+  animation: scroll-hint-pulse 2s ease-in-out infinite;
+}
+@keyframes scroll-hint-pulse {
+  0%, 100% { opacity: 0.3; transform: scaleY(0.8); }
+  50%       { opacity: 1;   transform: scaleY(1); }
+}
+
+/* ─── PROGRESS BAR (right edge) ────────────────────── */
+.vre-progress {
+  position: fixed;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 2px;
+  height: 200px;
+  background: rgba(201,168,76,0.2);
+  z-index: 200;
+  border-radius: 2px;
+}
+.vre-progress-fill {
+  width: 100%;
+  height: 0%;
+  background: var(--gold);
+  border-radius: 2px;
+  transition: height 0.08s linear;
+}
+
+/* ─── CHAPTERS CONTAINER ───────────────────────────── */
+.vre-chapters { position: relative; }
+
+/* ─── CHAPTER: 2-COLUMN LAYOUT ────────────────────── */
+.vre-chapter {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 80vh;
+  background: var(--black);
+  border-top: 1px solid rgba(201,168,76,0.15);
+}
+
+/* Even chapters: video on right, text on left */
+.vre-chapter--reverse .vre-chapter-media {
+  order: 2;
+}
+.vre-chapter--reverse .vre-chapter-content {
+  order: 1;
+}
+
+/* ─── VIDEO COLUMN ─────────────────────────────────── */
+.vre-chapter-media {
+  position: relative;
+  overflow: hidden;
+  background: #0a0a0a;
+}
+
+.vre-chapter-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ─── TEXT COLUMN ──────────────────────────────────── */
+.vre-chapter-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 64px 72px;
+  background: var(--black-soft, #0e0e0e);
+}
+
+.vre-chapter-num {
+  display: block;
+  font-size: 0.68rem;
+  letter-spacing: 0.32em;
+  margin-bottom: 16px;
+}
+
+.vre-chapter-sep {
+  width: 48px;
+  height: 1px;
+  background: var(--gold);
+  margin-bottom: 24px;
+}
+
+.vre-chapter-content h2 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 3vw, 3.2rem);
+  font-weight: 400;
+  line-height: 1.15;
+  margin: 0 0 24px;
+  color: #fff;
+}
+
+.vre-chapter-content p {
+  font-family: var(--font-body);
+  font-size: clamp(0.9rem, 1.1vw, 1rem);
+  font-weight: 300;
+  line-height: 1.78;
+  color: rgba(255,255,255,0.78);
+  max-width: 480px;
+}
+
+/* ─── VIDEO PLACEHOLDER (no file yet) ─────────────── */
+.chapter-video-placeholder {
+  width: 100%;
+  height: 100%;
+  min-height: 400px;
+  background: #1a1a1a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #C9A84C;
+  font-size: 3rem;
+  opacity: 0.5;
+}
+
+/* ─── SQUIGGLY CONNECTORS ──────────────────────────── */
+.chapter-connector-wrap {
+  display: flex;
+  justify-content: center;
+  padding: 40px 0;
+  background: var(--black);
+}
+
+.squiggle-path {
+  stroke-dasharray: 200;
+  stroke-dashoffset: 200;
+  transition: stroke-dashoffset 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.chapter-connector.drawn .squiggle-path {
+  stroke-dashoffset: 0;
+}
+
+/* ─── CTA SECTION ──────────────────────────────────── */
+.vre-cta-chapter {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--black-soft);
+  border-top: 1px solid rgba(201,168,76,0.3);
+}
+.vre-cta-content {
+  text-align: center;
+  padding: 80px 40px;
+  max-width: 680px;
+}
+.vre-cta-content h2 {
+  font-size: var(--fs-h1);
+  margin: 16px 0 8px;
+}
+.vre-cta-content p {
+  color: var(--white-60);
+  margin: 20px 0 40px;
+  line-height: 1.75;
+}
+.vre-cta-btns {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ─── MOBILE ───────────────────────────────────────── */
+@media (max-width: 768px) {
+  .vre-opening { height: 100svh; min-height: 500px; }
+  .vre-opening-content h1 {
+    font-size: clamp(2rem, 8vw, 3rem);
+    line-height: 1.2;
+  }
+  .vre-opening-sub { font-size: 0.95rem; }
+
+  /* Hide progress bar on mobile */
+  .vre-progress { display: none; }
+
+  /* Chapters: single column — video top, text below */
+  .vre-chapter {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  /* Always show video first regardless of odd/even */
+  .vre-chapter-media {
+    order: 1 !important;
+    aspect-ratio: 16 / 9;
+    width: 100%;
+    height: auto;
+  }
+  .vre-chapter-content {
+    order: 2 !important;
+    padding: 32px 24px;
+  }
+
+  .vre-chapter-content h2 {
+    font-size: clamp(1.6rem, 5vw, 2.2rem);
+    margin-bottom: 16px;
+  }
+  .vre-chapter-content p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    max-width: 100%;
+  }
+  .vre-chapter-num { font-size: 0.6rem; margin-bottom: 12px; }
+  .vre-chapter-sep { margin-bottom: 18px; }
+
+  /* Connector */
+  .chapter-connector-wrap { padding: 28px 0; }
+
+  /* CTA */
+  .vre-cta-chapter { min-height: auto; }
+  .vre-cta-content { padding: 64px 24px; }
+  .vre-cta-btns { flex-direction: column; align-items: center; }
+  .vre-cta-btns .btn-solid,
+  .vre-cta-btns .btn-ghost {
+    width: 100%;
+    max-width: 320px;
+    text-align: center;
+  }
+
+  .vre-scroll-hint { bottom: 24px; }
+}
+
+@media (max-width: 480px) {
+  .vre-opening-content h1 { font-size: clamp(1.8rem, 7vw, 2.5rem); }
+  .vre-chapter-content h2 { font-size: clamp(1.4rem, 5.5vw, 1.8rem); }
+}
