@@ -84,6 +84,7 @@
       <div class="nav-dropdown">
         <a href="/services#media-diagnostic">Media Diagnostic</a>
         <a href="/experience">Visual Rebrand Experience</a>
+        <a href="/services#epk">Electronic Press Kit</a>
         <a href="/services#event-coverage">Event &amp; Press Coverage</a>
         <a href="/services#website-dev">Website Development</a>
       </div>
@@ -105,6 +106,7 @@
   <a href="/services">Services</a>
   <a href="/services#media-diagnostic" class="drawer-sub">› Media Diagnostic</a>
   <a href="/experience" class="drawer-sub">› Visual Rebrand Experience</a>
+  <a href="/services#epk" class="drawer-sub">› Electronic Press Kit</a>
   <a href="/services#event-coverage" class="drawer-sub">› Event &amp; Press Coverage</a>
   <a href="/services#website-dev" class="drawer-sub">› Website Development</a>
   <a href="/press-affiliations">Press/Affiliations</a>
@@ -507,6 +509,106 @@
     </div>
   </section>
 
+  <!-- ELECTRONIC PRESS KIT -->
+  <section class="service-form-section service-form-section--alt" id="epk">
+    <div class="service-form-inner">
+      <div class="service-form-header">
+        <p class="small-caps gold">Service Enquiry</p>
+        <h2>Electronic Press Kit</h2>
+        <p class="service-form-sub">Tell us about your brand and we will craft a world-class EPK that opens doors. We respond within 24 hours.</p>
+        <div class="sep-gold-sm"></div>
+      </div>
+      <form class="service-form" method="POST" id="epkForm">
+        <input type="hidden" name="access_key" value="1948954d-4e2d-46ef-ba7b-bc0501efcc24">
+        <input type="hidden" name="subject" value="New Electronic Press Kit Inquiry | Rosen Relations">
+        <input type="hidden" name="service" value="Electronic Press Kit">
+        <input type="checkbox" name="botcheck" style="display:none;">
+
+        <div class="sf-row">
+          <div class="sf-group">
+            <label for="epk_name">Full Name *</label>
+            <input type="text" id="epk_name" name="name" required>
+          </div>
+          <div class="sf-group">
+            <label for="epk_email">Email Address *</label>
+            <input type="email" id="epk_email" name="email" required>
+          </div>
+        </div>
+        <div class="sf-row">
+          <div class="sf-group">
+            <label for="epk_brand">Brand / Business Name *</label>
+            <input type="text" id="epk_brand" name="brand_name" required>
+          </div>
+          <div class="sf-group">
+            <label for="epk_phone">Phone Number</label>
+            <input type="tel" id="epk_phone" name="phone">
+          </div>
+        </div>
+        <div class="sf-row">
+          <div class="sf-group">
+            <label for="epk_industry">Your Industry *</label>
+            <input type="text" id="epk_industry" name="industry" required placeholder="e.g. Luxury Real Estate, Fashion, Entertainment">
+          </div>
+          <div class="sf-group">
+            <label for="epk_url">Website or Social URL</label>
+            <input type="url" id="epk_url" name="website_url" placeholder="https://">
+          </div>
+        </div>
+        <div class="sf-group">
+          <label for="epk_purpose">What will you use your EPK for? *</label>
+          <select id="epk_purpose" name="epk_purpose" required>
+            <option value="">Select primary purpose</option>
+            <option>Media Features and Press Coverage</option>
+            <option>Speaking Engagements</option>
+            <option>Brand Partnerships and Collaborations</option>
+            <option>Event Appearances</option>
+            <option>Investor and Business Pitches</option>
+            <option>All of the Above</option>
+          </select>
+        </div>
+        <div class="sf-group">
+          <label for="epk_achievements">Key Achievements and Credentials</label>
+          <textarea id="epk_achievements" name="achievements" rows="3" placeholder="Awards, press features, notable clients, speaking history, certifications, milestones, etc."></textarea>
+        </div>
+        <div class="sf-group">
+          <label for="epk_story">Your Brand Story *</label>
+          <textarea id="epk_story" name="brand_story" rows="4" required placeholder="Tell us who you are, what you do, and why you do it. The more you share, the stronger your EPK."></textarea>
+        </div>
+        <div class="sf-group">
+          <label for="epk_audience">Who is your target media or audience?</label>
+          <textarea id="epk_audience" name="target_media" rows="2" placeholder="e.g. luxury lifestyle editors, business journalists, event organizers, brand sponsors."></textarea>
+        </div>
+        <div class="sf-row">
+          <div class="sf-group">
+            <label for="epk_assets">Do you have existing brand assets?</label>
+            <select id="epk_assets" name="existing_assets">
+              <option value="">Select</option>
+              <option>Yes, professional photos and logo</option>
+              <option>Yes, some assets but need help</option>
+              <option>No, starting from scratch</option>
+            </select>
+          </div>
+          <div class="sf-group">
+            <label for="epk_timeline">Ideal Timeline</label>
+            <select id="epk_timeline" name="timeline">
+              <option value="">Select</option>
+              <option>ASAP (under 2 weeks)</option>
+              <option>Within 1 month</option>
+              <option>1 to 3 months</option>
+              <option>Flexible</option>
+            </select>
+          </div>
+        </div>
+        <div class="sf-group">
+          <label for="epk_notes">Anything else we should know?</label>
+          <textarea id="epk_notes" name="additional_notes" rows="3" placeholder="Upcoming events, press deadlines, specific publications you are targeting, or any other context."></textarea>
+        </div>
+        <button type="submit" class="btn-ghost sf-submit">Submit EPK Enquiry</button>
+        <div class="sf-result" id="epkResult"></div>
+      </form>
+    </div>
+  </section>
+
   <!-- Media Diagnostic anchor (links to general form) -->
   <div id="media-diagnostic" style="scroll-margin-top: 100px;"></div>
 
@@ -655,7 +757,7 @@
 
   <script>
     /* Web3Forms submission handler for service forms */
-    ['vreForm','eventForm','webForm'].forEach(function(id) {
+    ['vreForm','eventForm','webForm','epkForm'].forEach(function(id) {
       var form = document.getElementById(id);
       if (!form) return;
       var resultId = id.replace('Form','Result');
@@ -685,6 +787,7 @@
         btn.disabled = false;
         if (id === 'vreForm') btn.textContent = 'Submit VRE Enquiry';
         else if (id === 'eventForm') btn.textContent = 'Submit Event Enquiry';
+        else if (id === 'epkForm') btn.textContent = 'Submit EPK Enquiry';
         else btn.textContent = 'Submit Web Development Enquiry';
       });
     });

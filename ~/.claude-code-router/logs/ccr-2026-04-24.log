@@ -1,0 +1,15 @@
+{"timestamp":"2026-04-24T22:16:28.462Z","level":"info","message":"Loaded 0 valid tokens from auth_files"}
+{"timestamp":"2026-04-24T22:16:28.464Z","level":"info","message":"Initialized provider: codewhisperer-primary","data":{"type":"codewhisperer","endpoint":"https://codewhisperer.us-east-1.amazonaws.com"}}
+{"timestamp":"2026-04-24T22:16:28.465Z","level":"info","message":"Initialized provider: shuaihong-openai","data":{"type":"openai","endpoint":"https://api.shuaihong.ai"}}
+{"timestamp":"2026-04-24T22:16:28.465Z","level":"info","message":"Initialized provider: openrouter","data":{"type":"openai","endpoint":"https://openrouter.ai/api/v1/chat/completions"}}
+{"timestamp":"2026-04-24T22:16:28.487Z","level":"error","message":"Failed to start server","data":{"code":"EADDRINUSE","errno":-48,"syscall":"listen","address":"127.0.0.1","port":3456}}
+{"timestamp":"2026-04-24T22:28:47.269Z","level":"info","message":"Loaded 0 valid tokens from auth_files"}
+{"timestamp":"2026-04-24T22:28:47.273Z","level":"info","message":"Initialized provider: codewhisperer-primary","data":{"type":"codewhisperer","endpoint":"https://codewhisperer.us-east-1.amazonaws.com"}}
+{"timestamp":"2026-04-24T22:28:47.274Z","level":"info","message":"Initialized provider: shuaihong-openai","data":{"type":"openai","endpoint":"https://api.shuaihong.ai"}}
+{"timestamp":"2026-04-24T22:28:47.275Z","level":"info","message":"Initialized provider: openrouter","data":{"type":"openai","endpoint":"https://openrouter.ai/api/v1/chat/completions"}}
+{"timestamp":"2026-04-24T22:28:47.297Z","level":"error","message":"Failed to start server","data":{"code":"EADDRINUSE","errno":-48,"syscall":"listen","address":"127.0.0.1","port":3456}}
+{"timestamp":"2026-04-24T22:31:11.098Z","level":"info","message":"Loaded 0 valid tokens from auth_files"}
+{"timestamp":"2026-04-24T22:31:11.100Z","level":"info","message":"Initialized provider: codewhisperer-primary","data":{"type":"codewhisperer","endpoint":"https://codewhisperer.us-east-1.amazonaws.com"}}
+{"timestamp":"2026-04-24T22:31:11.101Z","level":"info","message":"Initialized provider: shuaihong-openai","data":{"type":"openai","endpoint":"https://api.shuaihong.ai"}}
+{"timestamp":"2026-04-24T22:31:11.102Z","level":"info","message":"Initialized provider: openrouter","data":{"type":"openai","endpoint":"https://openrouter.ai/api/v1/chat/completions"}}
+{"timestamp":"2026-04-24T22:31:11.119Z","level":"error","message":"Failed to start server","data":{"code":"EADDRINUSE","errno":-48,"syscall":"listen","address":"127.0.0.1","port":3456}}
