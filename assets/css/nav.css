@@ -1,150 +1,295 @@
+/* ─── NAVBAR — nav height variable ─────────────────────────────── */
+:root {
+  --nav-height: 90px;
+}
+
 .site-nav {
   position: fixed;
   top: 0; left: 0; right: 0;
   height: var(--nav-height);
   z-index: var(--z-nav);
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
   align-items: center;
-  justify-content: space-between;
-  padding: 0 40px;
-  background: rgba(10, 10, 10, 0.95);
+  padding: 0 48px;
+  background: rgba(10, 10, 10, 0.96);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border-bottom: 1px solid rgba(201, 168, 76, 0.2);
-  transition: all 0.4s var(--ease-luxury);
+  border-bottom: 1px solid rgba(201, 168, 76, 0.18);
+  transition: height 0.4s var(--ease-luxury), background 0.4s var(--ease-luxury);
 }
 
-/* Scrolled state — darkens */
 .site-nav.scrolled {
-  background: rgba(10, 10, 10, 0.92);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  padding: 14px 40px;
-  border-bottom: var(--border-gold-30);
+  height: 80px;
+  background: rgba(10, 10, 10, 0.98);
+  border-bottom: 1px solid rgba(201, 168, 76, 0.25);
 }
 
+/* ─── LEFT: Nani Rosen + left-side nav links ─────────────────────── */
 .nav-left {
   display: flex;
   align-items: center;
-  gap: 20px;
-  flex: 1;
-}
-.nav-right {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  flex: 1;
-  justify-content: flex-end;
+  justify-content: space-evenly;
+  gap: clamp(16px, 2vw, 32px);
 }
 
 .nav-founder {
   font-family: var(--font-display);
-  font-size: 0.95rem;
+  font-size: 1.4rem;
   font-weight: 300;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.14em;
   color: var(--white-80);
+  text-decoration: none;
+  transition: color var(--dur-fast) var(--ease-luxury);
+  white-space: nowrap;
 }
 .nav-founder:hover { color: var(--gold); }
 
-.nav-ig {
-  color: var(--white-60);
-  transition: color var(--dur-fast) var(--ease-luxury);
-}
-.nav-ig:hover { color: var(--gold); }
-
-.nav-center { 
-  display: flex; 
-  justify-content: center;
-  flex: 0 0 auto; 
-  padding: 0 20px;
-}
-.nav-logo img { 
-  max-height: 56px !important; 
-  width: auto !important; 
-  object-fit: contain; 
-}
-
-.nav-right a:not(.btn-ghost) {
+.nav-left a:not(.nav-founder) {
   font-family: var(--font-body);
-  font-size: var(--fs-nav);
-  letter-spacing: 0.14em;
+  font-size: 0.72rem;
+  letter-spacing: 0.13em;
   text-transform: uppercase;
   color: var(--white-80);
   white-space: nowrap;
+  text-decoration: none;
   transition: color var(--dur-fast) var(--ease-luxury);
 }
-.nav-right a:not(.btn-ghost):hover { color: var(--gold); }
+.nav-left a:not(.nav-founder):hover { color: var(--gold); }
 
-.nav-right .btn-ghost { padding: 8px 18px; font-size: var(--fs-nav); white-space: nowrap; }
-
-/* Home crest */
-.nav-home-crest {
-  display: inline-flex;
-  align-items: center;
+/* ─── CENTER: Logo PNG ───────────────────────────────────────────── */
+.nav-center {
+  display: flex;
   justify-content: center;
-  min-width: 44px;
-  min-height: 44px;
-  cursor: pointer;
-  opacity: 1;
-  transition: opacity 0.2s ease;
-  text-decoration: none;
+  align-items: center;
 }
-.nav-home-crest:hover { opacity: 0.75; }
-.nav-crest-svg { width: 36px; height: 36px; }
-.nav-drawer-crest-svg { width: 48px; height: 48px; }
+.nav-logo-img {
+  height: 58px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+  transition: opacity 0.2s ease;
+}
+.nav-logo-img:hover { opacity: 0.82; }
 
-/* Hamburger — desktop hidden */
+/* ─── RIGHT: Nav links cluster near logo ────────────────────────── */
+.nav-right {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: clamp(16px, 2vw, 32px);
+}
+
+.nav-right a:not(.btn-contact) {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--white-80);
+  white-space: nowrap;
+  text-decoration: none;
+  transition: color var(--dur-fast) var(--ease-luxury);
+}
+
+/* VRE link — "THE" sits above, rest wraps below */
+.nav-vre-link {
+  white-space: normal !important;
+  text-align: center;
+  line-height: 1.25;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center;
+  gap: 2px;
+}
+.nav-vre-the {
+  display: block !important;
+  font-size: 0.55rem;
+  letter-spacing: 0.3em;
+  opacity: 0.65;
+  white-space: nowrap;
+}
+.nav-vre-rest {
+  display: block !important;
+  white-space: nowrap;
+}
+.nav-right a:not(.btn-contact):hover { color: var(--gold); }
+
+/* ─── CONTACT US button — white bg, dark text ───────────────────── */
+.btn-contact {
+  display: inline-block;
+  padding: 10px 22px;
+  background: #ffffff;
+  color: #0a0a0a !important;
+  font-family: var(--font-body);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: nowrap;
+  border: 1px solid #ffffff;
+  transition: background 0.25s ease, color 0.25s ease;
+}
+.btn-contact:hover {
+  background: transparent !important;
+  color: #ffffff !important;
+}
+
+/* ─── SERVICES DROPDOWN ─────────────────────────────────────────── */
+.nav-dropdown-wrap {
+  position: relative;
+}
+.nav-dropdown-wrap > a {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.nav-dropdown-wrap > a::after {
+  content: '▾';
+  font-size: 0.6rem;
+  opacity: 0.65;
+  transition: transform 0.2s ease;
+}
+.nav-dropdown-wrap:hover > a::after {
+  transform: rotate(180deg);
+}
+
+.nav-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 220px;
+  background: rgba(10, 10, 10, 0.98);
+  border: 1px solid rgba(201,168,76,0.22);
+  backdrop-filter: blur(12px);
+  padding: 12px 0 8px;
+  z-index: 200;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.18s ease, visibility 0.18s ease;
+  transition-delay: 0.12s;
+}
+.nav-dropdown-wrap:hover .nav-dropdown {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transition-delay: 0s;
+}
+.nav-dropdown a {
+  display: block;
+  padding: 11px 20px;
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.78) !important;
+  white-space: nowrap;
+  transition: color 0.2s ease, background 0.2s ease;
+}
+.nav-dropdown a:hover {
+  color: var(--gold) !important;
+  background: rgba(201,168,76,0.06);
+}
+
+/* ─── HAMBURGER — desktop hidden ────────────────────────────────── */
 .nav-hamburger { display: none; }
 
-/* Mobile drawer */
+/* ─── MOBILE DRAWER ─────────────────────────────────────────────── */
 .nav-drawer {
   position: fixed;
   top: 0; right: -100%;
   width: 85vw; max-width: 360px;
   height: 100vh;
   background: var(--black-soft);
-  border-left: var(--border-gold-30);
+  border-left: 1px solid rgba(201,168,76,0.2);
   z-index: 350;
   display: flex;
   flex-direction: column;
-  gap: 32px;
-  padding: 80px 40px 40px;
+  gap: 0;
+  padding: 90px 40px 40px;
   transition: right 0.45s var(--ease-snap);
+  overflow-y: auto;
 }
 .nav-drawer.open { right: 0; }
+
 .nav-drawer a {
   font-family: var(--font-display);
-  font-size: 1.5rem;
+  font-size: 1.35rem;
   font-weight: 300;
   color: var(--white-80);
   letter-spacing: 0.04em;
-  border-bottom: var(--border-gold-30);
-  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(201,168,76,0.15);
+  padding: 16px 0;
+  text-decoration: none;
+  transition: color 0.2s ease;
 }
 .nav-drawer a:hover { color: var(--gold); }
+.nav-drawer a.drawer-active { color: var(--gold); }
+
 .nav-drawer-close {
   position: absolute; top: 24px; right: 24px;
   background: none; border: none;
   color: var(--gold); font-size: 1.4rem; cursor: pointer;
 }
 
-/* NAVIGATION — MOBILE */
-@media (max-width: 768px) {
+/* Drawer logo */
+.nav-drawer-logo {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 32px;
+}
+.nav-drawer-logo img {
+  height: 52px;
+  width: auto;
+}
+
+/* Drawer services sub-items */
+.drawer-sub {
+  font-size: 0.85rem !important;
+  letter-spacing: 0.1em !important;
+  padding-left: 16px !important;
+  color: rgba(255,255,255,0.55) !important;
+  border-bottom: none !important;
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
+}
+.drawer-sub:hover { color: var(--gold) !important; }
+
+/* Contact in drawer */
+.drawer-contact-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 28px;
+  background: #ffffff;
+  color: #0a0a0a !important;
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-align: center;
+  border-bottom: none !important;
+}
+
+/* ─── MOBILE RESPONSIVE ─────────────────────────────────────────── */
+@media (max-width: 900px) {
   .site-nav {
-    padding: 16px 20px;
+    grid-template-columns: 1fr auto 44px;
+    padding: 0 20px;
+    height: 72px;
   }
+  .site-nav.scrolled { height: 64px; }
 
-  /* Hide all desktop nav links */
-  .nav-right {
-    display: none;
+  /* Show only Nani Rosen on mobile — hide Our Founder and VRE */
+  .nav-left {
+    justify-content: flex-start;
   }
+  .nav-left a:not(.nav-founder) { display: none !important; }
 
-  /* Left stays — shows Nani Rosen + IG */
-  .nav-left .nav-founder {
-    font-size: 0.8rem;
-  }
+  .nav-right { display: none; }
 
-  /* Hamburger appears */
   .nav-hamburger {
     display: flex;
     flex-direction: column;
@@ -154,6 +299,10 @@
     cursor: pointer;
     padding: 4px;
     z-index: var(--z-nav);
+    justify-content: center;
+    align-items: center;
+    width: 44px;
+    height: 44px;
   }
   .nav-hamburger span {
     display: block;
@@ -163,11 +312,5 @@
     transition: transform 0.3s ease, opacity 0.3s ease;
   }
 
-  /* Logo scales down */
-  .nav-logo img { width: 36px; height: 36px; }
-}
-
-@media (max-width: 480px) {
-  /* Hide Nani Rosen text on very small screens — keep just IG icon */
-  .nav-founder { display: none; }
+  .nav-logo-img { height: 44px; }
 }

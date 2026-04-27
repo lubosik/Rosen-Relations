@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <link rel="icon" type="image/png" href="assets/images/favicon.png">
+  <link rel="icon" type="image/png" href="/assets/images/favicon.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Privacy Policy | Rosen Relations</title>
 
@@ -10,11 +10,11 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="assets/css/variables.css">
-  <link rel="stylesheet" href="assets/css/base.css">
-  <link rel="stylesheet" href="assets/css/nav.css">
-  <link rel="stylesheet" href="assets/css/footer.css">
-  <link rel="stylesheet" href="assets/css/animations.css">
+  <link rel="stylesheet" href="/assets/css/variables.css">
+  <link rel="stylesheet" href="/assets/css/base.css">
+  <link rel="stylesheet" href="/assets/css/nav.css">
+  <link rel="stylesheet" href="/assets/css/footer.css">
+  <link rel="stylesheet" href="/assets/css/animations.css">
 
   <style>
     .privacy-body {
@@ -57,39 +57,60 @@
       margin-bottom: 40px;
     }
   </style>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XNJJ097JLF"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XNJJ097JLF');
+  </script>
 </head>
 <body>
 
 <nav class="site-nav scrolled" id="siteNav">
   <div class="nav-left">
-    <a href="about.html" class="nav-founder">Nani Rosen</a>
-    <a href="https://www.instagram.com/thenanirosen" target="_blank" class="nav-ig">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
-      </svg>
+    <a href="/about" class="nav-founder">Nani Rosen</a>
+    <a href="/about">Our Founder</a>
+    <a href="/experience" class="nav-vre-link"><span class="nav-vre-the">The</span><span class="nav-vre-rest">Visual Rebrand Experience</span></a>
+  </div>
+  <div class="nav-center">
+    <a href="/home" aria-label="Rosen Relations — Home">
+      <img src="/assets/images/rr-logo-gold.png" alt="Rosen Relations" class="nav-logo-img">
     </a>
   </div>
   <div class="nav-right">
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="services.html">Services</a>
-    <a href="experience.html">THE VRE</a>
-    <a href="press.html" class="nav-disabled">Press</a>
-    <a href="affiliations.html" class="nav-disabled">Affiliations</a>
-    <a href="contact.html" class="btn-ghost nav-cta">Contact Us</a>
+    <div class="nav-dropdown-wrap">
+      <a href="/services">Services</a>
+      <div class="nav-dropdown">
+        <a href="/services#media-diagnostic">Media Diagnostic</a>
+        <a href="/experience">Visual Rebrand Experience</a>
+        <a href="/services#event-coverage">Event &amp; Press Coverage</a>
+        <a href="/services#website-dev">Website Development</a>
+      </div>
+    </div>
+    <a href="/press-affiliations">Press/Affiliations</a>
+    <a href="/contact" class="btn-contact">Contact Us</a>
   </div>
   <button class="nav-hamburger" id="navHamburger"><span></span><span></span><span></span></button>
 </nav>
 
 <div class="nav-drawer" id="navDrawer">
   <button class="nav-drawer-close" id="navDrawerClose">✕</button>
-  <a href="index.html">Home</a>
-  <a href="about.html">About Founder</a>
-  <a href="services.html">Services</a>
-  <a href="experience.html">The Visual Rebrand Experience</a>
-  <a href="press.html" class="nav-disabled">Press</a>
-  <a href="affiliations.html" class="nav-disabled">Affiliations</a>
-  <a href="contact.html">Contact Us</a>
+  <div class="nav-drawer-logo">
+    <img src="/assets/images/rr-logo-gold.png" alt="Rosen Relations">
+  </div>
+  <a href="/">Home</a>
+  <a href="/about">Our Founder</a>
+  <a href="/experience">The Visual Rebrand Experience</a>
+  <a href="/services">Services</a>
+  <a href="/services#media-diagnostic" class="drawer-sub">› Media Diagnostic</a>
+  <a href="/experience" class="drawer-sub">› Visual Rebrand Experience</a>
+  <a href="/services#event-coverage" class="drawer-sub">› Event &amp; Press Coverage</a>
+  <a href="/services#website-dev" class="drawer-sub">› Website Development</a>
+  <a href="/press-affiliations">Press/Affiliations</a>
+  <a href="/la-rosa">La Rosa Newsletter</a>
+  <a href="/contact" class="drawer-contact-btn">Contact Us</a>
 </div>
 
 <main class="page-fade-in">
@@ -108,10 +129,10 @@
     <h2>Information We Collect</h2>
     <p>We may collect the following types of information:</p>
     <ul>
-      <li><strong>Contact form submissions</strong> — your name, email address, phone number, company name, and the content of your message.</li>
-      <li><strong>Discovery call bookings</strong> — scheduling information submitted via third-party booking tools.</li>
-      <li><strong>Inquiry funnel responses</strong> — service interests and budget ranges selected during the intake process.</li>
-      <li><strong>Usage data</strong> — standard analytics such as pages visited, browser type, and approximate location, collected in aggregate and never tied to personally identifiable information without consent.</li>
+      <li><strong>Contact form submissions:</strong> your name, email address, phone number, company name, and the content of your message.</li>
+      <li><strong>Discovery call bookings:</strong> scheduling information submitted via third-party booking tools.</li>
+      <li><strong>Inquiry funnel responses:</strong> service interests and budget ranges selected during the intake process.</li>
+      <li><strong>Usage data:</strong> standard analytics such as pages visited, browser type, and approximate location, collected in aggregate and never tied to personally identifiable information without consent.</li>
     </ul>
 
     <h2>How We Use Your Information</h2>
@@ -120,10 +141,10 @@
     <h2>Third-Party Services</h2>
     <p>This site uses the following third-party services, each subject to their own privacy policies:</p>
     <ul>
-      <li><strong>Web3Forms</strong> — for contact form submission handling.</li>
-      <li><strong>Cal.com</strong> — for discovery call scheduling.</li>
-      <li><strong>Google Fonts</strong> — for typography rendering.</li>
-      <li><strong>Google Maps</strong> — for location display on the contact page.</li>
+      <li><strong>Web3Forms:</strong> for contact form submission handling.</li>
+      <li><strong>Cal.com:</strong> for discovery call scheduling.</li>
+      <li><strong>Google Fonts:</strong> for typography rendering.</li>
+      <li><strong>Google Maps:</strong> for location display on the contact page.</li>
     </ul>
 
     <h2>Cookies</h2>
@@ -142,26 +163,26 @@
     <p>We may update this Privacy Policy from time to time. The "Last updated" date at the top of this page reflects when the most recent changes were made. Continued use of this site after any changes constitutes your acceptance of the revised policy.</p>
 
     <h2>Contact</h2>
-    <p>For privacy-related enquiries, please write to us at <a href="mailto:info@rosenrelations.com">info@rosenrelations.com</a> or use the <a href="contact.html">contact page</a>.</p>
+    <p>For privacy-related enquiries, please write to us at <a href="mailto:info@rosenrelations.com">info@rosenrelations.com</a> or use the <a href="/contact">contact page</a>.</p>
   </div>
 </main>
 
 <footer class="site-footer">
   <div class="footer-inner">
     <div class="footer-logo">
-      <img src="assets/images/rr-logo-gold.png?v=2" alt="Rosen Relations" style="height: 52px; width: auto; object-fit: contain;">
+      <img src="/assets/images/rr-logo-gold.png" alt="Rosen Relations" style="height: 56px; width: auto; object-fit: contain;">
     </div>
     <nav class="footer-nav" aria-label="Footer navigation">
-      <a href="about.html">About</a>
-      <a href="services.html">Services</a>
-      <a href="experience.html">THE VRE</a>
-      <a href="contact.html">Contact</a>
-      <a href="privacy.html">Privacy Policy</a>
+      <a href="/about">Our Founder</a>
+      <a href="/experience">The Visual Rebrand Experience</a>
+      <a href="/services">Services</a>
+      <a href="/press-affiliations">Press/Affiliations</a>
+      <a href="/la-rosa">La Rosa Newsletter</a>
+      <a href="/contact">Contact</a>
+      <a href="/privacy">Privacy Policy</a>
     </nav>
     <div class="footer-social">
-      <a href="https://www.instagram.com/thenanirosen" target="_blank" rel="noopener noreferrer" class="footer-ig">
-        @thenanirosen
-      </a>
+      <a href="https://www.instagram.com/thenanirosen" target="_blank" rel="noopener noreferrer" class="footer-ig">@thenanirosen</a>
     </div>
   </div>
   <div class="footer-bottom">
@@ -170,6 +191,6 @@
   </div>
 </footer>
 
-<script src="assets/js/main.js" defer></script>
+<script src="/assets/js/main.js" defer></script>
 </body>
 </html>

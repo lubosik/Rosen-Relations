@@ -1,0 +1,18 @@
+Options -Indexes
+RewriteEngine On
+
+# Force HTTPS
+RewriteCond %{HTTPS} off
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# /home and /index both serve the homepage
+RewriteRule ^home/?$ /index.html [NC,L]
+RewriteRule ^index\.html?$ /index.html [NC,L]
+
+# Remove .html extension from all other URLs (clean URLs)
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^\.]+)$ $1.html [NC,L]
+
+# 404 fallback
+ErrorDocument 404 /404.html

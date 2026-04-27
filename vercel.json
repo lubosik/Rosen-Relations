@@ -6,6 +6,23 @@
       "runtime": "nodejs20.x"
     }
   },
+  "redirects": [
+    { "source": "/", "destination": "/home", "permanent": true },
+    { "source": "/index", "destination": "/home", "permanent": true }
+  ],
+  "rewrites": [
+    { "source": "/home", "destination": "/index.html" },
+    { "source": "/about", "destination": "/about.html" },
+    { "source": "/services", "destination": "/services.html" },
+    { "source": "/experience", "destination": "/experience.html" },
+    { "source": "/press-affiliations", "destination": "/press-affiliations.html" },
+    { "source": "/press", "destination": "/press.html" },
+    { "source": "/affiliations", "destination": "/affiliations.html" },
+    { "source": "/contact", "destination": "/contact.html" },
+    { "source": "/la-rosa", "destination": "/la-rosa.html" },
+    { "source": "/privacy", "destination": "/privacy.html" },
+    { "source": "/media-diagnostic", "destination": "/media-diagnostic.html" }
+  ],
   "headers": [
     {
       "source": "/assets/(.*)",

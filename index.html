@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <link rel="icon" type="image/png" href="assets/images/favicon.png">
+  <link rel="icon" type="image/png" href="/assets/images/favicon.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Rosen Relations is a luxury brand visibility and media relations firm serving clients in New York, Washington DC, Maryland, Virginia (Loudoun County &amp; McLean), Orlando, and Los Angeles. Strategic visibility design for the exceptional.">
   <meta property="og:title" content="Rosen Relations | Luxury Brand Relations & Visibility Strategy">
@@ -12,21 +12,21 @@
   <meta name="twitter:card" content="summary_large_image">
   <title>Rosen Relations | Luxury Brand Visibility & Media Relations — New York, DC, Virginia, Orlando & LA</title>
   
-  <link rel="canonical" href="https://rosenrelations.com/index.html">
+  <link rel="canonical" href="https://rosenrelations.com/home">
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
   
   <!-- CSS -->
-  <link rel="stylesheet" href="assets/css/variables.css">
-  <link rel="stylesheet" href="assets/css/base.css">
-  <link rel="stylesheet" href="assets/css/nav.css">
-  <link rel="stylesheet" href="assets/css/hero.css">
-  <link rel="stylesheet" href="assets/css/banner.css">
-  <link rel="stylesheet" href="assets/css/footer.css">
-  <link rel="stylesheet" href="assets/css/funnel.css">
-  <link rel="stylesheet" href="assets/css/animations.css">
+  <link rel="stylesheet" href="/assets/css/variables.css">
+  <link rel="stylesheet" href="/assets/css/base.css">
+  <link rel="stylesheet" href="/assets/css/nav.css">
+  <link rel="stylesheet" href="/assets/css/hero.css">
+  <link rel="stylesheet" href="/assets/css/banner.css">
+  <link rel="stylesheet" href="/assets/css/footer.css">
+  <link rel="stylesheet" href="/assets/css/funnel.css">
+  <link rel="stylesheet" href="/assets/css/animations.css">
 
   <script type="application/ld+json">
   {
@@ -49,61 +49,65 @@
     ]
   }
   </script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XNJJ097JLF"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XNJJ097JLF');
+  </script>
 </head>
 <body class="page-home">
 
 <nav class="site-nav" id="siteNav">
-  <!-- Left: Nani's name + IG -->
   <div class="nav-left">
-    <a href="about.html" class="nav-founder">Nani Rosen</a>
-    <a href="https://www.instagram.com/thenanirosen" target="_blank" class="nav-ig" aria-label="Nani Rosen on Instagram">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
-      </svg>
+    <a href="/about" class="nav-founder">Nani Rosen</a>
+    <a href="/about">Our Founder</a>
+    <a href="/experience" class="nav-vre-link"><span class="nav-vre-the">The</span><span class="nav-vre-rest">Visual Rebrand Experience</span></a>
+  </div>
+  <!-- Center: Real logo PNG -->
+  <div class="nav-center">
+    <a href="/home" aria-label="Rosen Relations — Home">
+      <img src="/assets/images/rr-logo-gold.png" alt="Rosen Relations" class="nav-logo-img">
     </a>
   </div>
-  <!-- Right: Nav links + Contact CTA -->
   <div class="nav-right">
-    <a href="index.html" class="nav-home-crest" aria-label="Rosen Relations — Home">
-      <svg viewBox="0 0 80 100" fill="none" xmlns="http://www.w3.org/2000/svg" class="nav-crest-svg">
-        <path d="M40 4 L74 18 L74 52 C74 72 58 88 40 96 C22 88 6 72 6 52 L6 18 Z" stroke="rgba(201,168,76,0.8)" stroke-width="1.5" fill="rgba(201,168,76,0.06)"/>
-        <path d="M40 12 L68 24 L68 52 C68 69 54 84 40 91 C26 84 12 69 12 52 L12 24 Z" stroke="rgba(201,168,76,0.35)" stroke-width="0.75" fill="none"/>
-        <text x="17" y="64" font-family="Georgia,'Times New Roman',serif" font-size="32" font-weight="300" fill="rgba(201,168,76,0.9)">R</text>
-        <text x="40" y="64" font-family="Georgia,'Times New Roman',serif" font-size="32" font-weight="300" fill="rgba(201,168,76,0.9)">R</text>
-        <line x1="28" y1="22" x2="52" y2="22" stroke="rgba(201,168,76,0.45)" stroke-width="0.75"/>
-      </svg>
-    </a>
-    <a href="about.html">About</a>
-    <a href="services.html">Services</a>
-    <a href="experience.html">THE VRE</a>
-    <a href="press.html" class="nav-disabled">Press</a>
-    <a href="affiliations.html" class="nav-disabled">Affiliations</a>
-    <a href="contact.html" class="btn-ghost nav-cta">Contact Us</a>
+    <div class="nav-dropdown-wrap">
+      <a href="/services">Services</a>
+      <div class="nav-dropdown">
+        <a href="/services#media-diagnostic">Media Diagnostic</a>
+        <a href="/experience">Visual Rebrand Experience</a>
+        <a href="/services#event-coverage">Event &amp; Press Coverage</a>
+        <a href="/services#website-dev">Website Development</a>
+      </div>
+    </div>
+    <a href="/press-affiliations">Press/Affiliations</a>
+    <a href="/contact" class="btn-contact">Contact Us</a>
   </div>
-  <!-- Mobile hamburger (hidden on desktop) -->
+  <!-- Mobile hamburger -->
   <button class="nav-hamburger" id="navHamburger" aria-label="Open menu">
     <span></span><span></span><span></span>
   </button>
 </nav>
 
-<!-- Mobile menu drawer (hidden by default) -->
+<!-- Mobile menu drawer -->
 <div class="nav-drawer" id="navDrawer">
   <button class="nav-drawer-close" id="navDrawerClose" aria-label="Close menu">✕</button>
-  <a href="index.html" class="nav-home-crest nav-drawer-crest" aria-label="Rosen Relations — Home">
-    <svg viewBox="0 0 80 100" fill="none" xmlns="http://www.w3.org/2000/svg" class="nav-crest-svg nav-drawer-crest-svg">
-      <path d="M40 4 L74 18 L74 52 C74 72 58 88 40 96 C22 88 6 72 6 52 L6 18 Z" stroke="rgba(201,168,76,0.8)" stroke-width="1.5" fill="rgba(201,168,76,0.06)"/>
-      <path d="M40 12 L68 24 L68 52 C68 69 54 84 40 91 C26 84 12 69 12 52 L12 24 Z" stroke="rgba(201,168,76,0.35)" stroke-width="0.75" fill="none"/>
-      <text x="17" y="64" font-family="Georgia,'Times New Roman',serif" font-size="32" font-weight="300" fill="rgba(201,168,76,0.9)">R</text>
-      <text x="40" y="64" font-family="Georgia,'Times New Roman',serif" font-size="32" font-weight="300" fill="rgba(201,168,76,0.9)">R</text>
-      <line x1="28" y1="22" x2="52" y2="22" stroke="rgba(201,168,76,0.45)" stroke-width="0.75"/>
-    </svg>
-  </a>
-  <a href="about.html">About Founder</a>
-  <a href="services.html">Services</a>
-  <a href="experience.html">The Visual Rebrand Experience</a>
-  <a href="press.html" class="nav-disabled">Press</a>
-  <a href="affiliations.html" class="nav-disabled">Affiliations</a>
-  <a href="contact.html">Contact Us</a>
+  <div class="nav-drawer-logo">
+    <img src="/assets/images/rr-logo-gold.png" alt="Rosen Relations">
+  </div>
+  <a href="/">Home</a>
+  <a href="/about">Our Founder</a>
+  <a href="/experience">The Visual Rebrand Experience</a>
+  <a href="/services">Services</a>
+  <a href="/services#media-diagnostic" class="drawer-sub">› Media Diagnostic</a>
+  <a href="/experience" class="drawer-sub">› Visual Rebrand Experience</a>
+  <a href="/services#event-coverage" class="drawer-sub">› Event &amp; Press Coverage</a>
+  <a href="/services#website-dev" class="drawer-sub">› Website Development</a>
+  <a href="/press-affiliations">Press/Affiliations</a>
+  <a href="/la-rosa">La Rosa Newsletter</a>
+  <a href="/contact" class="drawer-contact-btn">Contact Us</a>
 </div>
 
 <main>
@@ -114,8 +118,8 @@
   <section class="hero" id="hero">
     <div class="hero-bg-wrapper">
       <video autoplay muted loop playsinline preload="auto" class="hero-bg">
-        <source src="assets/videos/hero-video-new.mp4" type="video/mp4">
-        <source src="assets/videos/hero-video.mp4.mov" type="video/mp4">
+        <source src="/assets/videos/hero-video-new.mp4" type="video/mp4">
+        <source src="/assets/videos/hero-video.mp4.mov" type="video/mp4">
       </video>
     </div>
 
@@ -123,44 +127,41 @@
 
     <div class="hero-content hero-content--centered">
 
-      <!-- ROSEN [crest] RELATIONS lockup -->
-      <div class="hero-lockup">
-        <span class="hero-lockup-word">ROSEN</span>
-
-        <span class="hero-lockup-crest" aria-hidden="true">
-          <svg viewBox="0 0 80 100" fill="none" xmlns="http://www.w3.org/2000/svg" class="hero-crest-svg">
-            <path d="M40 4 L74 18 L74 52 C74 72 58 88 40 96 C22 88 6 72 6 52 L6 18 Z"
-              stroke="rgba(255,255,255,0.85)" stroke-width="1.5" fill="rgba(255,255,255,0.06)"/>
-            <path d="M40 12 L68 24 L68 52 C68 69 54 84 40 91 C26 84 12 69 12 52 L12 24 Z"
-              stroke="rgba(255,255,255,0.4)" stroke-width="0.75" fill="none"/>
-            <text x="17" y="64" font-family="Georgia,'Times New Roman',serif" font-size="32"
-              font-weight="300" fill="white" opacity="0.95">R</text>
-            <text x="40" y="64" font-family="Georgia,'Times New Roman',serif" font-size="32"
-              font-weight="300" fill="white" opacity="0.95">R</text>
-            <line x1="28" y1="22" x2="52" y2="22" stroke="rgba(255,255,255,0.5)" stroke-width="0.75"/>
-          </svg>
-        </span>
-
-        <span class="hero-lockup-word">RELATIONS</span>
-      </div>
+      <!-- ROSEN [logo] RELATIONS headline -->
+      <h1 class="hero-name-main">
+        <span class="hero-name-rosen">ROSEN</span>
+        <img src="/assets/images/rr-logo-gold.png" alt="" class="hero-name-logo" aria-hidden="true">
+        <span class="hero-name-relations">RELATIONS</span>
+      </h1>
 
       <!-- Gold separator line -->
       <div class="hero-sep" aria-hidden="true"></div>
 
-      <!-- Tagline — one line, gentle fade reveal -->
+      <!-- Tagline -->
       <p class="hero-tagline-single">
         Your brand, intentional.&nbsp;&nbsp;Your presence, understood.&nbsp;&nbsp;Your story, redefined.
       </p>
 
+      <!-- Firm description -->
+      <p class="hero-firm-desc">
+        A luxury brand relations and visibility strategy firm operating at the intersection of high-end visual conceptualization, editorial direction, and brand elevation.
+      </p>
+
       <!-- CTA -->
-      <a href="contact.html" class="btn-ghost hero-cta">Begin Your Journey</a>
+      <a href="/contact" class="hero-cta-btn">Begin Your Journey</a>
 
     </div>
   </section>
 
   <style>
-    /* Centered hero content */
-    .hero { align-items: center; justify-content: center; }
+    /* Full-bleed hero */
+    .hero {
+      height: 100vh !important;
+      min-height: 600px;
+      align-items: center;
+      justify-content: center;
+    }
+
     .hero-content--centered {
       position: relative;
       z-index: 3;
@@ -168,9 +169,9 @@
       flex-direction: column;
       align-items: center;
       text-align: center;
-      padding: 0 24px;
-      max-width: 900px;
+      padding: 0 32px;
       width: 100%;
+      max-width: 1400px;
       opacity: 0;
       transform: translateY(20px);
       transition: opacity 0.9s var(--ease-luxury, cubic-bezier(0.16,1,0.3,1)),
@@ -181,30 +182,47 @@
       transform: translateY(0);
     }
 
-    /* Lockup: ROSEN crest RELATIONS — grid so crest is always at page center */
-    .hero-lockup {
+    /* ROSEN [logo] RELATIONS — grid ensures logo is exactly centered */
+    .hero-name-main {
       display: grid;
       grid-template-columns: 1fr auto 1fr;
       align-items: center;
-      gap: clamp(16px, 3vw, 40px);
-      margin-bottom: 20px;
+      gap: clamp(12px, 2.5vw, 36px);
+      margin: 0 0 24px;
       width: 100%;
     }
-    .hero-lockup-word {
+    .hero-name-rosen {
       font-family: 'Cormorant Garamond', Georgia, serif;
       font-weight: 300;
-      font-size: clamp(2rem, 5.5vw, 5rem);
-      letter-spacing: 0.22em;
-      color: white;
+      font-size: clamp(2rem, 5.2vw, 5.8rem);
+      letter-spacing: 0.18em;
+      color: #ffffff;
       line-height: 1;
       text-transform: uppercase;
+      white-space: nowrap;
+      text-align: right;
     }
-    .hero-lockup-word:first-child { text-align: right; }
-    .hero-lockup-word:last-child  { text-align: left; }
-    .hero-crest-svg {
-      height: clamp(4rem, 9vw, 8rem);
+    .hero-name-relations {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-weight: 300;
+      font-size: clamp(2rem, 5.2vw, 5.8rem);
+      letter-spacing: 0.18em;
+      color: #ffffff;
+      line-height: 1;
+      text-transform: uppercase;
+      white-space: nowrap;
+      text-align: left;
+    }
+    .hero-name-logo {
+      height: clamp(44px, 7vw, 96px);
       width: auto;
-      flex-shrink: 0;
+      object-fit: contain;
+      display: block;
+    }
+    @media (max-width: 640px) {
+      .hero-name-rosen,
+      .hero-name-relations { font-size: clamp(1.4rem, 7.5vw, 2.8rem); letter-spacing: 0.1em; }
+      .hero-name-logo { height: clamp(28px, 8vw, 48px); }
     }
 
     /* Gold separator */
@@ -212,30 +230,59 @@
       width: clamp(48px, 6vw, 80px);
       height: 1px;
       background: rgba(201, 168, 76, 0.75);
-      margin: 0 auto 20px;
+      margin: 0 auto 22px;
     }
 
-    /* Tagline — single line, italic serif */
+    /* Tagline */
     .hero-tagline-single {
       font-family: 'Cormorant Garamond', Georgia, serif;
       font-style: italic;
       font-weight: 300;
-      color: rgba(255, 255, 255, 0.88);
-      font-size: clamp(0.8rem, 1.6vw, 1.1rem);
+      color: rgba(255, 255, 255, 0.85);
+      font-size: clamp(0.85rem, 1.7vw, 1.15rem);
       letter-spacing: 0.08em;
       line-height: 1.6;
       white-space: nowrap;
-      margin-bottom: 32px;
+      margin-bottom: 14px;
     }
 
-    /* Responsive: allow wrap on small screens */
+    /* Firm description */
+    .hero-firm-desc {
+      font-family: 'Lato', sans-serif;
+      font-weight: 300;
+      color: rgba(255, 255, 255, 0.52);
+      font-size: clamp(0.72rem, 1.1vw, 0.85rem);
+      letter-spacing: 0.07em;
+      line-height: 1.7;
+      max-width: 640px;
+      margin: 0 auto 36px;
+    }
+
+    /* CTA — ghost outlined gold, luxury style */
+    .hero-cta-btn {
+      display: inline-block;
+      padding: 14px 40px;
+      border: 1px solid rgba(201, 168, 76, 0.75);
+      color: rgba(255,255,255,0.9);
+      font-family: 'Lato', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 400;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      text-decoration: none;
+      background: transparent;
+      transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    }
+    .hero-cta-btn:hover {
+      background: rgba(201, 168, 76, 0.12);
+      border-color: rgba(201, 168, 76, 1);
+      color: #ffffff;
+    }
+
     @media (max-width: 640px) {
       .hero-tagline-single { white-space: normal; font-size: 0.82rem; }
-      .hero-lockup-word { letter-spacing: 0.14em; }
+      .hero-firm-desc { font-size: 0.75rem; }
     }
-
-    /* Keep old .hero-content styles from hero.css from affecting this */
-    .hero-content--centered { max-width: 900px; }
   </style>
 
 
@@ -454,7 +501,7 @@
     <div class="manifesto-inner">
       <div class="manifesto-quote-wrap">
         <span class="manifesto-open-quote">&ldquo;</span>
-        <p class="manifesto-text typing-done manifesto-fade-in" id="manifestoText">Rosen Relations LLC is a luxury brand relations and visibility strategy firm operating at the intersection of high-end visual conceptualization, editorial direction, and brand elevation. More than a traditional media relations agency, Rosen Relations is a culture-shaping force &#8212; designed to position brands with intention, authority, and unmistakable presence in competitive luxury markets.</p>
+        <p class="manifesto-text typing-done manifesto-fade-in" id="manifestoText">Rosen Relations LLC is a luxury brand relations and visibility strategy firm operating at the intersection of high-end visual conceptualization, editorial direction, and brand elevation. More than a traditional media relations agency, Rosen Relations is a culture-shaping force, designed to position brands with intention, authority, and unmistakable presence in competitive luxury markets.</p>
         <span class="manifesto-close-quote visible" id="manifestoCloseQuote" aria-hidden="true">&rdquo;</span>
       </div>
       <div class="manifesto-attribution manifesto-fade-in" id="manifestoAttrib" aria-label="Rosen Relations">
@@ -630,8 +677,8 @@
       <article class="hs-svc-card" id="hsSvc2">
         <div class="hs-svc-img-wrap">
           <picture>
-            <source media="(max-width: 640px)" srcset="assets/images/svc-event-coverage-mobile-2.png">
-            <img src="assets/images/svc-event-coverage.jpg" alt="Event &amp; Press Coverage" loading="lazy">
+            <source media="(max-width: 640px)" srcset="/assets/images/svc-event-coverage-mobile-2.png">
+            <img src="/assets/images/svc-event-coverage.jpg" alt="Event &amp; Press Coverage" loading="lazy">
           </picture>
           <div class="hs-svc-img-overlay"></div>
           <span class="hs-svc-number small-caps">01</span>
@@ -640,7 +687,7 @@
           <span class="hs-svc-badge small-caps">Activation</span>
           <h3 class="hs-svc-title">Event &amp; Press Coverage</h3>
           <p class="hs-svc-desc">Orchestrating unforgettable brand moments. From private dinners to launch parties, we curate the guest list, manage press attendance, and ensure your event defines the season.</p>
-          <a href="services.html" class="hs-svc-btn" aria-label="Learn more about Event and Press Coverage">Learn More <span class="hs-arrow">→</span></a>
+          <a href="/services#event-coverage" class="hs-svc-btn" aria-label="Learn more about Event and Press Coverage">Learn More <span class="hs-arrow">→</span></a>
         </div>
       </article>
 
@@ -648,32 +695,35 @@
       <article class="hs-svc-card hs-svc-card--flagship" id="hsSvc1">
         <div class="hs-svc-img-wrap">
           <picture>
-            <source media="(max-width: 640px)" srcset="assets/images/svc-vre-mobile-2.png">
-            <img src="assets/images/svc-vre.jpg" alt="Visual Rebrand Experience" loading="lazy">
+            <source media="(max-width: 640px)" srcset="/assets/images/svc-vre-mobile-2.png">
+            <img src="/assets/images/svc-vre.jpg" alt="Visual Rebrand Experience" loading="lazy">
           </picture>
           <div class="hs-svc-img-overlay"></div>
           <span class="hs-svc-number small-caps">02</span>
         </div>
         <div class="hs-svc-body">
           <span class="hs-svc-badge small-caps">Transformation</span>
-          <h3 class="hs-svc-title">Visual Rebrand Experience</h3>
-          <p class="hs-svc-desc">Our signature offering. A complete aesthetic and brand metamorphosis — covering visual identity, content ideation, brand conceptualization, editorial direction, brand photography, social positioning, and digital presence.</p>
-          <a href="services.html" class="hs-svc-btn" aria-label="Learn more about Visual Rebrand Experience">Learn More <span class="hs-arrow">→</span></a>
+          <h3 class="hs-svc-title">
+            <span style="display:block; font-size: 0.62rem; font-family:'Lato',sans-serif; letter-spacing:0.28em; text-transform:uppercase; color:rgba(201,168,76,0.75); margin-bottom:4px; font-weight:300;">THE</span>
+            Visual Rebrand Experience
+          </h3>
+          <p class="hs-svc-desc">Our signature offering. A complete aesthetic and brand metamorphosis: visual identity, content ideation, brand conceptualization, editorial direction, brand photography, social positioning, and digital presence.</p>
+          <a href="/experience" class="hs-svc-btn" aria-label="Learn more about Visual Rebrand Experience">Learn More <span class="hs-arrow">→</span></a>
         </div>
       </article>
 
       <!-- Service 3 (RIGHT) — Media Diagnostic -->
       <article class="hs-svc-card" id="hsSvc4">
         <div class="hs-svc-img-wrap">
-          <img src="assets/images/media-diagnostic.png" alt="Media Diagnostic" loading="lazy">
+          <img src="/assets/images/media-diagnostic.png" alt="Media Diagnostic" loading="lazy">
           <div class="hs-svc-img-overlay"></div>
           <span class="hs-svc-number small-caps">03</span>
         </div>
         <div class="hs-svc-body">
           <span class="hs-svc-badge small-caps">Clarity</span>
           <h3 class="hs-svc-title">Media Diagnostic</h3>
-          <p class="hs-svc-desc">An immersive audit of your entire digital presence. We analyse your SEO, social performance, and competitive positioning — then deliver a precise roadmap for how to rise.</p>
-          <a href="services.html" class="hs-svc-btn" aria-label="Learn more about Media Diagnostic">Learn More <span class="hs-arrow">→</span></a>
+          <p class="hs-svc-desc">An immersive audit of your entire digital presence. We analyse your SEO, social performance, and competitive positioning, then deliver a precise roadmap for how to rise.</p>
+          <a href="/services#media-diagnostic" class="hs-svc-btn" aria-label="Learn more about Media Diagnostic">Learn More <span class="hs-arrow">→</span></a>
         </div>
       </article>
 
@@ -681,8 +731,8 @@
       <article class="hs-svc-card" id="hsSvc3">
         <div class="hs-svc-img-wrap">
           <picture>
-            <source media="(max-width: 640px)" srcset="assets/images/svc-website-dev-mobile-2.png">
-            <img src="assets/images/svc-website-dev.jpg" alt="Website Development" loading="lazy">
+            <source media="(max-width: 640px)" srcset="/assets/images/svc-website-dev-mobile-2.png">
+            <img src="/assets/images/svc-website-dev.jpg" alt="Website Development" loading="lazy">
           </picture>
           <div class="hs-svc-img-overlay"></div>
           <span class="hs-svc-number small-caps">04</span>
@@ -691,7 +741,7 @@
           <span class="hs-svc-badge small-caps">Digital Presence</span>
           <h3 class="hs-svc-title">Website Development</h3>
           <p class="hs-svc-desc">Your digital home should command the same luxury standard as your brand. We build bespoke, high-performance websites with full SEO architecture and technical optimization built in from the ground up.</p>
-          <a href="services.html" class="hs-svc-btn" aria-label="Learn more about Website Development">Learn More <span class="hs-arrow">→</span></a>
+          <a href="/services#website-dev" class="hs-svc-btn" aria-label="Learn more about Website Development">Learn More <span class="hs-arrow">→</span></a>
         </div>
       </article>
 
@@ -715,7 +765,7 @@
 
       <article class="hs-testimonial-card">
         <div class="hs-testimonial-quote-mark">&ldquo;</div>
-        <blockquote class="hs-testimonial-quote">Working with Nani changed how I show up entirely. Before Rosen Relations, I had the talent — I just didn't have the presence. Now I walk into rooms and people already know who I am.</blockquote>
+        <blockquote class="hs-testimonial-quote">Working with Nani changed how I show up entirely. Before Rosen Relations, I had the talent, but I just didn't have the presence. Now I walk into rooms and people already know who I am.</blockquote>
         <div class="hs-testimonial-author">
           <p class="hs-testimonial-name">Marcus T.</p>
           <p class="hs-testimonial-title">Real Estate Broker · Washington, DC</p>
@@ -724,7 +774,7 @@
 
       <article class="hs-testimonial-card">
         <div class="hs-testimonial-quote-mark">&ldquo;</div>
-        <blockquote class="hs-testimonial-quote">The Visual Rebrand Experience was one of the most intentional investments I've made in my business. The content she produced didn't just look good — it converted. Within two weeks of going live, I had three new high-ticket enquiries.</blockquote>
+        <blockquote class="hs-testimonial-quote">The Visual Rebrand Experience was one of the most intentional investments I've made in my business. The content she produced didn't just look good, it converted. Within two weeks of going live, I had three new high-ticket enquiries.</blockquote>
         <div class="hs-testimonial-author">
           <p class="hs-testimonial-name">Simone A.</p>
           <p class="hs-testimonial-title">Executive Coach · New York</p>
@@ -868,7 +918,7 @@
       <!-- Portrait -->
       <div class="hs-founder-img-col">
         <div class="hs-founder-frame">
-          <img src="assets/images/nani-rosen.jpg" alt="Nani Rosen — Founder, Rosen Relations" loading="lazy">
+          <img src="/assets/images/nani-rosen.jpg" alt="Nani Rosen — Founder, Rosen Relations" loading="lazy">
           <div class="hs-founder-img-tint"></div>
         </div>
       </div>
@@ -880,12 +930,12 @@
         <div class="sep-gold-left"></div>
         <p class="hs-founder-tagline">A decade of precision. A legacy of influence.</p>
         <p class="hs-founder-bio">
-          Chantal "Nani" Rosen is the founder of Rosen Relations and is widely known as <em>The Luxury Lens</em> — a distinction that speaks to both aesthetic mastery and a strategic ability to see brands in their highest, most intentional form. With a background in modeling, visual storytelling, and creative direction, she brings a refined editorial eye to every project. She has partnered with globally recognized brands including Breitling, Neiman Marcus, Kendra Scott, and America's Heart.
+          Chantal "Nani" Rosen is the founder of Rosen Relations and is widely known as <em>The Luxury Lens</em>, a distinction that speaks to both aesthetic mastery and a strategic ability to see brands in their highest, most intentional form. With a background in modeling, visual storytelling, and creative direction, she brings a refined editorial eye to every project. She has partnered with globally recognized brands including Breitling, Neiman Marcus, Kendra Scott, and America's Heart.
         </p>
         <p class="hs-founder-award small-caps">
           <span class="gold">2024 Emerging Leader Award</span> · Wisdom &amp; Wealth Conference, Dubai UAE
         </p>
-        <a href="about.html" class="hs-founder-btn" aria-label="Learn more about Nani Rosen">Meet the Founder <span class="hs-arrow">→</span></a>
+        <a href="/about" class="hs-founder-btn" aria-label="Learn more about Nani Rosen">Meet the Founder <span class="hs-arrow">→</span></a>
       </div>
 
     </div>
@@ -1205,19 +1255,19 @@
   <!-- ══════════════════════════════════════════════════════════
        L'ÉCHELON — NEWSLETTER SECTION
   ══════════════════════════════════════════════════════════ -->
-  <section class="lechelon-newsletter" aria-label="L'Échelon Newsletter">
-    <p class="lechelon-eyebrow">THE LUXURY INTELLIGENCE NEWSLETTER</p>
-    <h2 class="lechelon-headline">Stay Ahead of the Luxury World</h2>
-    <p class="lechelon-sub">Bi-monthly luxury intelligence across fashion, motorsport, watches, equestrian, and lifestyle — delivered through L'Échelon, the editorial intelligence platform Rosen Relations is proud to support.</p>
+  <section class="lechelon-newsletter" aria-label="La Rosa Newsletter">
+    <p class="lechelon-eyebrow">THE EDITORIAL INTELLIGENCE NEWSLETTER</p>
+    <h2 class="lechelon-headline">La Rosa</h2>
+    <p class="lechelon-sub">Where fashion, beauty, and luxury align. Front-row access across F1 Grand Prix weekends, Grammys, New York Fashion Week, and Miami Art Basel, curated for those who understand how they are seen is inseparable from what they are worth.</p>
     <form class="lechelon-form" onsubmit="return false;" action="https://api.web3forms.com/submit" method="POST">
       <input type="hidden" name="access_key" value="rosen-relations-newsletter">
-      <input type="hidden" name="tags" value="rosen-relations-newsletter">
+      <input type="hidden" name="tags" value="la-rosa-newsletter">
       <div class="lechelon-form-row">
         <input type="email" name="email" placeholder="Your email address" class="lechelon-input" required autocomplete="email">
         <button type="submit" class="lechelon-btn">Subscribe</button>
       </div>
     </form>
-    <p class="lechelon-fine">No spam. Unsubscribe at any time.</p>
+    <p class="lechelon-fine">Bi-monthly. Curated. No spam.</p>
   </section>
   <style>
     .lechelon-newsletter {
@@ -1307,14 +1357,16 @@
 <footer class="site-footer">
   <div class="footer-inner">
     <div class="footer-logo">
-      <img src="assets/images/rr-logo-gold.png?v=2" alt="Rosen Relations" style="height: 52px; width: auto; object-fit: contain;">
+      <img src="/assets/images/rr-logo-gold.png" alt="Rosen Relations" style="height: 56px; width: auto; object-fit: contain;">
     </div>
     <nav class="footer-nav" aria-label="Footer navigation">
-      <a href="about.html">About</a>
-      <a href="services.html">Services</a>
-      <a href="experience.html">THE VRE</a>
-      <a href="contact.html">Contact</a>
-      <a href="privacy.html">Privacy Policy</a>
+      <a href="/about">Our Founder</a>
+      <a href="/experience">The Visual Rebrand Experience</a>
+      <a href="/services">Services</a>
+      <a href="/press-affiliations">Press/Affiliations</a>
+      <a href="/la-rosa">La Rosa Newsletter</a>
+      <a href="/contact">Contact</a>
+      <a href="/privacy">Privacy Policy</a>
     </nav>
     <div class="footer-social">
       <a href="https://www.instagram.com/thenanirosen" target="_blank" rel="noopener noreferrer" class="footer-ig">
@@ -1358,8 +1410,8 @@
       <div class="funnel-checkboxes">
         <label class="funnel-check"><input type="checkbox" value="visibility"> I need better brand visibility</label>
         <label class="funnel-check"><input type="checkbox" value="website"> I need a website rebuild or redesign</label>
-        <label class="funnel-check"><input type="checkbox" value="seo"> I need SEO — I'm not showing up on Google</label>
-        <label class="funnel-check"><input type="checkbox" value="content"> I need content ideation — I don't know what to post</label>
+        <label class="funnel-check"><input type="checkbox" value="seo"> I need SEO, I'm not showing up on Google</label>
+        <label class="funnel-check"><input type="checkbox" value="content"> I need content ideation, I don't know what to post</label>
         <label class="funnel-check" id="vreCheckLabel"><input type="checkbox" value="vre" id="vreCheck"> I need a full visual rebrand (headshots, content, presence)</label>
         <label class="funnel-check"><input type="checkbox" value="events"> I need event coverage for my brand</label>
         <label class="funnel-check"><input type="checkbox" value="strategy"> I need a full brand strategy</label>
@@ -1373,10 +1425,10 @@
       <p class="funnel-sub">This helps us match you with the right service level.</p>
       <div class="funnel-radios">
         <label class="funnel-radio"><input type="radio" name="budget" value="under-1k"> Under $1,000/month</label>
-        <label class="funnel-radio"><input type="radio" name="budget" value="1k-2.5k"> $1,000 — $2,500/month</label>
-        <label class="funnel-radio"><input type="radio" name="budget" value="2.5k-5k"> $2,500 — $5,000/month</label>
+        <label class="funnel-radio"><input type="radio" name="budget" value="1k-2.5k"> $1,000 to $2,500/month</label>
+        <label class="funnel-radio"><input type="radio" name="budget" value="2.5k-5k"> $2,500 to $5,000/month</label>
         <label class="funnel-radio"><input type="radio" name="budget" value="5k-plus"> $5,000+/month</label>
-        <label class="funnel-radio"><input type="radio" name="budget" value="unsure"> I'm not sure yet — I want to learn more</label>
+        <label class="funnel-radio"><input type="radio" name="budget" value="unsure"> I'm not sure yet, I want to learn more</label>
       </div>
       <button class="btn-solid funnel-next" id="funnelStep2Next">Next →</button>
     </div>
@@ -1399,8 +1451,8 @@
   </div>
 </div>
 
-<script src="assets/js/main.js" defer></script>
-<script src="assets/js/banner.js" defer></script>
-<script src="assets/js/funnel.js" defer></script>
+<script src="/assets/js/main.js" defer></script>
+<script src="/assets/js/banner.js" defer></script>
+<script src="/assets/js/funnel.js" defer></script>
 </body>
 </html>

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <link rel="icon" type="image/png" href="assets/images/favicon.png">
+  <link rel="icon" type="image/png" href="/assets/images/favicon.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Visual Rebrand Experience | Rosen Relations</title>
 
@@ -10,69 +10,74 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="assets/css/variables.css">
-  <link rel="stylesheet" href="assets/css/base.css">
-  <link rel="stylesheet" href="assets/css/nav.css">
-  <link rel="stylesheet" href="assets/css/experience.css">
-  <link rel="stylesheet" href="assets/css/footer.css">
-  <link rel="stylesheet" href="assets/css/funnel.css">
-  <link rel="stylesheet" href="assets/css/animations.css">
+  <link rel="stylesheet" href="/assets/css/variables.css">
+  <link rel="stylesheet" href="/assets/css/base.css">
+  <link rel="stylesheet" href="/assets/css/nav.css">
+  <link rel="stylesheet" href="/assets/css/experience.css">
+  <link rel="stylesheet" href="/assets/css/footer.css">
+  <link rel="stylesheet" href="/assets/css/funnel.css">
+  <link rel="stylesheet" href="/assets/css/animations.css">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XNJJ097JLF"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XNJJ097JLF');
+  </script>
 </head>
 <body class="page-vre">
 
 <nav class="site-nav scrolled" id="siteNav">
   <div class="nav-left">
-    <a href="about.html" class="nav-founder">Nani Rosen</a>
-    <a href="https://www.instagram.com/thenanirosen" target="_blank" class="nav-ig">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
-      </svg>
+    <a href="/about" class="nav-founder">Nani Rosen</a>
+    <a href="/about">Our Founder</a>
+    <a href="/experience" class="nav-vre-link" style="color: var(--gold);"><span class="nav-vre-the">The</span><span class="nav-vre-rest">Visual Rebrand Experience</span></a>
+  </div>
+  <div class="nav-center">
+    <a href="/home" aria-label="Rosen Relations — Home">
+      <img src="/assets/images/rr-logo-gold.png" alt="Rosen Relations" class="nav-logo-img">
     </a>
   </div>
   <div class="nav-right">
-    <a href="index.html" class="nav-home-crest" aria-label="Rosen Relations — Home">
-      <svg viewBox="0 0 80 100" fill="none" xmlns="http://www.w3.org/2000/svg" class="nav-crest-svg">
-        <path d="M40 4 L74 18 L74 52 C74 72 58 88 40 96 C22 88 6 72 6 52 L6 18 Z" stroke="rgba(201,168,76,0.8)" stroke-width="1.5" fill="rgba(201,168,76,0.06)"/>
-        <path d="M40 12 L68 24 L68 52 C68 69 54 84 40 91 C26 84 12 69 12 52 L12 24 Z" stroke="rgba(201,168,76,0.35)" stroke-width="0.75" fill="none"/>
-        <text x="17" y="64" font-family="Georgia,'Times New Roman',serif" font-size="32" font-weight="300" fill="rgba(201,168,76,0.9)">R</text>
-        <text x="40" y="64" font-family="Georgia,'Times New Roman',serif" font-size="32" font-weight="300" fill="rgba(201,168,76,0.9)">R</text>
-        <line x1="28" y1="22" x2="52" y2="22" stroke="rgba(201,168,76,0.45)" stroke-width="0.75"/>
-      </svg>
-    </a>
-    <a href="about.html">About</a>
-    <a href="services.html">Services</a>
-    <a href="experience.html" style="color: var(--gold);">THE VRE</a>
-    <a href="press.html" class="nav-disabled">Press</a>
-    <a href="affiliations.html" class="nav-disabled">Affiliations</a>
-    <a href="contact.html" class="btn-ghost nav-cta">Contact Us</a>
+    <div class="nav-dropdown-wrap">
+      <a href="/services">Services</a>
+      <div class="nav-dropdown">
+        <a href="/services#media-diagnostic">Media Diagnostic</a>
+        <a href="/experience">Visual Rebrand Experience</a>
+        <a href="/services#event-coverage">Event &amp; Press Coverage</a>
+        <a href="/services#website-dev">Website Development</a>
+      </div>
+    </div>
+    <a href="/press-affiliations">Press/Affiliations</a>
+    <a href="/contact" class="btn-contact">Contact Us</a>
   </div>
   <button class="nav-hamburger" id="navHamburger"><span></span><span></span><span></span></button>
 </nav>
 
 <div class="nav-drawer" id="navDrawer">
   <button class="nav-drawer-close" id="navDrawerClose">✕</button>
-  <a href="index.html" class="nav-home-crest nav-drawer-crest" aria-label="Rosen Relations — Home">
-    <svg viewBox="0 0 80 100" fill="none" xmlns="http://www.w3.org/2000/svg" class="nav-crest-svg nav-drawer-crest-svg">
-      <path d="M40 4 L74 18 L74 52 C74 72 58 88 40 96 C22 88 6 72 6 52 L6 18 Z" stroke="rgba(201,168,76,0.8)" stroke-width="1.5" fill="rgba(201,168,76,0.06)"/>
-      <path d="M40 12 L68 24 L68 52 C68 69 54 84 40 91 C26 84 12 69 12 52 L12 24 Z" stroke="rgba(201,168,76,0.35)" stroke-width="0.75" fill="none"/>
-      <text x="17" y="64" font-family="Georgia,'Times New Roman',serif" font-size="32" font-weight="300" fill="rgba(201,168,76,0.9)">R</text>
-      <text x="40" y="64" font-family="Georgia,'Times New Roman',serif" font-size="32" font-weight="300" fill="rgba(201,168,76,0.9)">R</text>
-      <line x1="28" y1="22" x2="52" y2="22" stroke="rgba(201,168,76,0.45)" stroke-width="0.75"/>
-    </svg>
-  </a>
-  <a href="about.html">About Founder</a>
-  <a href="services.html">Services</a>
-  <a href="experience.html">The Visual Rebrand Experience</a>
-  <a href="press.html" class="nav-disabled">Press</a>
-  <a href="affiliations.html" class="nav-disabled">Affiliations</a>
-  <a href="contact.html">Contact Us</a>
+  <div class="nav-drawer-logo">
+    <img src="/assets/images/rr-logo-gold.png" alt="Rosen Relations">
+  </div>
+  <a href="/">Home</a>
+  <a href="/about">Our Founder</a>
+  <a href="/experience" class="drawer-active">The Visual Rebrand Experience</a>
+  <a href="/services">Services</a>
+  <a href="/services#media-diagnostic" class="drawer-sub">› Media Diagnostic</a>
+  <a href="/experience" class="drawer-sub">› Visual Rebrand Experience</a>
+  <a href="/services#event-coverage" class="drawer-sub">› Event &amp; Press Coverage</a>
+  <a href="/services#website-dev" class="drawer-sub">› Website Development</a>
+  <a href="/press-affiliations">Press/Affiliations</a>
+  <a href="/la-rosa">La Rosa Newsletter</a>
+  <a href="/contact" class="drawer-contact-btn">Contact Us</a>
 </div>
 
 <main>
   <!-- ── HERO OPENING ───────────────────────────────── -->
   <section class="vre-opening">
     <video class="vre-opening-img" autoplay muted loop playsinline preload="metadata">
-      <source src="assets/videos/vre-opening-video.mp4.mov" type="video/mp4">
+      <source src="/assets/videos/vre-opening-video.mp4.mov" type="video/mp4">
     </video>
     <div class="vre-opening-overlay"></div>
     <div class="vre-opening-content">
@@ -98,7 +103,7 @@
     <section class="vre-chapter" id="chapter1">
       <div class="vre-chapter-media">
         <video autoplay muted loop playsinline preload="metadata" class="vre-chapter-video">
-          <source src="assets/videos/vre-ch1.mov" type="video/mp4">
+          <source src="/assets/videos/vre-ch1.mov" type="video/mp4">
         </video>
       </div>
       <div class="vre-chapter-content reveal">
@@ -121,14 +126,14 @@
     <section class="vre-chapter vre-chapter--reverse" id="chapter2">
       <div class="vre-chapter-media">
         <video autoplay muted loop playsinline preload="metadata" class="vre-chapter-video">
-          <source src="assets/videos/vre-ch2.mov" type="video/mp4">
+          <source src="/assets/videos/vre-ch2.mov" type="video/mp4">
         </video>
       </div>
       <div class="vre-chapter-content reveal">
         <span class="small-caps gold vre-chapter-num">Chapter 02</span>
         <div class="vre-chapter-sep"></div>
         <h2>Aesthetic Blueprint</h2>
-        <p>We architect a new visual language — defining a bespoke color palette, selecting editorial typography, and establishing a cohesive aesthetic mandate that communicates luxury at every touchpoint.</p>
+        <p>We architect a new visual language, defining a bespoke color palette, selecting editorial typography, and establishing a cohesive aesthetic mandate that communicates luxury at every touchpoint.</p>
       </div>
     </section>
 
@@ -144,14 +149,14 @@
     <section class="vre-chapter" id="chapter3">
       <div class="vre-chapter-media">
         <video autoplay muted loop playsinline preload="metadata" class="vre-chapter-video">
-          <source src="assets/videos/vre-ch3.mov" type="video/mp4">
+          <source src="/assets/videos/vre-ch3.mov" type="video/mp4">
         </video>
       </div>
       <div class="vre-chapter-content reveal">
         <span class="small-caps gold vre-chapter-num">Chapter 03</span>
         <div class="vre-chapter-sep"></div>
         <h2>Editorial Production</h2>
-        <p>No more amateur photography. We direct a high-end editorial photoshoot — securing the studio, styling the wardrobe, and capturing the definitive imagery that becomes the face of your new brand.</p>
+        <p>No more amateur photography. We direct a high-end editorial photoshoot, securing the studio, styling the wardrobe, and capturing the definitive imagery that becomes the face of your new brand.</p>
       </div>
     </section>
 
@@ -167,14 +172,14 @@
     <section class="vre-chapter vre-chapter--reverse" id="chapter4">
       <div class="vre-chapter-media">
         <video autoplay muted loop playsinline preload="metadata" class="vre-chapter-video">
-          <source src="assets/videos/vre-ch4.mov" type="video/mp4">
+          <source src="/assets/videos/vre-ch4.mov" type="video/mp4">
         </video>
       </div>
       <div class="vre-chapter-content reveal">
         <span class="small-caps gold vre-chapter-num">Chapter 04</span>
         <div class="vre-chapter-sep"></div>
         <h2>Digital Reconstruction</h2>
-        <p>We translate your new aesthetic to the digital realm — a complete redesign of your website and social architecture, building an immersive, cinematic experience that converts high-ticket clients.</p>
+        <p>We translate your new aesthetic to the digital realm: a complete redesign of your website and social architecture, building an immersive, cinematic experience that converts high-ticket clients.</p>
       </div>
     </section>
 
@@ -194,7 +199,7 @@
         <p>The Visual Rebrand Experience is an intensive, highly selective process. We accept a limited number of clients per quarter to ensure uncompromising quality.</p>
         <div class="vre-cta-btns">
           <button type="button" class="btn-solid" id="vreApplyOpenFunnel">Apply for the VRE</button>
-          <a href="services.html" class="btn-ghost">View All Services</a>
+          <a href="/services" class="btn-ghost">View All Services</a>
         </div>
       </div>
     </section>
@@ -205,24 +210,23 @@
 <footer class="site-footer">
   <div class="footer-inner">
     <div class="footer-logo">
-      <img src="assets/images/rr-logo-gold.png?v=2" alt="Rosen Relations" style="height: 52px; width: auto; object-fit: contain;">
+      <img src="/assets/images/rr-logo-gold.png" alt="Rosen Relations" style="height: 56px; width: auto; object-fit: contain;">
     </div>
     <nav class="footer-nav" aria-label="Footer navigation">
-      <a href="about.html">About</a>
-      <a href="services.html">Services</a>
-      <a href="experience.html">THE VRE</a>
-      <a href="contact.html">Contact</a>
-      <a href="privacy.html">Privacy Policy</a>
+      <a href="/about">Our Founder</a>
+      <a href="/experience"><span class="nav-vre-the">The</span><span class="nav-vre-rest">Visual Rebrand Experience</span></a>
+      <a href="/services">Services</a>
+      <a href="/press-affiliations">Press/Affiliations</a>
+      <a href="/la-rosa">La Rosa Newsletter</a>
+      <a href="/contact">Contact</a>
+      <a href="/privacy">Privacy Policy</a>
     </nav>
     <div class="footer-social">
-      <a href="https://www.instagram.com/thenanirosen" target="_blank" rel="noopener noreferrer" class="footer-ig">
-        @thenanirosen
-      </a>
+      <a href="https://www.instagram.com/thenanirosen" target="_blank" rel="noopener noreferrer" class="footer-ig">@thenanirosen</a>
     </div>
   </div>
   <div class="footer-bottom">
     <p class="footer-copy">© 2026 Rosen Relations. All rights reserved.</p>
-    <p class="footer-byline">Luxury Brand Relations & Visibility Strategy · Washington DC</p>
   </div>
 </footer>
 
@@ -242,8 +246,8 @@
       <div class="funnel-checkboxes">
         <label class="funnel-check"><input type="checkbox" value="visibility"> I need better brand visibility</label>
         <label class="funnel-check"><input type="checkbox" value="website"> I need a website rebuild or redesign</label>
-        <label class="funnel-check"><input type="checkbox" value="seo"> I need SEO — I'm not showing up on Google</label>
-        <label class="funnel-check"><input type="checkbox" value="content"> I need content ideation — I don't know what to post</label>
+        <label class="funnel-check"><input type="checkbox" value="seo"> I need SEO, I'm not showing up on Google</label>
+        <label class="funnel-check"><input type="checkbox" value="content"> I need content ideation, I don't know what to post</label>
         <label class="funnel-check" id="vreCheckLabel"><input type="checkbox" value="vre" id="vreCheck"> I need a full visual rebrand (headshots, content, presence)</label>
         <label class="funnel-check"><input type="checkbox" value="events"> I need event coverage for my brand</label>
         <label class="funnel-check"><input type="checkbox" value="strategy"> I need a full brand strategy</label>
@@ -257,10 +261,10 @@
       <p class="funnel-sub">This helps us match you with the right service level.</p>
       <div class="funnel-radios">
         <label class="funnel-radio"><input type="radio" name="budget" value="under-1k"> Under $1,000/month</label>
-        <label class="funnel-radio"><input type="radio" name="budget" value="1k-2.5k"> $1,000 — $2,500/month</label>
-        <label class="funnel-radio"><input type="radio" name="budget" value="2.5k-5k"> $2,500 — $5,000/month</label>
+        <label class="funnel-radio"><input type="radio" name="budget" value="1k-2.5k"> $1,000 to $2,500/month</label>
+        <label class="funnel-radio"><input type="radio" name="budget" value="2.5k-5k"> $2,500 to $5,000/month</label>
         <label class="funnel-radio"><input type="radio" name="budget" value="5k-plus"> $5,000+/month</label>
-        <label class="funnel-radio"><input type="radio" name="budget" value="unsure"> I'm not sure yet — I want to learn more</label>
+        <label class="funnel-radio"><input type="radio" name="budget" value="unsure"> I'm not sure yet, I want to learn more</label>
       </div>
       <button class="btn-solid funnel-next" id="funnelStep2Next">Next →</button>
     </div>
@@ -283,8 +287,8 @@
   </div>
 </div>
 
-<script src="assets/js/main.js" defer></script>
-<script src="assets/js/experience.js" defer></script>
-<script src="assets/js/funnel.js" defer></script>
+<script src="/assets/js/main.js" defer></script>
+<script src="/assets/js/experience.js" defer></script>
+<script src="/assets/js/funnel.js" defer></script>
 </body>
 </html>
