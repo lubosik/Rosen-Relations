@@ -1,11 +1,6 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
-  "functions": {
-    "api/notion.js": {
-      "runtime": "nodejs20.x"
-    }
-  },
   "redirects": [
     { "source": "/", "destination": "/home", "permanent": true },
     { "source": "/index", "destination": "/home", "permanent": true }
