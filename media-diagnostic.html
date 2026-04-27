@@ -112,6 +112,9 @@
         <p class="contact-sub">Takes less than five minutes. Nani reviews every submission personally.</p>
 
         <form id="diagnosticForm" class="contact-form" novalidate>
+          <input type="hidden" name="access_key" value="1948954d-4e2d-46ef-ba7b-bc0501efcc24">
+          <input type="hidden" name="subject" value="New Media Diagnostic Inquiry | Rosen Relations">
+          <input type="hidden" name="botcheck" style="display:none;">
           <input type="hidden" name="form_type" value="media-diagnostic">
 
           <div class="form-row">
@@ -272,30 +275,48 @@
       resultEl.textContent = '';
       resultEl.className   = 'form-result';
 
+      var notionPayload = JSON.stringify({
+        source:           'Media Diagnostic form',
+        firstName,
+        lastName,
+        email,
+        phone,
+        company:          brandName,
+        reasonForInquiry: 'Media Diagnostic: ' + diagnosticType,
+        message: [
+          'Brand: '           + brandName,
+          'Industry: '        + industry,
+          'Website: '         + website,
+          'Platforms: '       + (platforms || 'None specified'),
+          'Diagnostic type: ' + diagnosticType,
+          'Challenge: '       + challenge,
+          'Audience: '        + audience,
+          'How they heard: '  + source,
+        ].filter(function (line) { return line.split(': ')[1]; }).join('\n'),
+      });
+
+      var w3fData = new FormData(form);
+      w3fData.set('name', firstName + (lastName ? ' ' + lastName : ''));
+      w3fData.set('message', [
+        'Brand: '           + brandName,
+        'Industry: '        + industry,
+        'Website: '         + website,
+        'Platforms: '       + (platforms || 'None specified'),
+        'Diagnostic type: ' + diagnosticType,
+        'Challenge: '       + challenge,
+        'Audience: '        + audience,
+        'How they heard: '  + source,
+      ].filter(function (line) { return line.split(': ')[1]; }).join('\n'));
+
       try {
-        var res = await fetch('/api/notion', {
-          method:  'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body:    JSON.stringify({
-            source:          'Media Diagnostic form',
-            firstName,
-            lastName,
-            email,
-            phone,
-            company:         brandName,
-            reasonForInquiry: 'Media Diagnostic: ' + diagnosticType,
-            message:         [
-              'Brand: ' + brandName,
-              'Industry: ' + industry,
-              'Website: ' + website,
-              'Platforms: ' + (platforms || 'None specified'),
-              'Diagnostic type: ' + diagnosticType,
-              'Challenge: ' + challenge,
-              'Audience: ' + audience,
-              'How they heard: ' + source,
-            ].filter(function (line) { return line.split(': ')[1]; }).join('\n'),
+        await Promise.allSettled([
+          fetch('https://api.web3forms.com/submit', { method: 'POST', body: w3fData }),
+          fetch('/api/notion', {
+            method:  'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body:    notionPayload,
           }),
-        });
+        ]);
 
         resultEl.textContent = 'Thank you. Your diagnostic request has been received. We will confirm and send next steps within 24 hours.';
         resultEl.className   = 'form-result form-result--success';
