@@ -34,10 +34,11 @@
 }
 
 .nav-founder {
-  font-family: var(--font-display);
-  font-size: 1.4rem;
-  font-weight: 300;
-  letter-spacing: 0.14em;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.25rem;
+  font-weight: 400;
+  font-style: italic;
+  letter-spacing: 0.06em;
   color: var(--white-80);
   text-decoration: none;
   transition: color var(--dur-fast) var(--ease-luxury);
@@ -64,7 +65,7 @@
   align-items: center;
 }
 .nav-logo-img {
-  height: 58px;
+  height: 46px;
   width: auto;
   object-fit: contain;
   display: block;
