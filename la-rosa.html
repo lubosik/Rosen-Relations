@@ -152,10 +152,37 @@
           <h2 class="lr-signup-heading">Subscribe to L'Échelon</h2>
           <p class="lr-signup-sub">Bi-monthly. Curated. No spam.</p>
 
-          <form class="lr-form" action="https://l-chelon-production.up.railway.app/subscribe" method="POST" target="_blank">
-            <input type="email" name="email" placeholder="Your email address" class="lr-input" required autocomplete="email">
-            <button type="submit" class="lr-submit">Subscribe</button>
+          <form class="lr-form" id="lrSubscribeForm" onsubmit="submitLrForm(event)">
+            <input type="email" name="email" id="lrEmail" placeholder="Your email address" class="lr-input" required autocomplete="email">
+            <button type="submit" class="lr-submit" id="lrBtn">Subscribe</button>
+            <p id="lrMsg" style="font-family:'Lato',sans-serif;font-size:0.62rem;margin-top:10px;min-height:1.1em;text-align:center;"></p>
           </form>
+          <script>
+          async function submitLrForm(e) {
+            e.preventDefault();
+            var email = document.getElementById('lrEmail').value.trim();
+            var btn = document.getElementById('lrBtn');
+            var msg = document.getElementById('lrMsg');
+            btn.disabled = true; btn.textContent = '...';
+            msg.style.color = 'rgba(255,255,255,0.4)'; msg.textContent = '';
+            try {
+              var res = await fetch('https://l-chelon-production.up.railway.app/api/subscribe', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email: email, source: 'rosen-relations-newsletter-page' })
+              });
+              if (res.ok) {
+                msg.style.color = '#C9A84C'; msg.textContent = "You're on the list. Welcome to L'Échelon.";
+                document.getElementById('lrSubscribeForm').reset();
+              } else {
+                msg.style.color = 'rgba(255,80,80,0.8)'; msg.textContent = 'Something went wrong. Please try again.';
+              }
+            } catch (err) {
+              msg.style.color = 'rgba(255,80,80,0.8)'; msg.textContent = 'Something went wrong. Please try again.';
+            }
+            btn.disabled = false; btn.textContent = 'Subscribe';
+          }
+          </script>
 
           <p class="lr-form-note">You can unsubscribe at any time. We never share your email.</p>
         </div>
