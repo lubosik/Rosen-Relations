@@ -202,20 +202,8 @@
       <!-- Service label — small, elegant, below the emblem -->
       <p class="hero-what-we-do">Luxury Brand Visibility &amp; Media Relations</p>
 
-      <!-- Firm description -->
-      <p class="hero-firm-desc">
-        A luxury brand relations and visibility strategy firm operating at the intersection of high-end visual conceptualization, editorial direction, and brand elevation.
-      </p>
-
       <!-- CTA -->
       <a href="/contact" class="hero-cta-btn">Begin Your Journey</a>
-
-      <!-- Tagline — below CTA, inside content flow -->
-      <blockquote class="hero-tagline-main" aria-hidden="true">
-        <span class="hero-quote-open">&ldquo;</span>Your brand intentional.
-        Your presence understood.
-        Your story redefined.<span class="hero-quote-close">&rdquo;</span>
-      </blockquote>
 
     </div>
 
@@ -325,22 +313,23 @@
     /* ── CTA button ─────────────────────────────────────────── */
     .hero-cta-btn {
       display: inline-block;
-      padding: 13px 48px;
-      border: 1px solid rgba(201, 168, 76, 0.5);
-      color: rgba(255,255,255,0.85);
+      padding: 18px 64px;
+      border: 1px solid rgba(201, 168, 76, 0.85);
+      color: #ffffff;
       font-family: 'Lato', sans-serif;
-      font-size: 0.62rem;
-      font-weight: 300;
-      letter-spacing: 0.3em;
+      font-size: 0.72rem;
+      font-weight: 400;
+      letter-spacing: 0.28em;
       text-transform: uppercase;
       text-decoration: none;
-      background: transparent;
-      transition: background 0.35s ease, color 0.35s ease, border-color 0.35s ease;
+      background: rgba(201, 168, 76, 0.08);
+      transition: background 0.35s ease, color 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
     }
     .hero-cta-btn:hover {
-      background: rgba(201, 168, 76, 0.1);
-      border-color: rgba(201, 168, 76, 0.85);
+      background: rgba(201, 168, 76, 0.18);
+      border-color: #C9A84C;
       color: #ffffff;
+      box-shadow: 0 0 28px rgba(201, 168, 76, 0.18);
     }
 
     /* ── Tagline — clear and elegant below CTA ──────────────── */
@@ -611,7 +600,7 @@
     <div class="manifesto-inner">
       <div class="manifesto-quote-wrap">
         <span class="manifesto-open-quote">&ldquo;</span>
-        <p class="manifesto-text typing-done manifesto-fade-in" id="manifestoText">Rosen Relations LLC is a luxury brand relations and visibility strategy firm operating at the intersection of high-end visual conceptualization, editorial direction, and brand elevation. More than a traditional media relations agency, Rosen Relations is a culture-shaping force, designed to position brands with intention, authority, and unmistakable presence in competitive luxury markets.</p>
+        <p class="manifesto-text typing-done manifesto-fade-in" id="manifestoText">Your brand intentional. Your presence understood. Your story redefined.</p>
         <span class="manifesto-close-quote visible" id="manifestoCloseQuote" aria-hidden="true">&rdquo;</span>
       </div>
       <div class="manifesto-attribution manifesto-fade-in" id="manifestoAttrib" aria-label="Rosen Relations">
@@ -672,15 +661,15 @@
     }
 
     .manifesto-text {
-      font-family: 'Cormorant Garamond', Georgia, serif;
-      font-size: clamp(1.15rem, 2.4vw, 1.55rem);
-      font-weight: 300;
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(1.65rem, 3.2vw, 2.6rem);
+      font-weight: 400;
       font-style: italic;
-      color: rgba(250, 248, 244, 0.88);
-      line-height: 1.85;
-      letter-spacing: 0.02em;
+      color: rgba(250, 248, 244, 0.92);
+      line-height: 1.65;
+      letter-spacing: 0.01em;
       margin: 0 auto;
-      min-height: 5em;
+      min-height: 0;
       position: relative;
     }
 
