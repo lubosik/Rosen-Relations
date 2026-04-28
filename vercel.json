@@ -6,6 +6,11 @@
       "source": "/media-diagnostic",
       "destination": "/luxury-lens",
       "permanent": true
+    },
+    {
+      "source": "/la-rosa",
+      "destination": "/lechelon",
+      "permanent": true
     }
   ],
   "headers": [
