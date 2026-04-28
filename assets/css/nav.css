@@ -71,17 +71,17 @@
   justify-content: center;
 }
 .nav-wordmark-text {
-  font-family: 'Cormorant Garamond', Georgia, serif;
-  font-weight: 400;
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
   font-style: normal;
-  font-size: 0.9rem;
-  letter-spacing: 0.32em;
+  font-size: 0.6rem;
+  letter-spacing: 0.3em;
   text-transform: uppercase;
-  color: rgba(201, 168, 76, 0.9);
+  color: rgba(201, 168, 76, 0.7);
   white-space: nowrap;
   transition: color 0.2s ease;
 }
-.nav-wordmark:hover .nav-wordmark-text { color: #ffffff; }
+.nav-wordmark:hover .nav-wordmark-text { color: rgba(201, 168, 76, 1); }
 
 /* Keep nav-logo-img for any pages still using it */
 .nav-logo-img {
