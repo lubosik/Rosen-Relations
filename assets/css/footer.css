@@ -22,6 +22,13 @@
 }
 .footer-nav a:hover { color: var(--gold); }
 
+.footer-social {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+}
+
 .footer-ig {
   font-family: var(--font-display);
   font-size: 0.9rem;
@@ -29,6 +36,18 @@
   font-style: italic;
 }
 .footer-ig:hover { color: var(--gold); }
+
+.footer-li {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  color: var(--white-60);
+  font-style: italic;
+}
+.footer-li:hover { color: var(--gold); }
+.footer-li svg { flex-shrink: 0; }
 
 .footer-bottom {
   text-align: center;
