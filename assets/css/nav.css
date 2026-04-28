@@ -58,12 +58,32 @@
 }
 .nav-left a:not(.nav-founder):hover { color: var(--gold); }
 
-/* ─── CENTER: Logo PNG ───────────────────────────────────────────── */
+/* ─── CENTER: Wordmark ───────────────────────────────────────────── */
 .nav-center {
   display: flex;
   justify-content: center;
   align-items: center;
 }
+.nav-wordmark {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.nav-wordmark-text {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 0.9rem;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: rgba(201, 168, 76, 0.9);
+  white-space: nowrap;
+  transition: color 0.2s ease;
+}
+.nav-wordmark:hover .nav-wordmark-text { color: #ffffff; }
+
+/* Keep nav-logo-img for any pages still using it */
 .nav-logo-img {
   height: 46px;
   width: auto;
@@ -235,15 +255,14 @@
   color: var(--gold); font-size: 1.4rem; cursor: pointer;
 }
 
-/* Drawer logo */
+/* Drawer wordmark */
 .nav-drawer-logo {
   display: flex;
   justify-content: center;
+  align-items: center;
   margin-bottom: 32px;
-}
-.nav-drawer-logo img {
-  height: 52px;
-  width: auto;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(201,168,76,0.2);
 }
 
 /* Drawer services sub-items */
