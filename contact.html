@@ -69,14 +69,12 @@
 
 <nav class="site-nav scrolled" id="siteNav">
   <div class="nav-left">
+    <a href="/" class="nav-logo-link" aria-label="Rosen Relations — Home">
+      <img src="/assets/images/rr-emblem.png" alt="Rosen Relations" class="nav-emblem-logo">
+    </a>
     <a href="/about" class="nav-founder">Nani Rosen</a>
     <a href="/about">Our Founder</a>
     <a href="/experience" class="nav-vre-link"><span class="nav-vre-the">The</span><span class="nav-vre-rest">Visual Rebrand Experience</span></a>
-  </div>
-  <div class="nav-center">
-    <a href="/" class="nav-wordmark" aria-label="Rosen Relations — Home">
-      <span class="nav-wordmark-text">ROSEN RELATIONS</span>
-    </a>
   </div>
   <div class="nav-right">
     <div class="nav-dropdown-wrap">
@@ -98,7 +96,7 @@
 <div class="nav-drawer" id="navDrawer">
   <button class="nav-drawer-close" id="navDrawerClose">✕</button>
   <div class="nav-drawer-logo">
-    <span class="nav-wordmark-text" style="font-size: 1rem; letter-spacing: 0.22em;">ROSEN RELATIONS</span>
+    <img src="/assets/images/rr-emblem.png" alt="Rosen Relations" style="height: 44px; width: auto;">
   </div>
   <a href="/">Home</a>
   <a href="/about">Our Founder</a>
@@ -111,6 +109,7 @@
   <a href="/services#website-dev" class="drawer-sub">› Website Development</a>
   <a href="/press-affiliations">Press/Affiliations</a>
   <a href="/lechelon">L’Échelon Newsletter</a>
+  <a href="/blog">The Rose Blog</a>
   <a href="/contact" class="drawer-contact-btn">Contact Us</a>
 </div>
 
@@ -139,26 +138,34 @@
 
       <!-- Right: Contact Logic -->
       <div class="contact-form-col">
-        
-        <!-- Direct Booking -->
+
+        <!-- Cal.com 15-min consultation embed -->
         <div class="contact-booking">
-          <span class="small-caps gold">Client Inquiry</span>
-          <h3>Book a Discovery Call</h3>
-          <p>Ready to build? Select a time to speak directly with Nani Rosen.</p>
-          <a href="https://cal.com/nani-rosen" target="_blank" class="btn-solid contact-cal-btn">View Availability</a>
+          <span class="small-caps gold">Book a Free Consultation</span>
+          <h3>15-Minute Luxury Lens Call</h3>
+          <p>A complimentary 15-minute call to explore how Rosen Relations can elevate your brand presence. Select a time below.</p>
+          <div style="width:100%;height:580px;overflow:scroll;margin-top:20px;border:1px solid rgba(201,168,76,0.2);border-radius:4px;" id="my-cal-inline-15min"></div>
+          <script type="text/javascript">
+            (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+            Cal("init", "15min", {origin:"https://app.cal.com"});
+            Cal.ns["15min"]("inline", {
+              elementOrSelector:"#my-cal-inline-15min",
+              config: {"layout":"month_view","useSlotsViewOnSmallScreen":"true"},
+              calLink: "rosen-relations/15min",
+            });
+            Cal.ns["15min"]("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
+          </script>
         </div>
 
         <div class="contact-divider"><span>OR</span></div>
 
-        <!-- Web3Forms Implementation -->
+        <!-- General Inquiry Form -->
         <div class="contact-form">
-          <span class="small-caps gold" style="display:block;margin-bottom:8px;">General Contact</span>
+          <span class="small-caps gold" style="display:block;margin-bottom:8px;">General Inquiries</span>
           <h2>Send a Message</h2>
-          <p class="contact-sub">For press, speaking engagements, or general inquiries.</p>
+          <p class="contact-sub">For press, speaking engagements, partnerships, or general questions. We respond within 24 hours.</p>
           
           <form id="contactForm" method="POST">
-
-            <!-- Web3Forms -->
             <input type="hidden" name="access_key" value="47c2e037-9077-412d-9b7f-fa2239e9ae79">
             <input type="hidden" name="subject" value="New General Inquiry | Rosen Relations">
             <input type="checkbox" name="botcheck" style="display:none;">
@@ -186,11 +193,24 @@
             </div>
 
             <div class="form-group">
+              <label for="budget">Marketing Investment Range</label>
+              <select id="budget" name="budget" style="width:100%; background:var(--black-soft); border:1px solid rgba(201,168,76,0.3); color:var(--white); padding:14px 16px; font-family:var(--font-body); font-size:1rem; outline:none;">
+                <option value="">Select a range</option>
+                <option value="under-1k">Under $1,000/month</option>
+                <option value="1k-2.5k">$1,000 to $2,500/month</option>
+                <option value="2.5k-5k">$2,500 to $5,000/month</option>
+                <option value="5k-plus">$5,000+/month</option>
+                <option value="unsure">Not sure yet</option>
+              </select>
+            </div>
+
+            <div class="form-group">
               <label for="inquiryType">Reason for Inquiry</label>
               <select id="inquiryType" name="inquiryType" style="width:100%; background:var(--black-soft); border:1px solid rgba(201,168,76,0.3); color:var(--white); padding:14px 16px; font-family:var(--font-body); font-size:1rem; outline:none;">
-                <option value="Client Services">Client Services & Representation</option>
-                <option value="Press">Press & Media</option>
+                <option value="Client Services">Client Services &amp; Representation</option>
+                <option value="Press">Press &amp; Media</option>
                 <option value="Speaking">Speaking Engagements</option>
+                <option value="Partnership">Brand Partnership</option>
                 <option value="Other">Other</option>
               </select>
             </div>
@@ -204,84 +224,8 @@
             <div id="formResult" class="form-result"></div>
           </form>
         </div>
-        
 
       </div>
-    </div>
-  </section>
-
-  <!-- ── SERVICE FORMS ─────────────────────────────────────────────── -->
-
-  <!-- VISUAL REBRAND EXPERIENCE -->
-  <section class="service-form-section" id="vre">
-    <div class="service-form-inner">
-      <div class="service-form-header">
-        <p class="small-caps gold">Service Enquiry</p>
-        <h2>The Visual Rebrand Experience</h2>
-        <p class="service-form-sub">Tell us about your brand and what you're looking to achieve. We'll be in touch within 24 hours.</p>
-        <div class="sep-gold-sm"></div>
-      </div>
-      <form class="service-form" method="POST" id="vreForm">
-        <input type="hidden" name="access_key" value="47c2e037-9077-412d-9b7f-fa2239e9ae79">
-        <input type="hidden" name="subject" value="New Visual Rebrand Experience Inquiry | Rosen Relations">
-        <input type="hidden" name="service" value="Visual Rebrand Experience">
-        <input type="checkbox" name="botcheck" style="display:none;">
-
-        <div class="sf-row">
-          <div class="sf-group">
-            <label for="vre_name">Full Name *</label>
-            <input type="text" id="vre_name" name="name" required>
-          </div>
-          <div class="sf-group">
-            <label for="vre_email">Email Address *</label>
-            <input type="email" id="vre_email" name="email" required>
-          </div>
-        </div>
-        <div class="sf-row">
-          <div class="sf-group">
-            <label for="vre_business">Business / Brand Name *</label>
-            <input type="text" id="vre_business" name="business_name" required>
-          </div>
-          <div class="sf-group">
-            <label for="vre_url">Website or Social URL</label>
-            <input type="url" id="vre_url" name="website_url" placeholder="https://">
-          </div>
-        </div>
-        <div class="sf-row">
-          <div class="sf-group">
-            <label for="vre_industry">Your Industry / Niche *</label>
-            <input type="text" id="vre_industry" name="industry" required placeholder="e.g. Real Estate, Fashion, Wellness">
-          </div>
-          <div class="sf-group">
-            <label for="vre_budget">Investment Range</label>
-            <select id="vre_budget" name="budget">
-              <option value="">Select a range</option>
-              <option>Under $2,500</option>
-              <option>$2,500 to $5,000</option>
-              <option>$5,000 to $10,000</option>
-              <option>$10,000+</option>
-            </select>
-          </div>
-        </div>
-        <div class="sf-group">
-          <label for="vre_goals">What are your current brand goals? *</label>
-          <textarea id="vre_goals" name="brand_goals" rows="3" required placeholder="What do you want your brand to achieve in the next 6–12 months?"></textarea>
-        </div>
-        <div class="sf-group">
-          <label for="vre_challenge">What is your biggest brand challenge right now? *</label>
-          <textarea id="vre_challenge" name="brand_challenge" rows="3" required placeholder="What's not working? What feels off about your current presence?"></textarea>
-        </div>
-        <div class="sf-group">
-          <label for="vre_audience">Who is your ideal client?</label>
-          <textarea id="vre_audience" name="ideal_client" rows="2" placeholder="Describe who you are trying to reach."></textarea>
-        </div>
-        <div class="sf-group">
-          <label for="vre_differentiator">What makes you different from your competitors?</label>
-          <textarea id="vre_differentiator" name="differentiator" rows="2" placeholder="What is your unique edge?"></textarea>
-        </div>
-        <button type="submit" class="btn-ghost sf-submit">Submit VRE Enquiry</button>
-        <div class="sf-result" id="vreResult"></div>
-      </form>
     </div>
   </section>
 
@@ -403,214 +347,6 @@
     </div>
   </section>
 
-  <!-- WEB DEVELOPMENT -->
-  <section class="service-form-section" id="web-development">
-    <div class="service-form-inner">
-      <div class="service-form-header">
-        <p class="small-caps gold">Service Enquiry</p>
-        <h2>Web Development</h2>
-        <p class="service-form-sub">Tell us about your digital presence and what you need built. We'll respond within 24 hours.</p>
-        <div class="sep-gold-sm"></div>
-      </div>
-      <form class="service-form" method="POST" id="webForm">
-        <input type="hidden" name="access_key" value="47c2e037-9077-412d-9b7f-fa2239e9ae79">
-        <input type="hidden" name="subject" value="New Website Development Inquiry | Rosen Relations">
-        <input type="hidden" name="service" value="Web Development">
-        <input type="checkbox" name="botcheck" style="display:none;">
-
-        <div class="sf-row">
-          <div class="sf-group">
-            <label for="web_name">Full Name *</label>
-            <input type="text" id="web_name" name="name" required>
-          </div>
-          <div class="sf-group">
-            <label for="web_email">Email Address *</label>
-            <input type="email" id="web_email" name="email" required>
-          </div>
-        </div>
-        <div class="sf-row">
-          <div class="sf-group">
-            <label for="web_business">Business / Brand Name *</label>
-            <input type="text" id="web_business" name="business_name" required>
-          </div>
-          <div class="sf-group">
-            <label for="web_existing">Do you have an existing website? *</label>
-            <select id="web_existing" name="has_website" required>
-              <option value="">Select</option>
-              <option value="yes">Yes, I need a redesign / rebuild</option>
-              <option value="no">No, building from scratch</option>
-            </select>
-          </div>
-        </div>
-        <div class="sf-group" id="web_url_group" style="display:none;">
-          <label for="web_current_url">Current Website URL</label>
-          <input type="url" id="web_current_url" name="current_url" placeholder="https://">
-        </div>
-        <div class="sf-group" id="web_problem_group" style="display:none;">
-          <label for="web_problem" id="web_problem_label">What is wrong with your current website, and why do you need a new one?</label>
-          <textarea id="web_problem" name="current_problem" rows="3" placeholder="Describe what's not working, what's missing, or what you want to achieve."></textarea>
-        </div>
-        <div class="sf-row">
-          <div class="sf-group">
-            <label for="web_industry">Your Industry *</label>
-            <input type="text" id="web_industry" name="industry" required placeholder="e.g. Real Estate, Consulting, Beauty">
-          </div>
-          <div class="sf-group">
-            <label for="web_budget">Investment Range</label>
-            <select id="web_budget" name="budget">
-              <option value="">Select a range</option>
-              <option>Under $2,500</option>
-              <option>$2,500 to $5,000</option>
-              <option>$5,000 to $10,000</option>
-              <option>$10,000+</option>
-            </select>
-          </div>
-        </div>
-        <div class="sf-group">
-          <label>Features Needed (select all that apply)</label>
-          <div class="sf-checkboxes">
-            <label class="sf-check"><input type="checkbox" name="features" value="SEO"> SEO Optimisation</label>
-            <label class="sf-check"><input type="checkbox" name="features" value="Blog"> Blog / Content Section</label>
-            <label class="sf-check"><input type="checkbox" name="features" value="Contact Form"> Contact Form</label>
-            <label class="sf-check"><input type="checkbox" name="features" value="Booking"> Booking / Scheduling</label>
-            <label class="sf-check"><input type="checkbox" name="features" value="E-commerce"> E-commerce / Shop</label>
-            <label class="sf-check"><input type="checkbox" name="features" value="Analytics"> Analytics Dashboard</label>
-            <label class="sf-check"><input type="checkbox" name="features" value="Social Integration"> Social Media Integration</label>
-            <label class="sf-check"><input type="checkbox" name="features" value="Unsure"> Not Sure, Advise Me</label>
-          </div>
-        </div>
-        <div class="sf-group">
-          <label for="web_audience">Who is your target audience?</label>
-          <textarea id="web_audience" name="target_audience" rows="2" placeholder="Describe who visits or should visit your website."></textarea>
-        </div>
-        <div class="sf-row">
-          <div class="sf-group">
-            <label for="web_timeline">Ideal Timeline</label>
-            <select id="web_timeline" name="timeline">
-              <option value="">Select</option>
-              <option>ASAP (under 2 weeks)</option>
-              <option>Within 1 month</option>
-              <option>1 to 3 months</option>
-              <option>3+ months</option>
-            </select>
-          </div>
-          <div class="sf-group">
-            <label for="web_phone">Phone Number</label>
-            <input type="tel" id="web_phone" name="phone">
-          </div>
-        </div>
-        <div class="sf-group">
-          <label for="web_details">Anything else we should know?</label>
-          <textarea id="web_details" name="additional_details" rows="3" placeholder="Reference sites you love, brand values, colours, special requirements, etc."></textarea>
-        </div>
-        <button type="submit" class="btn-ghost sf-submit">Submit Web Development Enquiry</button>
-        <div class="sf-result" id="webResult"></div>
-      </form>
-    </div>
-  </section>
-
-  <!-- ELECTRONIC PRESS KIT -->
-  <section class="service-form-section service-form-section--alt" id="epk">
-    <div class="service-form-inner">
-      <div class="service-form-header">
-        <p class="small-caps gold">Service Enquiry</p>
-        <h2>Electronic Press Kit</h2>
-        <p class="service-form-sub">Tell us about your brand and we will craft a world-class EPK that opens doors. We respond within 24 hours.</p>
-        <div class="sep-gold-sm"></div>
-      </div>
-      <form class="service-form" method="POST" id="epkForm">
-        <input type="hidden" name="access_key" value="47c2e037-9077-412d-9b7f-fa2239e9ae79">
-        <input type="hidden" name="subject" value="New Electronic Press Kit Inquiry | Rosen Relations">
-        <input type="hidden" name="service" value="Electronic Press Kit">
-        <input type="checkbox" name="botcheck" style="display:none;">
-
-        <div class="sf-row">
-          <div class="sf-group">
-            <label for="epk_name">Full Name *</label>
-            <input type="text" id="epk_name" name="name" required>
-          </div>
-          <div class="sf-group">
-            <label for="epk_email">Email Address *</label>
-            <input type="email" id="epk_email" name="email" required>
-          </div>
-        </div>
-        <div class="sf-row">
-          <div class="sf-group">
-            <label for="epk_brand">Brand / Business Name *</label>
-            <input type="text" id="epk_brand" name="brand_name" required>
-          </div>
-          <div class="sf-group">
-            <label for="epk_phone">Phone Number</label>
-            <input type="tel" id="epk_phone" name="phone">
-          </div>
-        </div>
-        <div class="sf-row">
-          <div class="sf-group">
-            <label for="epk_industry">Your Industry *</label>
-            <input type="text" id="epk_industry" name="industry" required placeholder="e.g. Luxury Real Estate, Fashion, Entertainment">
-          </div>
-          <div class="sf-group">
-            <label for="epk_url">Website or Social URL</label>
-            <input type="url" id="epk_url" name="website_url" placeholder="https://">
-          </div>
-        </div>
-        <div class="sf-group">
-          <label for="epk_purpose">What will you use your EPK for? *</label>
-          <select id="epk_purpose" name="epk_purpose" required>
-            <option value="">Select primary purpose</option>
-            <option>Media Features and Press Coverage</option>
-            <option>Speaking Engagements</option>
-            <option>Brand Partnerships and Collaborations</option>
-            <option>Event Appearances</option>
-            <option>Investor and Business Pitches</option>
-            <option>All of the Above</option>
-          </select>
-        </div>
-        <div class="sf-group">
-          <label for="epk_achievements">Key Achievements and Credentials</label>
-          <textarea id="epk_achievements" name="achievements" rows="3" placeholder="Awards, press features, notable clients, speaking history, certifications, milestones, etc."></textarea>
-        </div>
-        <div class="sf-group">
-          <label for="epk_story">Your Brand Story *</label>
-          <textarea id="epk_story" name="brand_story" rows="4" required placeholder="Tell us who you are, what you do, and why you do it. The more you share, the stronger your EPK."></textarea>
-        </div>
-        <div class="sf-group">
-          <label for="epk_audience">Who is your target media or audience?</label>
-          <textarea id="epk_audience" name="target_media" rows="2" placeholder="e.g. luxury lifestyle editors, business journalists, event organizers, brand sponsors."></textarea>
-        </div>
-        <div class="sf-row">
-          <div class="sf-group">
-            <label for="epk_assets">Do you have existing brand assets?</label>
-            <select id="epk_assets" name="existing_assets">
-              <option value="">Select</option>
-              <option>Yes, professional photos and logo</option>
-              <option>Yes, some assets but need help</option>
-              <option>No, starting from scratch</option>
-            </select>
-          </div>
-          <div class="sf-group">
-            <label for="epk_timeline">Ideal Timeline</label>
-            <select id="epk_timeline" name="timeline">
-              <option value="">Select</option>
-              <option>ASAP (under 2 weeks)</option>
-              <option>Within 1 month</option>
-              <option>1 to 3 months</option>
-              <option>Flexible</option>
-            </select>
-          </div>
-        </div>
-        <div class="sf-group">
-          <label for="epk_notes">Anything else we should know?</label>
-          <textarea id="epk_notes" name="additional_notes" rows="3" placeholder="Upcoming events, press deadlines, specific publications you are targeting, or any other context."></textarea>
-        </div>
-        <button type="submit" class="btn-ghost sf-submit">Submit EPK Enquiry</button>
-        <div class="sf-result" id="epkResult"></div>
-      </form>
-    </div>
-  </section>
-
-  <!-- The Luxury Lens anchor (links to general form) -->
-  <div id="media-diagnostic" style="scroll-margin-top: 100px;"></div>
 
   <style>
     .service-form-section {
@@ -724,47 +460,51 @@
     }
   </style>
 
-  <script>
-    /* Web Development form — dynamic fields based on existing site answer */
+    <script>
+    /* Web3Forms handler for event form */
     (function() {
-      var sel     = document.getElementById('web_existing');
-      var urlGrp  = document.getElementById('web_url_group');
-      var probGrp = document.getElementById('web_problem_group');
-      var probTa  = document.getElementById('web_problem');
-      var probLbl = document.getElementById('web_problem_label');
-
-      function updateWebFields() {
-        if (sel.value === 'yes') {
-          urlGrp.style.display  = '';
-          probGrp.style.display = '';
-          probTa.required = true;
-          probLbl.textContent = 'What is wrong with your current website, and why do you need a new one? *';
-        } else if (sel.value === 'no') {
-          urlGrp.style.display  = 'none';
-          probGrp.style.display = '';
-          probTa.required = false;
-          probLbl.textContent = 'Why do you need a new website? (Optional)';
-        } else {
-          urlGrp.style.display  = 'none';
-          probGrp.style.display = 'none';
-          probTa.required = false;
-        }
-      }
-
-      if (sel) sel.addEventListener('change', updateWebFields);
+      ['eventForm'].forEach(function(id) {
+        var form = document.getElementById(id);
+        if (!form) return;
+        var resultId = id.replace('Form','Result');
+        var result = document.getElementById(resultId);
+        form.addEventListener('submit', async function(e) {
+          e.preventDefault();
+          var btn = form.querySelector('.sf-submit');
+          btn.textContent = 'Sending…';
+          btn.disabled = true;
+          try {
+            var res = await fetch('https://api.web3forms.com/submit', {
+              method: 'POST',
+              body: new FormData(form)
+            });
+            var data = await res.json();
+            if (data.success) {
+              result.className = 'sf-result success';
+              result.textContent = 'Thank you. Your enquiry has been received. We will be in touch within 24 hours.';
+              form.reset();
+            } else { throw new Error(data.message); }
+          } catch(err) {
+            result.className = 'sf-result error';
+            result.textContent = 'Something went wrong. Please try again or email us directly.';
+          }
+          btn.disabled = false;
+          btn.textContent = 'Submit Event Enquiry';
+        });
+      });
     })();
   </script>
 
   <script>
-    /* Web3Forms submission handler for service forms */
-    ['vreForm','eventForm','webForm','epkForm'].forEach(function(id) {
-      var form = document.getElementById(id);
+    /* Web3Forms handler for general contact form */
+    (function() {
+      var form = document.getElementById('contactForm');
       if (!form) return;
-      var resultId = id.replace('Form','Result');
-      var result = document.getElementById(resultId);
+      var result = document.getElementById('formResult');
       form.addEventListener('submit', async function(e) {
         e.preventDefault();
-        var btn = form.querySelector('.sf-submit');
+        var btn = form.querySelector('.contact-submit');
+        var orig = btn.textContent;
         btn.textContent = 'Sending…';
         btn.disabled = true;
         try {
@@ -774,23 +514,18 @@
           });
           var data = await res.json();
           if (data.success) {
-            result.className = 'sf-result success';
-            result.textContent = 'Thank you. Your enquiry has been received. We will be in touch within 24 hours.';
+            result.style.color = '#C9A84C';
+            result.textContent = 'Thank you. We will be in touch within 24 hours.';
             form.reset();
-          } else {
-            throw new Error(data.message);
-          }
-        } catch(err) {
-          result.className = 'sf-result error';
-          result.textContent = 'Something went wrong. Please try again or email us directly.';
+          } else { throw new Error(); }
+        } catch(e) {
+          result.style.color = 'rgba(255,100,100,0.9)';
+          result.textContent = 'Something went wrong. Please email inquiries@rosenrelations.com directly.';
         }
         btn.disabled = false;
-        if (id === 'vreForm') btn.textContent = 'Submit VRE Enquiry';
-        else if (id === 'eventForm') btn.textContent = 'Submit Event Enquiry';
-        else if (id === 'epkForm') btn.textContent = 'Submit EPK Enquiry';
-        else btn.textContent = 'Submit Web Development Enquiry';
+        btn.textContent = orig;
       });
-    });
+    })();
   </script>
 
 </main>

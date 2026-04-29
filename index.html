@@ -117,15 +117,12 @@
 
 <nav class="site-nav" id="siteNav">
   <div class="nav-left">
+    <a href="/" class="nav-logo-link" aria-label="Rosen Relations — Home">
+      <img src="/assets/images/rr-emblem.png" alt="Rosen Relations" class="nav-emblem-logo">
+    </a>
     <a href="/about" class="nav-founder">Nani Rosen</a>
     <a href="/about">Our Founder</a>
     <a href="/experience" class="nav-vre-link"><span class="nav-vre-the">The</span><span class="nav-vre-rest">Visual Rebrand Experience</span></a>
-  </div>
-  <!-- Center: Wordmark -->
-  <div class="nav-center">
-    <a href="/" class="nav-wordmark" aria-label="Rosen Relations — Home">
-      <span class="nav-wordmark-text">ROSEN RELATIONS</span>
-    </a>
   </div>
   <div class="nav-right">
     <div class="nav-dropdown-wrap">
@@ -139,6 +136,7 @@
       </div>
     </div>
     <a href="/press-affiliations">Press/Affiliations</a>
+    <a href="/blog">The Rose Blog</a>
     <a href="/contact" class="btn-contact">Contact Us</a>
   </div>
   <!-- Mobile hamburger -->
@@ -151,7 +149,7 @@
 <div class="nav-drawer" id="navDrawer">
   <button class="nav-drawer-close" id="navDrawerClose" aria-label="Close menu">✕</button>
   <div class="nav-drawer-logo">
-    <span class="nav-wordmark-text" style="font-size: 1rem; letter-spacing: 0.22em;">ROSEN RELATIONS</span>
+    <img src="/assets/images/rr-emblem.png" alt="Rosen Relations" style="height: 44px; width: auto;">
   </div>
   <a href="/">Home</a>
   <a href="/about">Our Founder</a>
@@ -164,6 +162,7 @@
   <a href="/services#website-dev" class="drawer-sub">› Website Development</a>
   <a href="/press-affiliations">Press/Affiliations</a>
   <a href="/lechelon">L’Échelon Newsletter</a>
+  <a href="/blog">The Rose Blog</a>
   <a href="/contact" class="drawer-contact-btn">Contact Us</a>
 </div>
 
@@ -191,9 +190,9 @@
 
     <div class="hero-content hero-content--centered">
 
-      <!-- Large emblem — the hero statement -->
-      <div class="hero-emblem-wrap" aria-hidden="true">
-        <img src="/assets/images/rr-emblem.png" alt="" class="hero-emblem-img">
+      <!-- Full logo — hero statement -->
+      <div class="hero-logo-wrap">
+        <img src="/assets/images/rr-logo-full.png" alt="Rosen Relations" class="hero-logo-img">
       </div>
 
       <!-- Gold separator line -->
@@ -226,7 +225,7 @@
     /* Lighter centre overlay — let the video breathe through */
     .hero-overlay {
       background:
-        linear-gradient(to bottom, rgba(10,10,10,0.55) 0%, rgba(10,10,10,0.28) 35%, rgba(10,10,10,0.28) 65%, rgba(10,10,10,0.78) 100%);
+        linear-gradient(to bottom, rgba(10,10,10,0.45) 0%, rgba(10,10,10,0.15) 35%, rgba(10,10,10,0.15) 65%, rgba(10,10,10,0.72) 100%);
     }
 
     /* ── Corner accent ─────────────────────────────────────── */
@@ -266,19 +265,19 @@
       transform: translateY(0);
     }
 
-    /* ── Emblem — refined, not overwhelming ─────────────────── */
-    .hero-emblem-wrap {
+    /* ── Full logo in hero ───────────────────────────────────── */
+    .hero-logo-wrap {
       margin: 0 auto 44px;
       display: flex;
       justify-content: center;
       align-items: center;
     }
-    .hero-emblem-img {
-      height: clamp(148px, 18vw, 220px);
-      width: auto;
+    .hero-logo-img {
+      width: clamp(280px, 45vw, 560px);
+      height: auto;
       object-fit: contain;
       display: block;
-      filter: drop-shadow(0 0 24px rgba(201, 168, 76, 0.14));
+      filter: drop-shadow(0 0 40px rgba(212, 175, 55, 0.6)) brightness(1.2) saturate(1.3);
     }
 
     /* ── Gold separator ─────────────────────────────────────── */
@@ -304,14 +303,14 @@
 
     /* ── Firm description ────────────────────────────────────── */
     .hero-firm-desc {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-weight: 400;
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-weight: 300;
       font-style: italic;
-      color: rgba(255, 255, 255, 0.88);
-      font-size: clamp(1.05rem, 1.6vw, 1.35rem);
-      letter-spacing: 0.01em;
-      line-height: 1.85;
-      max-width: 560px;
+      color: rgba(255, 255, 255, 0.92);
+      font-size: clamp(1.15rem, 1.8vw, 1.5rem);
+      letter-spacing: 0.03em;
+      line-height: 1.9;
+      max-width: 600px;
       margin: 0 auto 52px;
     }
 
@@ -374,8 +373,8 @@
         max-width: 100%;
       }
 
-      .hero-emblem-img { height: clamp(88px, 28vw, 128px); }
-      .hero-emblem-wrap { margin-bottom: 32px; }
+      .hero-logo-img { width: clamp(200px, 72vw, 320px); }
+      .hero-logo-wrap { margin-bottom: 28px; }
 
       .hero-sep { margin: 0 auto 28px; }
 
