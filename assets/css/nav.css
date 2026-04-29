@@ -34,15 +34,16 @@
 }
 
 .nav-founder {
-  font-family: 'Playfair Display', Georgia, serif;
-  font-size: 1.25rem;
-  font-weight: 400;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(1.6rem, 2.2vw, 2.4rem);
+  font-weight: 300;
   font-style: italic;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.04em;
   color: var(--white-80);
   text-decoration: none;
   transition: color var(--dur-fast) var(--ease-luxury);
   white-space: nowrap;
+  line-height: 1;
 }
 .nav-founder:hover { color: var(--gold); }
 
@@ -302,6 +303,7 @@
   }
   .nav-wordmark-text { font-size: 0.72rem; letter-spacing: 0.16em; }
   .site-nav.scrolled { height: 64px; }
+  .nav-founder { font-size: clamp(1.3rem, 5vw, 1.7rem); }
 
   /* Show only Nani Rosen on mobile — hide Our Founder and VRE */
   .nav-left {
