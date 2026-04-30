@@ -136,7 +136,7 @@
       </div>
     </div>
     <a href="/press-affiliations">Press/Affiliations</a>
-    <a href="/blog">The Rose Blog</a>
+    <a href="/blog" class="nav-blog-link"><span class="nav-blog-the">The</span><span class="nav-blog-rest">Rose Blog</span></a>
     <a href="/contact" class="btn-contact">Contact Us</a>
   </div>
   <!-- Mobile hamburger -->
@@ -256,13 +256,13 @@
       width: 100%;
       max-width: 900px;
       opacity: 0;
-      transform: translateY(24px);
+      transform: translateY(-68px);
       transition: opacity 1s var(--ease-luxury, cubic-bezier(0.16,1,0.3,1)),
                   transform 1s var(--ease-luxury, cubic-bezier(0.16,1,0.3,1));
     }
     .hero-content--centered.visible {
       opacity: 1;
-      transform: translateY(0);
+      transform: translateY(-100px);
     }
 
     /* ── Full logo in hero ───────────────────────────────────── */
@@ -317,11 +317,11 @@
     /* ── CTA button ─────────────────────────────────────────── */
     .hero-cta-btn {
       display: inline-block;
-      padding: 14px 52px;
+      padding: 17px 62px;
       border: 1px solid rgba(201, 168, 76, 0.85);
       color: #ffffff;
       font-family: 'Lato', sans-serif;
-      font-size: 0.72rem;
+      font-size: 0.78rem;
       font-weight: 400;
       letter-spacing: 0.28em;
       text-transform: uppercase;
@@ -382,7 +382,10 @@
 
       .hero-firm-desc { font-size: 0.92rem; margin-bottom: 36px; line-height: 1.8; }
 
-      .hero-cta-btn { padding: 12px 36px; }
+      .hero-cta-btn {
+        padding: 14px 42px;
+        font-size: 0.7rem;
+      }
 
       .hero-tagline-main { font-size: clamp(0.9rem, 4vw, 1.1rem); margin-top: 32px; padding-top: 20px; }
     }

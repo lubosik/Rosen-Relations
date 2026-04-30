@@ -34,16 +34,17 @@
 }
 
 .nav-founder {
-  font-family: 'Cormorant Garamond', Georgia, serif;
-  font-size: clamp(1.6rem, 2.2vw, 2.4rem);
+  font-family: 'Lato', 'Helvetica Neue', Arial, sans-serif;
+  font-size: clamp(1.15rem, 1.65vw, 1.75rem);
   font-weight: 300;
-  font-style: italic;
-  letter-spacing: 0.04em;
-  color: var(--white-80);
+  font-style: normal;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.9);
   text-decoration: none;
   transition: color var(--dur-fast) var(--ease-luxury);
   white-space: nowrap;
-  line-height: 1;
+  line-height: 1.05;
 }
 .nav-founder:hover { color: var(--gold); }
 
@@ -131,6 +132,27 @@
   white-space: nowrap;
 }
 .nav-vre-rest {
+  display: block !important;
+  white-space: nowrap;
+}
+
+.nav-blog-link {
+  white-space: normal !important;
+  text-align: center;
+  line-height: 1.25;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center;
+  gap: 2px;
+}
+.nav-blog-the {
+  display: block !important;
+  font-size: 0.55rem;
+  letter-spacing: 0.3em;
+  opacity: 0.65;
+  white-space: nowrap;
+}
+.nav-blog-rest {
   display: block !important;
   white-space: nowrap;
 }
@@ -303,7 +325,10 @@
   }
   .nav-wordmark-text { font-size: 0.72rem; letter-spacing: 0.16em; }
   .site-nav.scrolled { height: 64px; }
-  .nav-founder { font-size: clamp(1.3rem, 5vw, 1.7rem); }
+  .nav-founder {
+    font-size: clamp(1.05rem, 4.2vw, 1.4rem);
+    letter-spacing: 0.16em;
+  }
 
   /* Show only Nani Rosen on mobile — hide Our Founder and VRE */
   .nav-left {
