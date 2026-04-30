@@ -114,28 +114,8 @@
   transition: color var(--dur-fast) var(--ease-luxury);
 }
 
-/* VRE link — "THE" sits above, rest wraps below */
-.nav-vre-link {
-  white-space: normal !important;
-  text-align: center;
-  line-height: 1.25;
-  display: flex !important;
-  flex-direction: column !important;
-  align-items: center;
-  gap: 2px;
-}
-.nav-vre-the {
-  display: block !important;
-  font-size: 0.55rem;
-  letter-spacing: 0.3em;
-  opacity: 0.65;
-  white-space: nowrap;
-}
-.nav-vre-rest {
-  display: block !important;
-  white-space: nowrap;
-}
-
+/* Stacked nav links — "THE" sits above, rest wraps below */
+.nav-vre-link,
 .nav-blog-link {
   white-space: normal !important;
   text-align: center;
@@ -145,6 +125,7 @@
   align-items: center;
   gap: 2px;
 }
+.nav-vre-the,
 .nav-blog-the {
   display: block !important;
   font-size: 0.55rem;
@@ -152,6 +133,7 @@
   opacity: 0.65;
   white-space: nowrap;
 }
+.nav-vre-rest,
 .nav-blog-rest {
   display: block !important;
   white-space: nowrap;
