@@ -5,7 +5,8 @@
 //   Step 3 → updates same page (contact details)
 // Drop-offs are captured at whichever step they reach.
 
-const CAL_BASE = 'https://cal.com/nani-rosen';
+const CAL_BASE = 'https://cal.com/rosen-relations/15min';
+const WEB3FORMS_ACCESS_KEY = '47c2e037-9077-412d-9b7f-fa2239e9ae79';
 
 let funnelData = {
   source:     'Pop-up',
@@ -86,6 +87,43 @@ async function notionPost(payload) {
   }
 }
 
+function buildLeadMessage() {
+  return [
+    'Source: ' + funnelData.source,
+    'Pain points: ' + (funnelData.painPoints || 'None selected'),
+    'Marketing budget: ' + (funnelData.budget || 'Not provided'),
+    'Name: ' + [funnelData.firstName, funnelData.lastName].filter(Boolean).join(' '),
+    'Company: ' + (funnelData.company || 'Not provided'),
+    'Email: ' + funnelData.email,
+    'Phone: ' + (funnelData.phone || 'Not provided'),
+  ].join('\n');
+}
+
+async function web3FormsPost() {
+  const data = new FormData();
+  data.set('access_key', WEB3FORMS_ACCESS_KEY);
+  data.set('subject', 'New Discovery Call Funnel | Rosen Relations');
+  data.set('from_name', 'Rosen Relations Website');
+  data.set('name', [funnelData.firstName, funnelData.lastName].filter(Boolean).join(' '));
+  data.set('email', funnelData.email);
+  data.set('phone', funnelData.phone || '');
+  data.set('company', funnelData.company || '');
+  data.set('marketing_budget', funnelData.budget || '');
+  data.set('pain_points', funnelData.painPoints || '');
+  data.set('message', buildLeadMessage());
+
+  try {
+    return await fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      body: data,
+      keepalive: true,
+    });
+  } catch (e) {
+    console.warn('[Web3Forms] sync error:', e);
+    return null;
+  }
+}
+
 // ── step navigation ───────────────────────────────────────────────────────
 
 // Step 1 → 2  (pain points)
@@ -157,10 +195,21 @@ document.getElementById('funnelSubmitBtn')?.addEventListener('click', async () =
     notionPost({ ...funnelData });
   }
 
-  // Open Cal.com in new tab
-  const calUrl = `${CAL_BASE}?name=${encodeURIComponent(`${fn} ${ln}`)}&email=${encodeURIComponent(em)}&notes=${encodeURIComponent('Pain points: ' + funnelData.painPoints + ' | Budget: ' + funnelData.budget)}`;
+  await web3FormsPost();
+
+  const params = new URLSearchParams({
+    name: [fn, ln].filter(Boolean).join(' '),
+    email: em,
+    notes: 'Pain points: ' + funnelData.painPoints + ' | Marketing budget: ' + funnelData.budget + (co ? ' | Company: ' + co : ''),
+    marketing_budget: funnelData.budget,
+    pain_points: funnelData.painPoints,
+  });
+  if (ph) params.set('phone', ph);
+  if (co) params.set('company', co);
+
+  const calUrl = `${CAL_BASE}?${params.toString()}`;
   closeFunnel();
-  window.open(calUrl, '_blank');
+  window.location.href = calUrl;
 });
 
 // ── trigger logic ─────────────────────────────────────────────────────────

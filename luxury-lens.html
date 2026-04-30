@@ -230,6 +230,18 @@
           </div>
 
           <div class="form-group">
+            <label for="llBudget">What is your monthly marketing budget? *</label>
+            <select id="llBudget" name="marketing_budget" required style="width: 100%; background: var(--black-soft); border: 1px solid rgba(201,168,76,0.3); color: var(--white); padding: 14px 16px; font-family: var(--font-body); font-size: 1rem; outline: none; appearance: none; -webkit-appearance: none; cursor: pointer;">
+              <option value="" style="background: var(--black-soft);">Select one</option>
+              <option value="Under $1,000/month" style="background: var(--black-soft);">Under $1,000/month</option>
+              <option value="$1,000 to $2,500/month" style="background: var(--black-soft);">$1,000 to $2,500/month</option>
+              <option value="$2,500 to $5,000/month" style="background: var(--black-soft);">$2,500 to $5,000/month</option>
+              <option value="$5,000+/month" style="background: var(--black-soft);">$5,000+/month</option>
+              <option value="No set budget yet, but willing to invest" style="background: var(--black-soft);">No set budget yet, but willing to invest</option>
+            </select>
+          </div>
+
+          <div class="form-group">
             <label style="margin-bottom: 14px; display: block;">Preferred format *</label>
             <div style="display: flex; flex-direction: column; gap: 12px;">
               <label style="display: flex; align-items: flex-start; gap: 12px; color: var(--white-80); font-size: 0.875rem; cursor: pointer; padding: 16px; border: 1px solid rgba(201,168,76,0.2); transition: border-color 0.2s ease;">
@@ -256,11 +268,15 @@
             </select>
           </div>
 
-          <button type="submit" class="btn-solid contact-submit" style="width: 100%; margin-top: 8px;">Reserve My Session</button>
-          <p style="color: var(--white-60); font-size: 0.82rem; font-style: italic; margin-top: 12px; text-align: center;">Nani will confirm your request and be in touch with next steps within 24 hours.</p>
+          <button type="submit" class="btn-solid contact-submit" style="width: 100%; margin-top: 8px;">Continue to Booking</button>
+          <p style="color: var(--white-60); font-size: 0.82rem; font-style: italic; margin-top: 12px; text-align: center;">Your answers are sent before the calendar opens so Nani has context before the session.</p>
 
           <div class="form-result" id="llResult"></div>
         </form>
+
+        <div id="llCalWrap" hidden style="margin-top: 28px;">
+          <div id="llCalEmbed" style="width: 100%; min-height: 720px; overflow: hidden; border: 1px solid rgba(201,168,76,0.25); background: var(--black-soft);"></div>
+        </div>
       </div>
 
     </div>
@@ -296,10 +312,51 @@
 
 <script src="/assets/js/main.js" defer></script>
 <script>
+  (function (C, A, L) {
+    var p = function (a, ar) { a.q.push(ar); };
+    var d = C.document;
+    C.Cal = C.Cal || function () {
+      var cal = C.Cal;
+      var ar = arguments;
+      if (!cal.loaded) {
+        cal.ns = {};
+        cal.q = cal.q || [];
+        var s = d.createElement('script');
+        s.src = A;
+        d.head.appendChild(s);
+        cal.loaded = true;
+      }
+      if (ar[0] === L) {
+        var api = function () { p(api, arguments); };
+        var namespace = ar[1];
+        api.q = api.q || [];
+        if (typeof namespace === 'string') {
+          cal.ns[namespace] = cal.ns[namespace] || api;
+          p(cal.ns[namespace], ar);
+          p(cal, ['initNamespace', namespace]);
+        } else {
+          p(cal, ar);
+        }
+        return;
+      }
+      p(cal, ar);
+    };
+  })(window, 'https://app.cal.com/embed/embed.js', 'init');
+  Cal('init', { origin: 'https://app.cal.com' });
+  Cal('ui', {
+    theme: 'dark',
+    styles: {
+      branding: { brandColor: '#C9A84C' },
+    },
+  });
+</script>
+<script>
   (function () {
     var form     = document.getElementById('luxuryLensForm');
     var resultEl = document.getElementById('llResult');
     var submitBtn = form ? form.querySelector('.contact-submit') : null;
+    var calWrap = document.getElementById('llCalWrap');
+    var calRendered = false;
     if (!form || !resultEl) return;
 
     form.addEventListener('submit', async function (e) {
@@ -314,6 +371,7 @@
       var website    = (document.getElementById('llWebsite')?.value   || '').trim();
       var challenge  = (document.getElementById('llChallenge')?.value || '').trim();
       var audience   = (document.getElementById('llAudience')?.value  || '').trim();
+      var budget     = (document.getElementById('llBudget')?.value    || '').trim();
       var source     = (document.getElementById('llSource')?.value    || '').trim();
 
       var platformCheckboxes = form.querySelectorAll('input[name="platforms"]:checked');
@@ -322,7 +380,7 @@
       var formatEl = form.querySelector('input[name="session_format"]:checked');
       var format   = formatEl ? formatEl.value : '';
 
-      if (!firstName || !email || !format) {
+      if (!firstName || !email || !format || !budget) {
         resultEl.textContent = 'Please fill in all required fields.';
         resultEl.className   = 'form-result form-result--error';
         return;
@@ -346,6 +404,7 @@
           'Website: '   + website,
           'Platforms: ' + (platforms || 'None specified'),
           'Format: '    + format,
+          'Marketing budget: ' + budget,
           'Challenge: ' + challenge,
           'Audience: '  + audience,
           'Source: '    + source,
@@ -360,6 +419,7 @@
         'Website: '   + website,
         'Platforms: ' + (platforms || 'None specified'),
         'Format: '    + format,
+        'Marketing budget: ' + budget,
         'Challenge: ' + challenge,
         'Audience: '  + audience,
         'Source: '    + source,
@@ -375,15 +435,40 @@
           }),
         ]);
 
-        resultEl.textContent = 'Thank you. Your session request has been received. Nani will be in touch within 24 hours to confirm your booking.';
+        resultEl.textContent = 'Thank you. Choose your Luxury Lens appointment time below.';
         resultEl.className   = 'form-result form-result--success';
-        form.reset();
+        if (calWrap) calWrap.hidden = false;
+        if (!calRendered && window.Cal) {
+          calRendered = true;
+          Cal('inline', {
+            elementOrSelector: '#llCalEmbed',
+            calLink: 'rosen-relations/luxury-lens-appointment',
+            config: {
+              name: firstName + (lastName ? ' ' + lastName : ''),
+              email: email,
+              notes: [
+                'Luxury Lens request',
+                'Brand: ' + brandName,
+                'Industry: ' + industry,
+                'Marketing budget: ' + budget,
+                'Format: ' + format,
+                'Challenge: ' + challenge,
+                'Audience: ' + audience,
+              ].filter(Boolean).join('\n'),
+              marketing_budget: budget,
+              brand_name: brandName,
+              industry: industry,
+              session_format: format,
+            },
+          });
+        }
+        calWrap?.scrollIntoView({ behavior: 'smooth', block: 'start' });
       } catch (err) {
         resultEl.textContent = 'Something went wrong. Please try again or email us directly.';
         resultEl.className   = 'form-result form-result--error';
       }
 
-      if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'Reserve My Session'; }
+      if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'Continue to Booking'; }
     });
   })();
 </script>
