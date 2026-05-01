@@ -211,14 +211,75 @@
 
           <div class="form-group">
             <label style="margin-bottom: 14px; display: block;">Which platforms are you currently active on?</label>
-            <div style="display: flex; flex-wrap: wrap; gap: 12px;">
-              <label style="display: flex; align-items: center; gap: 8px; color: var(--white-80); font-size: 0.875rem; cursor: pointer;"><input type="checkbox" name="platforms" value="Instagram" style="accent-color: var(--gold); width: 16px; height: 16px;"> Instagram</label>
-              <label style="display: flex; align-items: center; gap: 8px; color: var(--white-80); font-size: 0.875rem; cursor: pointer;"><input type="checkbox" name="platforms" value="TikTok" style="accent-color: var(--gold); width: 16px; height: 16px;"> TikTok</label>
-              <label style="display: flex; align-items: center; gap: 8px; color: var(--white-80); font-size: 0.875rem; cursor: pointer;"><input type="checkbox" name="platforms" value="LinkedIn" style="accent-color: var(--gold); width: 16px; height: 16px;"> LinkedIn</label>
-              <label style="display: flex; align-items: center; gap: 8px; color: var(--white-80); font-size: 0.875rem; cursor: pointer;"><input type="checkbox" name="platforms" value="YouTube" style="accent-color: var(--gold); width: 16px; height: 16px;"> YouTube</label>
-              <label style="display: flex; align-items: center; gap: 8px; color: var(--white-80); font-size: 0.875rem; cursor: pointer;"><input type="checkbox" name="platforms" value="X/Twitter" style="accent-color: var(--gold); width: 16px; height: 16px;"> X / Twitter</label>
-              <label style="display: flex; align-items: center; gap: 8px; color: var(--white-80); font-size: 0.875rem; cursor: pointer;"><input type="checkbox" name="platforms" value="Podcast" style="accent-color: var(--gold); width: 16px; height: 16px;"> Podcast</label>
-              <label style="display: flex; align-items: center; gap: 8px; color: var(--white-80); font-size: 0.875rem; cursor: pointer;"><input type="checkbox" name="platforms" value="None yet" style="accent-color: var(--gold); width: 16px; height: 16px;"> None yet</label>
+            <div style="display: flex; flex-direction: column; gap: 0;">
+
+              <!-- Instagram -->
+              <div class="platform-row" style="border: 1px solid rgba(201,168,76,0.2); margin-bottom: 8px;">
+                <label style="display: flex; align-items: center; gap: 10px; padding: 12px 14px; cursor: pointer; color: var(--white-80); font-size: 0.875rem;">
+                  <input type="checkbox" name="platforms" value="Instagram" data-platform="instagram" style="accent-color: var(--gold); width: 16px; height: 16px; flex-shrink: 0;"> Instagram
+                </label>
+                <div class="platform-url-wrap" id="url-instagram" style="display:none; padding: 0 14px 12px;">
+                  <input type="url" name="platform_url_instagram" id="llInstagramUrl" placeholder="https://instagram.com/yourusername" style="width:100%; background:var(--black-soft); border:1px solid rgba(201,168,76,0.25); color:var(--white); padding:10px 12px; font-family:var(--font-body); font-size:0.9rem; outline:none;">
+                </div>
+              </div>
+
+              <!-- TikTok -->
+              <div class="platform-row" style="border: 1px solid rgba(201,168,76,0.2); margin-bottom: 8px;">
+                <label style="display: flex; align-items: center; gap: 10px; padding: 12px 14px; cursor: pointer; color: var(--white-80); font-size: 0.875rem;">
+                  <input type="checkbox" name="platforms" value="TikTok" data-platform="tiktok" style="accent-color: var(--gold); width: 16px; height: 16px; flex-shrink: 0;"> TikTok
+                </label>
+                <div class="platform-url-wrap" id="url-tiktok" style="display:none; padding: 0 14px 12px;">
+                  <input type="url" name="platform_url_tiktok" id="llTikTokUrl" placeholder="https://tiktok.com/@yourusername" style="width:100%; background:var(--black-soft); border:1px solid rgba(201,168,76,0.25); color:var(--white); padding:10px 12px; font-family:var(--font-body); font-size:0.9rem; outline:none;">
+                </div>
+              </div>
+
+              <!-- LinkedIn -->
+              <div class="platform-row" style="border: 1px solid rgba(201,168,76,0.2); margin-bottom: 8px;">
+                <label style="display: flex; align-items: center; gap: 10px; padding: 12px 14px; cursor: pointer; color: var(--white-80); font-size: 0.875rem;">
+                  <input type="checkbox" name="platforms" value="LinkedIn" data-platform="linkedin" style="accent-color: var(--gold); width: 16px; height: 16px; flex-shrink: 0;"> LinkedIn
+                </label>
+                <div class="platform-url-wrap" id="url-linkedin" style="display:none; padding: 0 14px 12px;">
+                  <input type="url" name="platform_url_linkedin" id="llLinkedInUrl" placeholder="https://linkedin.com/in/yourprofile" style="width:100%; background:var(--black-soft); border:1px solid rgba(201,168,76,0.25); color:var(--white); padding:10px 12px; font-family:var(--font-body); font-size:0.9rem; outline:none;">
+                </div>
+              </div>
+
+              <!-- YouTube -->
+              <div class="platform-row" style="border: 1px solid rgba(201,168,76,0.2); margin-bottom: 8px;">
+                <label style="display: flex; align-items: center; gap: 10px; padding: 12px 14px; cursor: pointer; color: var(--white-80); font-size: 0.875rem;">
+                  <input type="checkbox" name="platforms" value="YouTube" data-platform="youtube" style="accent-color: var(--gold); width: 16px; height: 16px; flex-shrink: 0;"> YouTube
+                </label>
+                <div class="platform-url-wrap" id="url-youtube" style="display:none; padding: 0 14px 12px;">
+                  <input type="url" name="platform_url_youtube" id="llYouTubeUrl" placeholder="https://youtube.com/@yourchannel" style="width:100%; background:var(--black-soft); border:1px solid rgba(201,168,76,0.25); color:var(--white); padding:10px 12px; font-family:var(--font-body); font-size:0.9rem; outline:none;">
+                </div>
+              </div>
+
+              <!-- X / Twitter -->
+              <div class="platform-row" style="border: 1px solid rgba(201,168,76,0.2); margin-bottom: 8px;">
+                <label style="display: flex; align-items: center; gap: 10px; padding: 12px 14px; cursor: pointer; color: var(--white-80); font-size: 0.875rem;">
+                  <input type="checkbox" name="platforms" value="X/Twitter" data-platform="twitter" style="accent-color: var(--gold); width: 16px; height: 16px; flex-shrink: 0;"> X / Twitter
+                </label>
+                <div class="platform-url-wrap" id="url-twitter" style="display:none; padding: 0 14px 12px;">
+                  <input type="url" name="platform_url_twitter" id="llTwitterUrl" placeholder="https://x.com/yourusername" style="width:100%; background:var(--black-soft); border:1px solid rgba(201,168,76,0.25); color:var(--white); padding:10px 12px; font-family:var(--font-body); font-size:0.9rem; outline:none;">
+                </div>
+              </div>
+
+              <!-- Podcast -->
+              <div class="platform-row" style="border: 1px solid rgba(201,168,76,0.2); margin-bottom: 8px;">
+                <label style="display: flex; align-items: center; gap: 10px; padding: 12px 14px; cursor: pointer; color: var(--white-80); font-size: 0.875rem;">
+                  <input type="checkbox" name="platforms" value="Podcast" data-platform="podcast" style="accent-color: var(--gold); width: 16px; height: 16px; flex-shrink: 0;"> Podcast
+                </label>
+                <div class="platform-url-wrap" id="url-podcast" style="display:none; padding: 0 14px 12px;">
+                  <input type="url" name="platform_url_podcast" id="llPodcastUrl" placeholder="https://open.spotify.com/show/... or Apple Podcasts link" style="width:100%; background:var(--black-soft); border:1px solid rgba(201,168,76,0.25); color:var(--white); padding:10px 12px; font-family:var(--font-body); font-size:0.9rem; outline:none;">
+                </div>
+              </div>
+
+              <!-- None yet — no URL needed -->
+              <div class="platform-row" style="border: 1px solid rgba(201,168,76,0.2);">
+                <label style="display: flex; align-items: center; gap: 10px; padding: 12px 14px; cursor: pointer; color: var(--white-80); font-size: 0.875rem;">
+                  <input type="checkbox" name="platforms" value="None yet" style="accent-color: var(--gold); width: 16px; height: 16px; flex-shrink: 0;"> None yet
+                </label>
+              </div>
+
             </div>
           </div>
 
@@ -305,6 +366,20 @@
 </footer>
 
 <script>
+// Platform checkbox -> reveal URL input
+document.querySelectorAll('input[data-platform]').forEach(function(cb) {
+  cb.addEventListener('change', function() {
+    var wrap = document.getElementById('url-' + this.dataset.platform);
+    if (!wrap) return;
+    wrap.style.display = this.checked ? 'block' : 'none';
+    if (!this.checked) {
+      var inp = wrap.querySelector('input[type="url"]');
+      if (inp) inp.value = '';
+    }
+  });
+});
+
+// Budget prompt
 document.getElementById('llBudget')?.addEventListener('change', function() {
   var prompt = document.getElementById('llBudgetPrompt');
   if (!prompt) return;
@@ -379,6 +454,18 @@ document.getElementById('llBudget')?.addEventListener('change', function() {
       var platformCheckboxes = form.querySelectorAll('input[name="platforms"]:checked');
       var platforms = Array.from(platformCheckboxes).map(function (cb) { return cb.value; }).join(', ');
 
+      // Collect platform URLs for checked platforms
+      var platformUrls = [];
+      var platformUrlMap = { Instagram: 'llInstagramUrl', TikTok: 'llTikTokUrl', LinkedIn: 'llLinkedInUrl', YouTube: 'llYouTubeUrl', 'X/Twitter': 'llTwitterUrl', Podcast: 'llPodcastUrl' };
+      Array.from(platformCheckboxes).forEach(function (cb) {
+        var urlId = platformUrlMap[cb.value];
+        if (urlId) {
+          var urlVal = (document.getElementById(urlId)?.value || '').trim();
+          if (urlVal) platformUrls.push(cb.value + ': ' + urlVal);
+        }
+      });
+      var platformUrlsStr = platformUrls.join('\n');
+
       var format = 'virtual';
 
       if (!firstName || !email || !budget) {
@@ -404,13 +491,14 @@ document.getElementById('llBudget')?.addEventListener('change', function() {
           'Industry: '  + industry,
           'Website: '   + website,
           'Platforms: ' + (platforms || 'None specified'),
+          platformUrlsStr ? 'Platform profiles:\n' + platformUrlsStr : '',
           'Format: '    + format,
           'Marketing budget: ' + budget,
           'Challenge: ' + challenge,
           'Audience: '  + audience,
           'Source: '    + source,
           'Budget note: ' + budgetNote,
-        ].filter(function (line) { return line.split(': ')[1]; }).join('\n'),
+        ].filter(function (line) { return line.split(': ')[1] || line.indexOf('\n') > -1; }).join('\n'),
       });
 
       var w3fData = new FormData(form);
@@ -420,13 +508,14 @@ document.getElementById('llBudget')?.addEventListener('change', function() {
         'Industry: '  + industry,
         'Website: '   + website,
         'Platforms: ' + (platforms || 'None specified'),
+        platformUrlsStr ? 'Platform profiles:\n' + platformUrlsStr : '',
         'Format: '    + format,
         'Marketing budget: ' + budget,
         'Challenge: ' + challenge,
         'Audience: '  + audience,
         'Source: '    + source,
         'Budget note: ' + budgetNote,
-      ].filter(function (line) { return line.split(': ')[1]; }).join('\n'));
+      ].filter(function (line) { return line.split(': ')[1] || line.indexOf('\n') > -1; }).join('\n'));
 
       try {
         await Promise.allSettled([
@@ -454,9 +543,10 @@ document.getElementById('llBudget')?.addEventListener('change', function() {
                 'Brand: ' + brandName,
                 'Industry: ' + industry,
                 'Marketing budget: ' + budget,
-                'Format: ' + format,
                 'Challenge: ' + challenge,
                 'Audience: ' + audience,
+                platforms ? 'Platforms: ' + platforms : '',
+                platformUrlsStr ? 'Platform profiles:\n' + platformUrlsStr : '',
               ].filter(Boolean).join('\n'),
               marketing_budget: budget,
               brand_name: brandName,
