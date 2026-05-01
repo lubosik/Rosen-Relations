@@ -50,7 +50,7 @@
 }
 .nav-founder:hover { color: var(--gold); }
 
-.nav-left a:not(.nav-founder) {
+.nav-left a:not(.nav-founder):not(.nav-founder-link):not(.nav-logo-link) {
   font-family: var(--font-body);
   font-size: 0.72rem;
   letter-spacing: 0.13em;
@@ -60,7 +60,7 @@
   text-decoration: none;
   transition: color var(--dur-fast) var(--ease-luxury);
 }
-.nav-left a:not(.nav-founder):hover { color: var(--gold); }
+.nav-left a:not(.nav-founder):not(.nav-founder-link):not(.nav-logo-link):hover { color: var(--gold); }
 
 /* ─── CENTER: Wordmark ───────────────────────────────────────────── */
 .nav-center {
@@ -300,6 +300,49 @@
   border-bottom: none !important;
 }
 
+.nav-founder-link {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start;
+  gap: 2px;
+  text-decoration: none;
+  line-height: 1.15;
+  transition: color var(--dur-fast) var(--ease-luxury);
+}
+.nav-founder-link:hover .nav-founder-name { color: var(--gold); }
+.nav-founder-eyebrow {
+  display: block !important;
+  font-family: var(--font-body);
+  font-size: 0.52rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold);
+  opacity: 0.8;
+  white-space: nowrap;
+}
+.nav-founder-name {
+  display: block !important;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(1.3rem, 1.8vw, 1.9rem);
+  font-weight: 400;
+  font-style: italic;
+  letter-spacing: 0.08em;
+  color: rgba(255,255,255,0.92);
+  white-space: nowrap;
+  transition: color var(--dur-fast) var(--ease-luxury);
+}
+.nav-about-us {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--white-80);
+  white-space: nowrap;
+  text-decoration: none;
+  transition: color var(--dur-fast) var(--ease-luxury);
+}
+.nav-about-us:hover { color: var(--gold); }
+
 /* ─── MOBILE RESPONSIVE ─────────────────────────────────────────── */
 @media (max-width: 900px) {
   .site-nav {
@@ -314,11 +357,11 @@
     letter-spacing: 0.16em;
   }
 
-  /* Show only Nani Rosen on mobile — hide Our Founder and VRE */
+  /* Show only Nani Rosen stacked link on mobile — hide About Us and VRE */
   .nav-left {
     justify-content: flex-start;
   }
-  .nav-left a:not(.nav-founder) { display: none !important; }
+  .nav-left .nav-about-us { display: none !important; }
 
   .nav-right { display: none; }
 

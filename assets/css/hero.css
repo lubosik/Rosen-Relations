@@ -97,7 +97,7 @@
 
   /* When video is added: show portrait video on mobile */
   .hero-bg {
-    object-position: center center;
+    object-position: center top;
   }
   
   .mobile-video { display: block; }

@@ -71,8 +71,11 @@
     <a href="/" class="nav-logo-link" aria-label="Rosen Relations — Home">
       <img src="/assets/images/rr-emblem.png" alt="Rosen Relations" class="nav-emblem-logo">
     </a>
-    <a href="/about" class="nav-founder">Nani Rosen</a>
-    <a href="/about">Our Founder</a>
+    <a href="/about" class="nav-founder-link">
+      <span class="nav-founder-eyebrow">Our Founder</span>
+      <span class="nav-founder-name">Nani Rosen</span>
+    </a>
+    <a href="/about-us" class="nav-about-us">About Us</a>
     <a href="/experience" class="nav-vre-link"><span class="nav-vre-the">The</span><span class="nav-vre-rest">Visual Rebrand Experience</span></a>
   </div>
   <div class="nav-right">
@@ -102,6 +105,7 @@
   </div>
   <a href="/">Home</a>
   <a href="/about">Our Founder</a>
+  <a href="/about-us">About Us</a>
   <a href="/experience">The Visual Rebrand Experience</a>
   <a href="/services" class="drawer-active">Services</a>
   <a href="/luxury-lens" class="drawer-sub">› The Luxury Lens</a>
@@ -132,28 +136,24 @@
         <h3 style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: var(--fs-h3); font-weight: 400; font-style: italic; margin-bottom: 24px; color: var(--white);">For the first time, you will see your presence the way the world does.</h3>
 
         <p style="color: var(--white-80); font-size: 0.97rem; line-height: 1.85; margin-bottom: 28px;">
-          In one focused, private hour with Nani Rosen   founder of Rosen Relations and luxury visibility strategist   she moves through your entire social presence with the trained eye of someone who has spent years positioning exceptional brands in front of the right rooms.
-        </p>
-
-        <p style="color: var(--white-80); font-size: 0.97rem; line-height: 1.85; margin-bottom: 28px;">
-          She sees what your audience sees. She feels what is working, what is not, and exactly where the gap between who you are and how the world perceives you lives. By the end of your session, you leave with a clear sense of direction   specific steps you can begin immediately to bring your presence into full alignment with the calibre of what you offer.
+          In a private one-on-one diagnostic, you will receive a full pulse of your digital presence across all platforms through a luxury expert eye. You will get insight on what is working and what is not — and exactly where the gap between who you are and how the world perceives you lives.
         </p>
 
         <p style="color: var(--white-80); font-size: 0.97rem; line-height: 1.85; margin-bottom: 36px;">
-          No confusion. No noise. Just peace, intention, and a path to being seen by exactly the people you are meant to serve.
+          By the end of your session, you will leave with a clear sense of direction and specific steps you can begin immediately to bring your presence into full alignment with the calibre of what you offer.
         </p>
 
         <ul style="list-style: none; padding: 0; margin: 0 0 36px; display: flex; flex-direction: column; gap: 16px;">
-          <li style="color: var(--white-80); font-size: 0.95rem; line-height: 1.65;"><span style="color: var(--gold); margin-right: 10px;">·</span>A full review of your social presence through a luxury expert eye</li>
-          <li style="color: var(--white-80); font-size: 0.95rem; line-height: 1.65;"><span style="color: var(--gold); margin-right: 10px;">·</span>Honest, precise feedback on what is serving your brand and what is not</li>
-          <li style="color: var(--white-80); font-size: 0.95rem; line-height: 1.65;"><span style="color: var(--gold); margin-right: 10px;">·</span>Clear, actionable recommendations you can begin acting on immediately</li>
+          <li style="color: var(--white-80); font-size: 0.95rem; line-height: 1.65;"><span style="color: var(--gold); margin-right: 10px;">·</span>A full pulse of your digital presence across all platforms through a luxury expert eye</li>
+          <li style="color: var(--white-80); font-size: 0.95rem; line-height: 1.65;"><span style="color: var(--gold); margin-right: 10px;">·</span>Honest, precise, and clear actionable recommendations</li>
           <li style="color: var(--white-80); font-size: 0.95rem; line-height: 1.65;"><span style="color: var(--gold); margin-right: 10px;">·</span>A personalised path to greater visibility with your ideal audience</li>
           <li style="color: var(--white-80); font-size: 0.95rem; line-height: 1.65;"><span style="color: var(--gold); margin-right: 10px;">·</span>The clarity and freedom of knowing exactly what to do next</li>
         </ul>
 
         <div style="border-top: 1px solid rgba(201,168,76,0.2); padding-top: 24px; margin-top: 8px;">
           <p style="color: var(--gold); font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.25rem; font-style: italic; margin-bottom: 8px;">One hour. One session. One clear direction.</p>
-          <p style="color: var(--white-60); font-size: 0.85rem; font-style: italic;">Conducted in person or virtually. Nani personally reviews every request before confirming your booking.</p>
+          <p style="color: var(--white-60); font-size: 0.85rem; font-style: italic; margin-bottom: 12px;">Conducted virtually. This session takes place remotely, from wherever you are in the world.</p>
+          <p style="color: var(--white-60); font-size: 0.85rem; line-height: 1.7;">Each request is vetted personally by Nani Rosen to confirm alignment before your booking is confirmed. Not every request will be accepted — this ensures that every session delivers its full value.</p>
         </div>
       </div>
 
@@ -168,6 +168,7 @@
           <input type="hidden" name="subject" value="New Luxury Lens Booking Request | Rosen Relations">
           <input type="hidden" name="botcheck" style="display:none;">
           <input type="hidden" name="form_type" value="luxury-lens">
+          <input type="hidden" name="session_format" value="virtual">
 
           <div class="form-row">
             <div class="form-group">
@@ -225,7 +226,7 @@
           </div>
 
           <div class="form-group">
-            <label for="llAudience">Describe the people you most want to reach.</label>
+            <label for="llAudience">Describe your ideal target market.</label>
             <textarea id="llAudience" name="audience" rows="3"></textarea>
           </div>
 
@@ -241,18 +242,9 @@
             </select>
           </div>
 
-          <div class="form-group">
-            <label style="margin-bottom: 14px; display: block;">Preferred format *</label>
-            <div style="display: flex; flex-direction: column; gap: 12px;">
-              <label style="display: flex; align-items: flex-start; gap: 12px; color: var(--white-80); font-size: 0.875rem; cursor: pointer; padding: 16px; border: 1px solid rgba(201,168,76,0.2); transition: border-color 0.2s ease;">
-                <input type="radio" name="session_format" value="virtual" style="accent-color: var(--gold); margin-top: 2px; width: 16px; height: 16px;" required>
-                <span><strong style="display:block; color: var(--white); margin-bottom: 4px;">Virtual Session</strong>One private hour with Nani over video call   from wherever you are in the world.</span>
-              </label>
-              <label style="display: flex; align-items: flex-start; gap: 12px; color: var(--white-80); font-size: 0.875rem; cursor: pointer; padding: 16px; border: 1px solid rgba(201,168,76,0.2); transition: border-color 0.2s ease;">
-                <input type="radio" name="session_format" value="in-person" style="accent-color: var(--gold); margin-top: 2px; width: 16px; height: 16px;">
-                <span><strong style="display:block; color: var(--white); margin-bottom: 4px;">In-Person Session</strong>A private, in-person meeting with Nani. Location confirmed after booking. Available in select cities.</span>
-              </label>
-            </div>
+          <div id="llBudgetPrompt" style="display:none; margin-top: 12px; padding: 16px; border: 1px solid rgba(201,168,76,0.2); background: rgba(201,168,76,0.04);">
+            <label for="llBudgetNote" style="display:block; font-size:0.82rem; letter-spacing:0.1em; color:var(--gold); margin-bottom:8px; text-transform:uppercase;">If you had to set a figure aside today, what investment would you consider?</label>
+            <input type="text" id="llBudgetNote" name="budget_note" placeholder="e.g. $800/month" style="width:100%; background:var(--black-soft); border:1px solid rgba(201,168,76,0.3); color:var(--white); padding:12px 14px; font-family:var(--font-body); font-size:0.95rem; outline:none;">
           </div>
 
           <div class="form-group">
@@ -310,6 +302,13 @@
   </div>
 </footer>
 
+<script>
+document.getElementById('llBudget')?.addEventListener('change', function() {
+  var prompt = document.getElementById('llBudgetPrompt');
+  if (!prompt) return;
+  prompt.style.display = this.value === 'No set budget yet, but willing to invest' ? 'block' : 'none';
+});
+</script>
 <script src="/assets/js/main.js" defer></script>
 <script>
   (function (C, A, L) {
@@ -373,14 +372,14 @@
       var audience   = (document.getElementById('llAudience')?.value  || '').trim();
       var budget     = (document.getElementById('llBudget')?.value    || '').trim();
       var source     = (document.getElementById('llSource')?.value    || '').trim();
+      var budgetNote = (document.getElementById('llBudgetNote')?.value || '').trim();
 
       var platformCheckboxes = form.querySelectorAll('input[name="platforms"]:checked');
       var platforms = Array.from(platformCheckboxes).map(function (cb) { return cb.value; }).join(', ');
 
-      var formatEl = form.querySelector('input[name="session_format"]:checked');
-      var format   = formatEl ? formatEl.value : '';
+      var format = 'virtual';
 
-      if (!firstName || !email || !format || !budget) {
+      if (!firstName || !email || !budget) {
         resultEl.textContent = 'Please fill in all required fields.';
         resultEl.className   = 'form-result form-result--error';
         return;
@@ -408,6 +407,7 @@
           'Challenge: ' + challenge,
           'Audience: '  + audience,
           'Source: '    + source,
+          'Budget note: ' + budgetNote,
         ].filter(function (line) { return line.split(': ')[1]; }).join('\n'),
       });
 
@@ -423,6 +423,7 @@
         'Challenge: ' + challenge,
         'Audience: '  + audience,
         'Source: '    + source,
+        'Budget note: ' + budgetNote,
       ].filter(function (line) { return line.split(': ')[1]; }).join('\n'));
 
       try {
