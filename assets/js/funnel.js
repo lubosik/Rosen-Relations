@@ -35,6 +35,7 @@ const step3     = document.getElementById('funnelStep3');
 // ── open / close ──────────────────────────────────────────────────────────
 
 function openFunnel(opts = {}) {
+  if (sessionStorage.getItem('funnel_submitted')) return;
   if (!opts.force && sessionStorage.getItem('funnel_shown')) return;
   if (!overlay) return;
 
@@ -208,6 +209,7 @@ document.getElementById('funnelSubmitBtn')?.addEventListener('click', async () =
   if (co) params.set('company', co);
 
   const calUrl = `${CAL_BASE}?${params.toString()}`;
+  sessionStorage.setItem('funnel_submitted', 'true');
   closeFunnel();
   window.location.href = calUrl;
 });
