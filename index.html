@@ -167,7 +167,6 @@
   <a href="/services#website-dev" class="drawer-sub">› Website Development</a>
   <a href="/speaking" class="drawer-sub">› Speaking &amp; Keynote</a>
   <a href="/press-affiliations">Press/Affiliations</a>
-  <a href="/lechelon">L’Échelon Newsletter</a>
   <a href="/blog">The Rose Blog</a>
   <a href="/contact" class="drawer-contact-btn">Contact Us</a>
 </div>
@@ -1395,131 +1394,6 @@
     })();
   </script>
 
-  <!-- ══════════════════════════════════════════════════════════
-       L'ÉCHELON — NEWSLETTER SECTION
-  ══════════════════════════════════════════════════════════ -->
-  <section class="lechelon-newsletter" aria-label="L’Échelon Newsletter">
-    <p class="lechelon-eyebrow">THE EDITORIAL INTELLIGENCE NEWSLETTER</p>
-    <h2 class="lechelon-headline">L’Échelon</h2>
-    <p class="lechelon-sub">Where fashion, beauty, and luxury align. Front-row access across F1 Grand Prix weekends, Grammys, New York Fashion Week, and Miami Art Basel, curated for those who understand how they are seen is inseparable from what they are worth.</p>
-    <form class="lechelon-form" id="lechelonForm" onsubmit="submitLechelon(event)">
-      <div class="lechelon-form-row">
-        <input type="email" name="email" id="lechelonEmail" placeholder="Your email address" class="lechelon-input" required autocomplete="email">
-        <button type="submit" class="lechelon-btn" id="lechelonBtn">Subscribe</button>
-      </div>
-      <p id="lechelonMsg" style="margin-top:12px;font-family:’Lato’,sans-serif;font-size:0.72rem;min-height:1.2em;"></p>
-    </form>
-    <p class="lechelon-fine">Bi-monthly. Curated. No spam.</p>
-  </section>
-  <script>
-  async function submitLechelon(e) {
-    e.preventDefault();
-    var email = document.getElementById(‘lechelonEmail’).value.trim();
-    var btn = document.getElementById(‘lechelonBtn’);
-    var msg = document.getElementById(‘lechelonMsg’);
-    btn.disabled = true; btn.textContent = ‘...’;
-    msg.style.color = ‘rgba(255,255,255,0.4)’; msg.textContent = ‘’;
-    try {
-      var res = await fetch(‘https://l-chelon-production.up.railway.app/api/subscribe’, {
-        method: ‘POST’,
-        headers: { ‘Content-Type’: ‘application/json’ },
-        body: JSON.stringify({ email: email, source: ‘rosen-relations’ })
-      });
-      if (res.ok) {
-        msg.style.color = ‘#C9A84C’; msg.textContent = ‘You’re on the list. Welcome to L’Échelon.’;
-        document.getElementById(‘lechelonForm’).reset();
-      } else {
-        msg.style.color = ‘rgba(255,80,80,0.8)’; msg.textContent = ‘Something went wrong. Please try again.’;
-      }
-    } catch (err) {
-      msg.style.color = ‘rgba(255,80,80,0.8)’; msg.textContent = ‘Something went wrong. Please try again.’;
-    }
-    btn.disabled = false; btn.textContent = ‘Subscribe’;
-  }
-  </script>
-  <style>
-    .lechelon-newsletter {
-      background: #0A0A0A;
-      padding: 72px 56px;
-      text-align: center;
-      border-top: 1px solid rgba(201,168,76,0.1);
-    }
-    .lechelon-eyebrow {
-      font-family: 'Lato', sans-serif;
-      font-size: 0.56rem;
-      color: #C9A84C;
-      letter-spacing: 0.30em;
-      text-transform: uppercase;
-      margin-bottom: 14px;
-    }
-    .lechelon-headline {
-      font-family: 'Cormorant Garamond', Georgia, serif;
-      font-weight: 300;
-      font-size: clamp(2rem, 4vw, 3.25rem);
-      color: #ffffff;
-      margin: 0 0 10px;
-      letter-spacing: 0.02em;
-    }
-    .lechelon-sub {
-      font-family: 'Lato', sans-serif;
-      font-weight: 300;
-      font-size: 0.81rem;
-      color: rgba(255,255,255,0.45);
-      line-height: 1.70;
-      max-width: 460px;
-      margin: 0 auto 32px;
-    }
-    .lechelon-form-row {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      max-width: 520px;
-      margin: 0 auto;
-    }
-    .lechelon-input {
-      flex: 1;
-      font-size: 16px;
-      border: none;
-      border-bottom: 1px solid rgba(255,255,255,0.25);
-      background: transparent;
-      color: #fff;
-      padding: 12px 0;
-      outline: none;
-      font-family: 'Lato', sans-serif;
-      font-weight: 300;
-    }
-    .lechelon-input::placeholder { color: rgba(255,255,255,0.30); }
-    .lechelon-input:focus { border-bottom-color: rgba(255,255,255,0.70); }
-    .lechelon-btn {
-      background: #C9A84C;
-      color: #000;
-      border: none;
-      border-radius: 0;
-      font-family: 'Lato', sans-serif;
-      font-size: 0.56rem;
-      letter-spacing: 0.20em;
-      text-transform: uppercase;
-      padding: 12px 24px;
-      margin-left: 16px;
-      cursor: pointer;
-      flex-shrink: 0;
-      transition: background 0.25s ease;
-    }
-    .lechelon-btn:hover { background: #b8942e; }
-    .lechelon-fine {
-      font-family: 'Lato', sans-serif;
-      font-size: 0.5rem;
-      color: rgba(255,255,255,0.20);
-      margin-top: 14px;
-    }
-    @media (max-width: 600px) {
-      .lechelon-newsletter { padding: 56px 24px; }
-      .lechelon-form-row { flex-direction: column; align-items: stretch; }
-      .lechelon-btn { margin-left: 0; margin-top: 10px; width: 100%; padding: 14px; }
-      .lechelon-input { width: 100%; }
-    }
-  </style>
-
 </main>
 
 <footer class="site-footer">
@@ -1532,7 +1406,6 @@
       <a href="/experience">The Visual Rebrand Experience</a>
       <a href="/services">Services</a>
       <a href="/press-affiliations">Press/Affiliations</a>
-      <a href="/lechelon">L’Échelon Newsletter</a>
       <a href="/contact">Contact</a>
       <a href="/privacy">Privacy Policy</a>
     </nav>
@@ -1546,6 +1419,43 @@
       </a>
     </div>
   </div>
+  <div class="footer-supporter">
+    <p class="footer-supporter-label">Proud supporter of <em>L&rsquo;&Eacute;chelon</em></p>
+    <form class="footer-supporter-form" id="footerLrForm" onsubmit="submitFooterLr(event)">
+      <input type="email" id="footerLrEmail" placeholder="Your email" class="footer-supporter-input" required autocomplete="email">
+      <button type="submit" class="footer-supporter-btn" id="footerLrBtn">Subscribe</button>
+    </form>
+    <p id="footerLrMsg" class="footer-supporter-msg"></p>
+  </div>
+  <script>
+  function submitFooterLr(e) {
+    e.preventDefault();
+    var email = document.getElementById('footerLrEmail').value.trim();
+    var btn = document.getElementById('footerLrBtn');
+    var msg = document.getElementById('footerLrMsg');
+    btn.disabled = true; btn.textContent = '...';
+    msg.textContent = '';
+    fetch('https://l-chelon-production.up.railway.app/api/subscribe', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email: email, source: 'rosen-relations-footer' })
+    }).then(function(res) {
+      if (res.ok) {
+        msg.style.color = '#C9A84C';
+        msg.textContent = "You're on the list.";
+        document.getElementById('footerLrForm').reset();
+      } else {
+        msg.style.color = 'rgba(255,80,80,0.8)';
+        msg.textContent = 'Something went wrong. Try again.';
+      }
+      btn.disabled = false; btn.textContent = 'Subscribe';
+    }).catch(function() {
+      msg.style.color = 'rgba(255,80,80,0.8)';
+      msg.textContent = 'Something went wrong. Try again.';
+      btn.disabled = false; btn.textContent = 'Subscribe';
+    });
+  }
+  </script>
   <div class="footer-bottom">
     <p class="footer-copy">© 2026 Rosen Relations. All rights reserved.</p>
     <p class="footer-byline" style="font-size: 0.7rem; letter-spacing: 0.12em; text-align: center; color: #666; margin-top: 6px;">Serving &middot; New York &middot; Washington DC &middot; Maryland &middot; Virginia &middot; Orlando &middot; Los Angeles</p>

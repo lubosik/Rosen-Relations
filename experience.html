@@ -111,7 +111,6 @@
   <a href="/services#website-dev" class="drawer-sub">› Website Development</a>
   <a href="/speaking" class="drawer-sub">› Speaking &amp; Keynote</a>
   <a href="/press-affiliations">Press/Affiliations</a>
-  <a href="/lechelon">L’Échelon Newsletter</a>
   <a href="/blog">The Rose Blog</a>
   <a href="/contact" class="drawer-contact-btn">Contact Us</a>
 </div>
@@ -260,7 +259,6 @@
       <a href="/experience"><span class="nav-vre-the">The</span><span class="nav-vre-rest">Visual Rebrand Experience</span></a>
       <a href="/services">Services</a>
       <a href="/press-affiliations">Press/Affiliations</a>
-      <a href="/lechelon">L’Échelon Newsletter</a>
       <a href="/contact">Contact</a>
       <a href="/privacy">Privacy Policy</a>
     </nav>
@@ -272,6 +270,43 @@
       </a>
     </div>
   </div>
+  <div class="footer-supporter">
+    <p class="footer-supporter-label">Proud supporter of <em>L&rsquo;&Eacute;chelon</em></p>
+    <form class="footer-supporter-form" id="footerLrForm" onsubmit="submitFooterLr(event)">
+      <input type="email" id="footerLrEmail" placeholder="Your email" class="footer-supporter-input" required autocomplete="email">
+      <button type="submit" class="footer-supporter-btn" id="footerLrBtn">Subscribe</button>
+    </form>
+    <p id="footerLrMsg" class="footer-supporter-msg"></p>
+  </div>
+  <script>
+  function submitFooterLr(e) {
+    e.preventDefault();
+    var email = document.getElementById('footerLrEmail').value.trim();
+    var btn = document.getElementById('footerLrBtn');
+    var msg = document.getElementById('footerLrMsg');
+    btn.disabled = true; btn.textContent = '...';
+    msg.textContent = '';
+    fetch('https://l-chelon-production.up.railway.app/api/subscribe', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email: email, source: 'rosen-relations-footer' })
+    }).then(function(res) {
+      if (res.ok) {
+        msg.style.color = '#C9A84C';
+        msg.textContent = "You're on the list.";
+        document.getElementById('footerLrForm').reset();
+      } else {
+        msg.style.color = 'rgba(255,80,80,0.8)';
+        msg.textContent = 'Something went wrong. Try again.';
+      }
+      btn.disabled = false; btn.textContent = 'Subscribe';
+    }).catch(function() {
+      msg.style.color = 'rgba(255,80,80,0.8)';
+      msg.textContent = 'Something went wrong. Try again.';
+      btn.disabled = false; btn.textContent = 'Subscribe';
+    });
+  }
+  </script>
   <div class="footer-bottom">
     <p class="footer-copy">© 2026 Rosen Relations. All rights reserved.</p>
   </div>
