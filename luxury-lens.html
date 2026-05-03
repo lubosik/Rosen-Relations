@@ -359,12 +359,18 @@
     </div>
   </div>
   <div class="footer-supporter">
-    <p class="footer-supporter-label">Proud supporter of <em>L&rsquo;&Eacute;chelon</em></p>
-    <form class="footer-supporter-form" id="footerLrForm" onsubmit="submitFooterLr(event)">
-      <input type="email" id="footerLrEmail" placeholder="Your email" class="footer-supporter-input" required autocomplete="email">
-      <button type="submit" class="footer-supporter-btn" id="footerLrBtn">Subscribe</button>
+    <p class="fsp-eyebrow">The Newsletter by Rosen Relations</p>
+    <h2 class="fsp-heading">L&rsquo;&Eacute;chelon</h2>
+    <div class="fsp-sep"></div>
+    <p class="fsp-tagline">Where fashion, beauty, and luxury align.</p>
+    <form class="fsp-form" id="footerLrForm" onsubmit="submitFooterLr(event)">
+      <div class="fsp-form-row">
+        <input type="email" id="footerLrEmail" placeholder="Your email address" class="fsp-input" required autocomplete="email">
+        <button type="submit" class="fsp-btn" id="footerLrBtn">Subscribe</button>
+      </div>
+      <p id="footerLrMsg" class="fsp-msg"></p>
     </form>
-    <p id="footerLrMsg" class="footer-supporter-msg"></p>
+    <p class="fsp-fine">Bi-monthly. Curated. No spam.</p>
   </div>
   <script>
   function submitFooterLr(e) {
@@ -381,22 +387,22 @@
     }).then(function(res) {
       if (res.ok) {
         msg.style.color = '#C9A84C';
-        msg.textContent = "You're on the list.";
+        msg.textContent = "You're on the list. Welcome to L'\xc9chelon.";
         document.getElementById('footerLrForm').reset();
       } else {
         msg.style.color = 'rgba(255,80,80,0.8)';
-        msg.textContent = 'Something went wrong. Try again.';
+        msg.textContent = 'Something went wrong. Please try again.';
       }
       btn.disabled = false; btn.textContent = 'Subscribe';
     }).catch(function() {
       msg.style.color = 'rgba(255,80,80,0.8)';
-      msg.textContent = 'Something went wrong. Try again.';
+      msg.textContent = 'Something went wrong. Please try again.';
       btn.disabled = false; btn.textContent = 'Subscribe';
     });
   }
   </script>
   <div class="footer-bottom">
-    <p class="footer-copy">© 2026 Rosen Relations. All rights reserved.</p>
+    <p class="footer-copy">© 2015 Rosen Relations. All rights reserved.</p>
   </div>
 </footer>
 
