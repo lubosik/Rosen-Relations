@@ -223,7 +223,6 @@
 
 /* ─── HAMBURGER — desktop hidden ────────────────────────────────── */
 .nav-hamburger { display: none; }
-.nav-menu-label { display: none; }
 .btn-contact-mobile { display: none; }
 
 /* ─── MOBILE DRAWER ─────────────────────────────────────────────── */
@@ -367,12 +366,13 @@
   }
   .nav-emblem-logo { height: 34px; margin-right: 0; }
 
-  /* Hamburger: left with Menu text */
+  /* Hamburger: top left, icon only */
   .nav-hamburger {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
-    gap: 8px;
+    justify-content: center;
+    gap: 5px;
     background: none;
     border: none;
     cursor: pointer;
@@ -380,20 +380,12 @@
     z-index: calc(var(--z-nav) + 1);
     position: relative;
   }
-  .nav-hamburger span:not(.nav-menu-label) {
+  .nav-hamburger span {
     display: block;
-    width: 20px;
+    width: 22px;
     height: 1px;
     background: var(--gold);
     transition: transform 0.3s ease, opacity 0.3s ease;
-  }
-  .nav-menu-label {
-    display: block;
-    font-family: var(--font-body);
-    font-size: 0.62rem;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: rgba(255,255,255,0.75);
   }
 
   /* Mobile Contact Us: right side */
