@@ -223,6 +223,8 @@
 
 /* ─── HAMBURGER — desktop hidden ────────────────────────────────── */
 .nav-hamburger { display: none; }
+.nav-menu-label { display: none; }
+.btn-contact-mobile { display: none; }
 
 /* ─── MOBILE DRAWER ─────────────────────────────────────────────── */
 .nav-drawer {
@@ -262,7 +264,6 @@
   color: var(--gold); font-size: 1.4rem; cursor: pointer;
 }
 
-/* Drawer wordmark */
 .nav-drawer-logo {
   display: flex;
   justify-content: center;
@@ -272,7 +273,6 @@
   border-bottom: 1px solid rgba(201,168,76,0.2);
 }
 
-/* Drawer services sub-items */
 .drawer-sub {
   font-size: 0.85rem !important;
   letter-spacing: 0.1em !important;
@@ -284,7 +284,6 @@
 }
 .drawer-sub:hover { color: var(--gold) !important; }
 
-/* Contact in drawer */
 .drawer-contact-btn {
   display: inline-block;
   margin-top: 20px;
@@ -346,64 +345,90 @@
 /* ─── MOBILE RESPONSIVE ─────────────────────────────────────────── */
 @media (max-width: 900px) {
   .site-nav {
-    grid-template-columns: 1fr auto 44px;
-    padding: 0 20px;
+    grid-template-columns: auto 1fr auto;
+    padding: 0 16px;
     height: 72px;
+    position: fixed;
   }
-  .nav-wordmark-text { font-size: 0.72rem; letter-spacing: 0.16em; }
   .site-nav.scrolled { height: 64px; }
-  .nav-founder {
-    font-size: clamp(1.05rem, 4.2vw, 1.4rem);
-    letter-spacing: 0.16em;
-  }
 
-  /* Show only Nani Rosen stacked link on mobile — hide About Us and VRE */
-  .nav-left {
-    justify-content: flex-start;
-  }
-  .nav-left .nav-about-us { display: none !important; }
-
+  /* Hide desktop content */
+  .nav-left { display: none; }
   .nav-right { display: none; }
 
+  /* Logo: absolute center */
+  .nav-logo-link {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .nav-emblem-logo { height: 34px; margin-right: 0; }
+
+  /* Hamburger: left with Menu text */
   .nav-hamburger {
     display: flex;
-    flex-direction: column;
-    gap: 5px;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
     background: none;
     border: none;
     cursor: pointer;
-    padding: 4px;
-    z-index: var(--z-nav);
-    justify-content: center;
-    align-items: center;
-    width: 44px;
-    height: 44px;
+    padding: 4px 0;
+    z-index: calc(var(--z-nav) + 1);
+    position: relative;
   }
-  .nav-hamburger span {
+  .nav-hamburger span:not(.nav-menu-label) {
     display: block;
-    width: 22px;
+    width: 20px;
     height: 1px;
     background: var(--gold);
     transition: transform 0.3s ease, opacity 0.3s ease;
   }
+  .nav-menu-label {
+    display: block;
+    font-family: var(--font-body);
+    font-size: 0.62rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.75);
+  }
 
-  .nav-logo-img { height: 44px; }
+  /* Mobile Contact Us: right side */
+  .btn-contact-mobile {
+    display: inline-flex;
+    align-items: center;
+    padding: 9px 14px;
+    background: #ffffff;
+    color: #0a0a0a;
+    font-family: var(--font-body);
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    text-decoration: none;
+    white-space: nowrap;
+    position: relative;
+    z-index: calc(var(--z-nav) + 1);
+  }
 }
 
-/* ── Emblem logo in nav ─────────────────────────────────────── */
-.nav-logo-link {
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-  flex-shrink: 0;
-}
-.nav-emblem-logo {
-  height: 42px;
-  width: auto;
-  object-fit: contain;
-  display: block;
-  margin-right: 20px;
-}
-@media (max-width: 768px) {
-  .nav-emblem-logo { height: 32px; margin-right: 0; }
+/* Desktop: reformat grid to accommodate logo as direct nav child */
+@media (min-width: 901px) {
+  .site-nav {
+    grid-template-columns: auto auto 1fr;
+  }
+  .nav-logo-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    flex-shrink: 0;
+    margin-right: 0;
+  }
+  .nav-emblem-logo {
+    height: 42px;
+    margin-right: 20px;
+  }
 }
