@@ -112,6 +112,9 @@
     gtag('js', new Date());
     gtag('config', 'G-XNJJ097JLF');
   </script>
+  <!-- TrustBox script -->
+  <script type="text/javascript" src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js" async></script>
+  <!-- End TrustBox script -->
 </head>
 <body class="page-home">
 
@@ -1050,6 +1053,66 @@
       cards.forEach(function (c) { io.observe(c); });
     })();
   </script>
+
+  <!-- ══════════════════════════════════════════════════════════
+       TRUSTPILOT — Review us
+  ══════════════════════════════════════════════════════════ -->
+  <section class="hs-trustpilot" id="hsTrustpilot" aria-label="Review us on Trustpilot">
+    <div class="hs-trustpilot-inner">
+      <p class="hs-section-label small-caps">Your Voice Matters</p>
+      <h2 class="hs-trustpilot-heading">Share Your Experience</h2>
+      <div class="sep-gold-center"></div>
+      <p class="hs-trustpilot-sub">If Rosen Relations has elevated your presence, we'd be honoured to hear about it.</p>
+      <!-- TrustBox widget - Review Collector -->
+      <div class="trustpilot-widget" data-locale="en-US" data-template-id="56278e9abfbbba0bdcd568bc" data-businessunit-id="69f8ce80938efc3fb56d852b" data-style-height="52px" data-style-width="100%" data-token="d40f9e3a-97f9-451b-8e92-cc0df06a7d8c">
+        <a href="https://www.trustpilot.com/review/rosenrelations.com" target="_blank" rel="noopener">Trustpilot</a>
+      </div>
+      <!-- End TrustBox widget -->
+    </div>
+  </section>
+
+  <style>
+    .hs-trustpilot {
+      background: #0d0c0b;
+      padding: 90px 24px 100px;
+      border-top: 1px solid rgba(197,168,79,0.1);
+      text-align: center;
+    }
+    .hs-trustpilot-inner {
+      max-width: 640px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0;
+    }
+    .hs-trustpilot-heading {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: clamp(1.9rem, 4vw, 3rem);
+      font-weight: 300;
+      color: #FAF8F5;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      margin: 0 0 20px;
+    }
+    .hs-trustpilot-sub {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-style: italic;
+      font-size: clamp(1rem, 1.6vw, 1.15rem);
+      font-weight: 300;
+      color: rgba(250,248,245,0.65);
+      letter-spacing: 0.02em;
+      line-height: 1.7;
+      margin: 0 0 40px;
+    }
+    .hs-trustpilot .trustpilot-widget {
+      width: 100%;
+      max-width: 480px;
+    }
+    @media (max-width: 480px) {
+      .hs-trustpilot { padding: 64px 16px 72px; }
+    }
+  </style>
 
   <!-- ══════════════════════════════════════════════════════════
        OUR FOUNDER — cinematic portrait + snippet
