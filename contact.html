@@ -263,27 +263,24 @@
             <input type="tel" id="ev_phone" name="phone">
           </div>
           <div class="sf-group">
-            <label for="ev_org">Organisation / Brand Name *</label>
+            <label for="ev_org">Organisation / Event Name *</label>
             <input type="text" id="ev_org" name="organisation" required>
           </div>
         </div>
-        <div class="sf-row">
-          <div class="sf-group">
-            <label for="ev_event_name">Event Name / Title *</label>
-            <input type="text" id="ev_event_name" name="event_name" required>
-          </div>
-          <div class="sf-group">
-            <label for="ev_type">Event Type *</label>
-            <select id="ev_type" name="event_type" required>
-              <option value="">Select type</option>
-              <option>Gala / Fundraiser</option>
-              <option>Brand Activation</option>
-              <option>Corporate Event</option>
-              <option>Product Launch</option>
-              <option>Private Celebration</option>
-              <option>Fashion / Industry Show</option>
-              <option>Other</option>
-            </select>
+        <div class="sf-group">
+          <label for="ev_type">Event Type *</label>
+          <select id="ev_type" name="event_type" required>
+            <option value="">Select type</option>
+            <option>Gala / Fundraiser</option>
+            <option>Brand Activation</option>
+            <option>Corporate Event</option>
+            <option>Product Launch</option>
+            <option>Private Celebration</option>
+            <option>Fashion / Industry Show</option>
+            <option value="Other">Other</option>
+          </select>
+          <div id="ev_type_other_wrap" style="display:none; margin-top: 10px;">
+            <input type="text" id="ev_type_other" name="event_type_other" placeholder="Please describe your event type" style="width:100%; background:rgba(255,255,255,0.04); border:1px solid rgba(201,168,76,0.25); color:#FAF8F5; padding:14px 16px; font-family:'Lato',sans-serif; font-size:0.9rem; font-weight:300; outline:none; border-radius:2px;">
           </div>
         </div>
         <div class="sf-row">
@@ -292,57 +289,21 @@
             <input type="date" id="ev_date" name="event_date" required>
           </div>
           <div class="sf-group">
-            <label for="ev_duration">Duration of Coverage Needed *</label>
-            <select id="ev_duration" name="coverage_duration" required>
-              <option value="">Select duration</option>
-              <option>2 hours</option>
-              <option>4 hours</option>
-              <option>6 hours</option>
-              <option>Full Day (8+ hours)</option>
-              <option>Multi-Day</option>
-            </select>
-          </div>
-        </div>
-        <div class="sf-row">
-          <div class="sf-group">
-            <label for="ev_city">City *</label>
-            <input type="text" id="ev_city" name="city" required>
-          </div>
-          <div class="sf-group">
-            <label for="ev_state">State / Country *</label>
-            <input type="text" id="ev_state" name="state_country" required>
-          </div>
-        </div>
-        <div class="sf-row">
-          <div class="sf-group">
-            <label for="ev_venue">Venue Name / Address</label>
-            <input type="text" id="ev_venue" name="venue">
-          </div>
-          <div class="sf-group">
-            <label for="ev_guests">Expected Guest Count</label>
-            <select id="ev_guests" name="guest_count">
-              <option value="">Select range</option>
-              <option>Under 50</option>
-              <option>50 to 150</option>
-              <option>150 to 300</option>
-              <option>300 to 500</option>
-              <option>500+</option>
-            </select>
+            <label for="ev_duration">Duration of Event *</label>
+            <input type="text" id="ev_duration" name="event_duration" placeholder="e.g. 3 hours, half day, full day" required>
           </div>
         </div>
         <div class="sf-group">
-          <label for="ev_coverage_type">Coverage Type Needed</label>
-          <select id="ev_coverage_type" name="coverage_type">
-            <option value="">Select</option>
-            <option>Photography Only</option>
-            <option>Videography Only</option>
-            <option>Photography &amp; Videography</option>
-            <option>Not Sure, Advise Me</option>
-          </select>
+          <label for="ev_deliverable">Length of Final Product / Deliverable *</label>
+          <input type="text" id="ev_deliverable" name="deliverable_length" placeholder="e.g. 30-second clip, 5-minute commercial, full highlight reel" required>
         </div>
         <div class="sf-group">
-          <label for="ev_details">Additional Details / Special Requirements</label>
-          <textarea id="ev_details" name="details" rows="4" placeholder="Any specific shots, deliverables, dress code, or other requirements?"></textarea>
+          <label for="ev_venue">Venue Address *</label>
+          <input type="text" id="ev_venue" name="venue_address" placeholder="Full venue address" required>
+        </div>
+        <div class="sf-group">
+          <label for="ev_details">Additional Information</label>
+          <textarea id="ev_details" name="details" rows="4" placeholder="Any additional details or requirements?"></textarea>
         </div>
         <button type="submit" class="btn-ghost sf-submit">Submit Event Enquiry</button>
         <div class="sf-result" id="eventResult"></div>
@@ -464,6 +425,42 @@
   </style>
 
     <script>
+    /* "Other" reveal — event type */
+    (function() {
+      var evType = document.getElementById('ev_type');
+      var evTypeOtherWrap = document.getElementById('ev_type_other_wrap');
+      var evTypeOther = document.getElementById('ev_type_other');
+      if (evType && evTypeOtherWrap) {
+        evType.addEventListener('change', function() {
+          var show = this.value === 'Other';
+          evTypeOtherWrap.style.display = show ? 'block' : 'none';
+          if (!show && evTypeOther) evTypeOther.value = '';
+        });
+      }
+    })();
+
+    /* "Other" reveal — reason for inquiry (general contact form) */
+    (function() {
+      var inqType = document.getElementById('inquiryType');
+      if (!inqType) return;
+      var wrap = document.createElement('div');
+      wrap.id = 'inquiryTypeOtherWrap';
+      wrap.style.cssText = 'display:none; margin-top:10px;';
+      var inp = document.createElement('input');
+      inp.type = 'text';
+      inp.id = 'inquiryTypeOther';
+      inp.name = 'inquiry_type_other';
+      inp.placeholder = 'Please describe your reason for inquiry';
+      inp.style.cssText = 'width:100%; background:var(--black-soft); border:1px solid rgba(201,168,76,0.3); color:var(--white); padding:14px 16px; font-family:var(--font-body); font-size:1rem; outline:none;';
+      wrap.appendChild(inp);
+      inqType.parentNode.insertBefore(wrap, inqType.nextSibling);
+      inqType.addEventListener('change', function() {
+        var show = this.value === 'Other';
+        wrap.style.display = show ? 'block' : 'none';
+        if (!show) inp.value = '';
+      });
+    })();
+
     /* Web3Forms handler for event form */
     (function() {
       ['eventForm'].forEach(function(id) {
@@ -486,6 +483,7 @@
               result.className = 'sf-result success';
               result.textContent = 'Thank you. Your enquiry has been received. We will be in touch within 24 hours.';
               form.reset();
+              document.getElementById('ev_type_other_wrap').style.display = 'none';
             } else { throw new Error(data.message); }
           } catch(err) {
             result.className = 'sf-result error';

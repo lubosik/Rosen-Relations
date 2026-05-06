@@ -250,6 +250,9 @@
               <option value="event" style="background: var(--black-soft);">Event</option>
               <option value="other" style="background: var(--black-soft);">Other</option>
             </select>
+            <div id="diagSourceOtherWrap" style="display:none; margin-top: 10px;">
+              <input type="text" id="diagSourceOther" name="source_other" placeholder="Please tell us how you found us" style="width:100%; background:var(--black-soft); border:1px solid rgba(201,168,76,0.3); color:var(--white); padding:14px 16px; font-family:var(--font-body); font-size:1rem; outline:none;">
+            </div>
           </div>
 
           <button type="submit" class="btn-solid contact-submit" style="width: 100%; margin-top: 8px;">Submit My Diagnostic Request</button>
@@ -286,6 +289,17 @@
 </footer>
 
 <script src="/assets/js/main.js" defer></script>
+<script>
+  // Source "Other" reveal
+  document.getElementById('diagSource')?.addEventListener('change', function() {
+    var wrap = document.getElementById('diagSourceOtherWrap');
+    var inp  = document.getElementById('diagSourceOther');
+    if (!wrap) return;
+    var show = this.value === 'other';
+    wrap.style.display = show ? 'block' : 'none';
+    if (!show && inp) inp.value = '';
+  });
+</script>
 <script>
   (function () {
     var form      = document.getElementById('diagnosticForm');

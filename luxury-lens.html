@@ -322,6 +322,9 @@
               <option value="event" style="background: var(--black-soft);">Event</option>
               <option value="other" style="background: var(--black-soft);">Other</option>
             </select>
+            <div id="llSourceOtherWrap" style="display:none; margin-top: 10px;">
+              <input type="text" id="llSourceOther" name="source_other" placeholder="Please tell us how you found us" style="width:100%; background:var(--black-soft); border:1px solid rgba(201,168,76,0.3); color:var(--white); padding:14px 16px; font-family:var(--font-body); font-size:1rem; outline:none;">
+            </div>
           </div>
 
           <button type="submit" class="btn-solid contact-submit" style="width: 100%; margin-top: 8px;">Continue to Booking</button>
@@ -378,6 +381,16 @@ document.querySelectorAll('input[data-platform]').forEach(function(cb) {
       if (inp) inp.value = '';
     }
   });
+});
+
+// Source "Other" reveal
+document.getElementById('llSource')?.addEventListener('change', function() {
+  var wrap = document.getElementById('llSourceOtherWrap');
+  var inp = document.getElementById('llSourceOther');
+  if (!wrap) return;
+  var show = this.value === 'other';
+  wrap.style.display = show ? 'block' : 'none';
+  if (!show && inp) inp.value = '';
 });
 
 // Budget prompt
