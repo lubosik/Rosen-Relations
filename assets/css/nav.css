@@ -97,6 +97,15 @@
 }
 .nav-logo-img:hover { opacity: 0.82; }
 
+/* ─── Emblem logo — always constrained, never stretched ─────────── */
+.nav-emblem-logo {
+  height: 42px;
+  width: auto;           /* overrides base.css img { width: 100% } */
+  object-fit: contain;
+  display: block;
+  flex-shrink: 0;
+}
+
 /* ─── RIGHT: Nav links cluster near logo ────────────────────────── */
 .nav-right {
   display: flex;
@@ -221,7 +230,7 @@
   background: rgba(201,168,76,0.06);
 }
 
-/* ─── HAMBURGER — desktop hidden ────────────────────────────────── */
+/* ─── HAMBURGER + MOBILE CONTACT — hidden on desktop ────────────── */
 .nav-hamburger { display: none; }
 .btn-contact-mobile { display: none; }
 
@@ -341,7 +350,15 @@
 }
 .nav-about-us:hover { color: var(--gold); }
 
-/* ─── MOBILE RESPONSIVE ─────────────────────────────────────────── */
+/* ═══════════════════════════════════════════════════════════════════
+   RESPONSIVE BREAKPOINTS
+   ─────────────────────────────────────────────────────────────────
+   ≤ 900px   → Phone layout  (hamburger L, logo center, contact R)
+   901–1200px → Tablet layout (logo L, hamburger R, contact R)
+   ≥ 1201px  → Desktop layout (full split nav, grid)
+═══════════════════════════════════════════════════════════════════ */
+
+/* ─── PHONE (≤ 900px) ────────────────────────────────────────────── */
 @media (max-width: 900px) {
   .site-nav {
     display: flex;
@@ -354,11 +371,10 @@
   }
   .site-nav.scrolled { height: 64px; }
 
-  /* Hide desktop content */
   .nav-left { display: none; }
   .nav-right { display: none; }
 
-  /* Logo: absolute center — sits over the flex row without affecting spacing */
+  /* Logo centered absolutely so it doesn't disturb flex spacing */
   .nav-logo-link {
     position: absolute;
     left: 50%;
@@ -368,9 +384,13 @@
     justify-content: center;
     z-index: 1;
   }
-  .nav-emblem-logo { height: 34px; margin-right: 0; }
+  .nav-emblem-logo {
+    height: 34px;
+    width: auto;
+    margin-right: 0;
+  }
 
-  /* Hamburger: top left, icon only */
+  /* Hamburger: top left */
   .nav-hamburger {
     display: flex;
     flex-direction: column;
@@ -393,7 +413,7 @@
     transition: transform 0.3s ease, opacity 0.3s ease;
   }
 
-  /* Mobile Contact Us: top right, compact */
+  /* Contact Us: top right */
   .btn-contact-mobile {
     display: inline-flex;
     align-items: center;
@@ -414,8 +434,87 @@
   }
 }
 
-/* Desktop: reformat grid to accommodate logo as direct nav child */
-@media (min-width: 901px) {
+/* ─── TABLET (901px – 1200px) ────────────────────────────────────── */
+/* Covers iPad portrait/landscape, iPad mini landscape, iPad Air     */
+@media (min-width: 901px) and (max-width: 1200px) {
+  .site-nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 28px;
+    height: 80px;
+  }
+  .site-nav.scrolled { height: 70px; }
+
+  /* Hide all desktop nav links — they go in the drawer */
+  .nav-left { display: none; }
+  .nav-right { display: none; }
+
+  /* Logo: left-aligned, in normal document flow */
+  .nav-logo-link {
+    position: static;
+    transform: none;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    flex-shrink: 0;
+    z-index: calc(var(--z-nav) + 1);
+  }
+  .nav-emblem-logo {
+    height: 40px;
+    width: auto;
+    margin-right: 0;
+  }
+
+  /* Hamburger: pushed to the right, just before Contact Us */
+  .nav-hamburger {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    margin-left: auto;
+    margin-right: 16px;
+    z-index: calc(var(--z-nav) + 1);
+    position: relative;
+    flex-shrink: 0;
+  }
+  .nav-hamburger span {
+    display: block;
+    width: 24px;
+    height: 1px;
+    background: var(--gold);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+
+  /* Contact Us: far right */
+  .btn-contact-mobile {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 22px;
+    background: #ffffff;
+    color: #0a0a0a;
+    font-family: var(--font-body);
+    font-size: 0.64rem;
+    font-weight: 700;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    text-decoration: none;
+    white-space: nowrap;
+    flex-shrink: 0;
+    z-index: calc(var(--z-nav) + 1);
+    position: relative;
+  }
+}
+
+/* ─── DESKTOP (≥ 1201px) ─────────────────────────────────────────── */
+@media (min-width: 1201px) {
   .site-nav {
     grid-template-columns: auto auto 1fr;
   }
@@ -428,6 +527,26 @@
   }
   .nav-emblem-logo {
     height: 42px;
+    width: auto;
     margin-right: 20px;
+  }
+}
+
+/* ─── LARGE DESKTOP (≥ 1440px) ───────────────────────────────────── */
+/* Prevent nav from becoming too sparse on wide monitors              */
+@media (min-width: 1440px) {
+  .site-nav {
+    padding: 0 clamp(48px, 3.5vw, 80px);
+  }
+  .nav-emblem-logo {
+    height: 44px;
+    width: auto;
+  }
+}
+
+/* ─── 4K / ULTRA-WIDE (≥ 2200px) ────────────────────────────────── */
+@media (min-width: 2200px) {
+  .site-nav {
+    padding: 0 clamp(80px, 4vw, 140px);
   }
 }
