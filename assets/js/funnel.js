@@ -6,6 +6,14 @@
 // Drop-offs are captured at whichever step they reach.
 
 const CAL_BASE = 'https://cal.com/rosen-relations/15min';
+// Funnel budget values → the exact option labels on the Cal.com booking form
+const CAL_BUDGET_LABELS = {
+  'under-1k':                    'Under $1,000/month',
+  '1k-2.5k':                     '$1,000 to $2,500/month',
+  '2.5k-5k':                     '$2,500 to $5,000/month',
+  '5k-plus':                     '$5,000+/month',
+  'no-budget-willing-to-invest': 'No set budget yet, but willing to invest',
+};
 const WEB3FORMS_ACCESS_KEY = '47c2e037-9077-412d-9b7f-fa2239e9ae79';
 
 let funnelData = {
@@ -198,15 +206,19 @@ document.getElementById('funnelSubmitBtn')?.addEventListener('click', async () =
 
   await web3FormsPost();
 
+  // Prefill the Cal.com booking fields (slugs match the 15min event's booking questions)
+  const helpWith = [...document.querySelectorAll('.funnel-check input:checked')]
+    .map(i => i.parentElement.textContent.trim()).join('\n');
   const params = new URLSearchParams({
     name: [fn, ln].filter(Boolean).join(' '),
     email: em,
-    notes: 'Pain points: ' + funnelData.painPoints + ' | Marketing budget: ' + funnelData.budget + (co ? ' | Company: ' + co : ''),
-    marketing_budget: funnelData.budget,
-    pain_points: funnelData.painPoints,
+    help_with: helpWith,
   });
-  if (ph) params.set('phone', ph);
+  const budgetLabel = CAL_BUDGET_LABELS[funnelData.budget];
+  if (budgetLabel) params.set('marketing_budget', budgetLabel);
   if (co) params.set('company', co);
+  // Cal.com's phone field only accepts international format
+  if (/^\+\d[\d\s()-]{6,}$/.test(ph)) params.set('phone_number', ph.replace(/[\s()-]/g, ''));
 
   const calUrl = `${CAL_BASE}?${params.toString()}`;
   sessionStorage.setItem('funnel_submitted', 'true');

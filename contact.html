@@ -147,23 +147,149 @@
       <!-- Right: Contact Logic -->
       <div class="contact-form-col">
 
-        <!-- Cal.com 15-min consultation embed -->
+        <!-- Free 15-min consultation: short intake form, then Cal.com embed prefilled from it -->
         <div class="contact-booking">
           <span class="small-caps gold">Complimentary · 15 Minutes</span>
           <h3>Book a Free Consultation</h3>
-          <p>A private 15-minute call with Nani Rosen herself. Share the service you are interested in, and Nani will walk you through exactly how Rosen Relations can elevate your brand presence — personally, strategically, and at the level your vision deserves. Select a time below.</p>
-          <div style="width:100%;height:580px;overflow:scroll;margin-top:20px;border:1px solid rgba(201,168,76,0.2);border-radius:4px;" id="my-cal-inline-15min"></div>
+          <p>A private 15-minute call with Nani Rosen herself. Tell us a little about your brand and what you need, and Nani will walk you through exactly how Rosen Relations can elevate your brand presence, personally, strategically, and at the level your vision deserves. Answer a few quick questions, then choose a time.</p>
+
+          <form id="consultForm" class="contact-form" novalidate style="margin-top: 24px;">
+            <input type="hidden" name="access_key" value="47c2e037-9077-412d-9b7f-fa2239e9ae79">
+            <input type="hidden" name="subject" value="New Free Consultation Request | Rosen Relations">
+            <input type="checkbox" name="botcheck" style="display:none;">
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="cfFirst">First Name *</label>
+                <input type="text" id="cfFirst" name="first_name" required>
+              </div>
+              <div class="form-group">
+                <label for="cfLast">Last Name</label>
+                <input type="text" id="cfLast" name="last_name">
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="cfEmail">Email Address *</label>
+                <input type="email" id="cfEmail" name="email" required>
+              </div>
+              <div class="form-group">
+                <label for="cfPhone">Phone (optional)</label>
+                <input type="tel" id="cfPhone" name="phone" placeholder="+1 555 123 4567">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="cfCompany">Company or Brand Name *</label>
+              <input type="text" id="cfCompany" name="company" required>
+            </div>
+
+            <div class="form-group">
+              <label for="cfService">Which service are you interested in? *</label>
+              <select id="cfService" name="service" required style="width:100%; background:var(--black-soft); border:1px solid rgba(201,168,76,0.3); color:var(--white); padding:14px 16px; font-family:var(--font-body); font-size:1rem; outline:none;">
+                <option value="">Select one</option>
+                <option>Brand visibility and strategy</option>
+                <option>The Visual Rebrand Experience</option>
+                <option>The Luxury Lens</option>
+                <option>Event and press coverage</option>
+                <option>Website development</option>
+                <option>Not sure yet</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="cfTopic">What would you like to talk about? *</label>
+              <textarea id="cfTopic" name="topic" rows="3" placeholder="A sentence or two is plenty" required></textarea>
+            </div>
+
+            <div class="form-group">
+              <label for="cfBudget">What is your monthly marketing budget? *</label>
+              <select id="cfBudget" name="marketing_budget" required style="width:100%; background:var(--black-soft); border:1px solid rgba(201,168,76,0.3); color:var(--white); padding:14px 16px; font-family:var(--font-body); font-size:1rem; outline:none;">
+                <option value="">Select one</option>
+                <option>Under $1,000/month</option>
+                <option>$1,000 to $2,500/month</option>
+                <option>$2,500 to $5,000/month</option>
+                <option>$5,000+/month</option>
+                <option>No set budget yet, but willing to invest</option>
+              </select>
+            </div>
+
+            <button type="submit" class="btn-solid contact-submit" style="width:100%; margin-top: 8px;">Continue to Booking</button>
+            <div id="cfResult" class="form-result"></div>
+          </form>
+
+          <div id="cfCalWrap" hidden>
+            <div style="width:100%;height:580px;overflow:scroll;margin-top:20px;border:1px solid rgba(201,168,76,0.2);border-radius:4px;" id="my-cal-inline-15min"></div>
+          </div>
           <script type="text/javascript">
             (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
             Cal("init", "15min", {origin:"https://app.cal.com"});
-            Cal.ns["15min"]("inline", {
-              elementOrSelector:"#my-cal-inline-15min",
-              config: {"layout":"month_view","useSlotsViewOnSmallScreen":"true"},
-              calLink: "rosen-relations/15min",
-            });
             Cal.ns["15min"]("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
+
+            (function () {
+              var form = document.getElementById('consultForm');
+              var resultEl = document.getElementById('cfResult');
+              var calWrap = document.getElementById('cfCalWrap');
+              var calRendered = false;
+              if (!form) return;
+
+              function val(id) { return (document.getElementById(id)?.value || '').trim(); }
+
+              form.addEventListener('submit', async function (e) {
+                e.preventDefault();
+                var firstName = val('cfFirst'), lastName = val('cfLast'), email = val('cfEmail'), phone = val('cfPhone');
+                var company = val('cfCompany'), service = val('cfService'), topic = val('cfTopic'), budget = val('cfBudget');
+
+                if (!firstName || !email || !company || !service || !topic || !budget) {
+                  resultEl.textContent = 'Please fill in all required fields.';
+                  resultEl.className = 'form-result form-result--error';
+                  return;
+                }
+
+                var btn = form.querySelector('.contact-submit');
+                btn.disabled = true; btn.textContent = 'Sending…';
+                resultEl.textContent = ''; resultEl.className = 'form-result';
+
+                var fullName = firstName + (lastName ? ' ' + lastName : '');
+                var helpWith = 'Service: ' + service + '\n' + topic;
+                var summary = ['Company: ' + company, 'Service: ' + service, 'Topic: ' + topic, 'Marketing budget: ' + budget].join('\n');
+
+                var w3fData = new FormData(form);
+                w3fData.set('name', fullName);
+                w3fData.set('message', summary);
+
+                await Promise.allSettled([
+                  fetch('https://api.web3forms.com/submit', { method: 'POST', body: w3fData }),
+                  fetch('/api/notion', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                      source: 'Free consultation form',
+                      firstName: firstName, lastName: lastName, email: email, phone: phone, company: company,
+                      reasonForInquiry: 'Free consultation: ' + service,
+                      message: summary,
+                    }),
+                  }),
+                ]);
+
+                resultEl.textContent = 'Thank you. Choose a time for your free consultation below.';
+                resultEl.className = 'form-result form-result--success';
+                form.hidden = true;
+                calWrap.hidden = false;
+                if (!calRendered) {
+                  calRendered = true;
+                  var config = { layout: 'month_view', useSlotsViewOnSmallScreen: 'true', name: fullName, email: email, company: company, help_with: helpWith, marketing_budget: budget };
+                  // Cal.com's phone field only accepts international format
+                  if (/^\+\d[\d\s()-]{6,}$/.test(phone)) config.phone_number = phone.replace(/[\s()-]/g, '');
+                  Cal.ns['15min']('inline', { elementOrSelector: '#my-cal-inline-15min', config: config, calLink: 'rosen-relations/15min' });
+                }
+                calWrap.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              });
+            })();
           </script>
         </div>
+
 
         <div class="contact-divider"><span>OR</span></div>
 
